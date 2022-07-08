@@ -84,7 +84,7 @@ const button = css`
   margin: 0;
   margin-top: 16px;
   border: 0;
-  color: white;
+  color: #fff;
   box-sizing: border-box;
 `;
 
