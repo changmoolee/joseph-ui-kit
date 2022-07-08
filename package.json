@@ -1,8 +1,9 @@
 {
   "name": "joseph-ui-kit",
+  "description": "ui-kit that make user convenient",
   "version": "0.1.0",
   "private": false,
-  "main": "components/index.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/changmoolee/joseph-ui-kit.git"
@@ -27,12 +28,22 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "cross-env BABEL_ENV=production babel src -d dist",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "chromatic": "npx chromatic --project-token=0449ad2768f7"
+  },
+  "babel": {
+    "presets": [
+      [
+        "react-app",
+        {
+          "absoluteRuntime": false
+        }
+      ]
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -63,6 +74,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.18.6",
     "@storybook/addon-a11y": "^6.5.9",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",
@@ -75,8 +87,10 @@
     "@storybook/preset-create-react-app": "^4.1.2",
     "@storybook/react": "^6.5.9",
     "@storybook/testing-library": "^0.0.13",
+    "auto": "^10.37.1",
     "babel-plugin-named-exports-order": "^0.0.2",
     "chromatic": "^6.7.0",
+    "cross-env": "^7.0.3",
     "prop-types": "^15.8.1",
     "webpack": "^5.73.0"
   },
