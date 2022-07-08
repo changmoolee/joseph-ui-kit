@@ -1,0 +1,207 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs";
+import Button from "./Button";
+
+<Meta
+  title="Components/Button"
+  component={Button}
+  argTypes={{
+    name: {
+      name: "name",
+      type: { name: "string", required: false },
+      description: "Specify the name of the Button.",
+      defaultValue: "Button",
+    },
+    size: {
+      name: "size",
+      type: { name: "select", required: false },
+      description: "Specify the size of the Button.",
+      table: {
+        type: {
+          summary: `small middle large xlarge 2xlarge`,
+        },
+      },
+      defaultValue: "middle",
+      options: ["small", "middle", "large", "xlarge", "2xlarge"],
+    },
+    border: {
+      name: "border",
+      type: { required: false },
+      defaultValue: "none",
+      control: { type: null },
+      table: {
+        disable: true,
+      },
+    },
+    bgColor: {
+      table: {
+        disable: true,
+      },
+    },
+    color: {
+      type: { required: false },
+      defaultValue: "white",
+      control: { type: null },
+      table: {
+        disable: true,
+      },
+    },
+    tabIndex: {
+      name: "tabIndex",
+      type: { name: "number", required: false },
+      description: "Handling the tabindex property of the Button",
+      defaultValue: 0,
+    },
+    hover: {
+      table: {
+        disable: true,
+      },
+    },
+    active: {
+      table: {
+        disable: true,
+      },
+    },
+    onClick: {
+      name: "onClick",
+      type: { required: false },
+      description:
+        "Provide an optional function to be called when the button element is clicked",
+      table: {
+        type: {
+          summary: "func",
+        },
+      },
+    },
+    onMouseEnter: {
+      name: "onMouseEnter",
+      type: { required: false },
+      description:
+        "Provide an optional function to be called when the mouse enters the button element",
+      table: {
+        type: {
+          summary: "func",
+        },
+      },
+    },
+    onMouseLeave: {
+      name: "onMouseLeave",
+      type: { required: false },
+      description:
+        "Provide an optional function to be called when the mouse leaves the button element",
+      table: {
+        type: {
+          summary: "func",
+        },
+      },
+    },
+  }}
+  parameters={{
+    componentSubtitle: "Button",
+  }}
+/>
+
+# Button
+
+## Overview
+
+Buttons are clickable elements that are used to trigger actions. They communicate calls to action to the user and allow users to interact with pages in a variety of ways. Button labels express what action will occur when the user interacts with it.
+
+export const Template = (args) => <Button {...args} />;
+
+<Canvas>
+  <Story
+    name="Primary"
+    args={{
+      bgColor: "#0e62fe",
+      hover: {
+        bgColor: "#024fe5",
+      },
+      active: {
+        bgColor: "#022b9d",
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Component Api
+
+<ArgsTable story="Primary" />
+
+<Canvas>
+  <Story
+    name="Danger"
+    args={{
+      bgColor: "#da1e28",
+      border: "none",
+      hover: {
+        bgColor: "#b91823",
+      },
+      active: {
+        bgColor: "#760c11",
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Ghost"
+    args={{
+      bgColor: "white",
+      hover: {
+        bgColor: "#e8e8e8",
+      },
+      active: {
+        bgColor: "#c5c5c5",
+        border: "1px solid white",
+      },
+      color: "#0e62fe",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Secondary"
+    args={{
+      bgColor: "#393939",
+      hover: {
+        bgColor: "#424242",
+      },
+      active: {
+        bgColor: "#6e6e6e",
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Tertiary"
+    args={{
+      bgColor: "transparent",
+      hover: {
+        border: "white",
+        bgColor: "#024fe5",
+        color: "white",
+      },
+      active: {
+        border: "white",
+        bgColor: "#022b9d",
+        color: "white",
+      },
+      color: "#0e62fe",
+      border: "1px solid #0e62fe",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

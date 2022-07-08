@@ -1,0 +1,141 @@
+import { ArgsTable, Preview, Canvas, Meta, Story } from "@storybook/addon-docs";
+import Modal from "./Modal";
+import { Button } from "./Button";
+
+<Meta
+  title="Components/Modal"
+  component={Modal}
+  argTypes={{
+    open: {
+      name: "open",
+      type: { name: "boolean", required: false },
+      description: "Specify whether the Modal is currently open",
+      defaultValue: true,
+      table: {
+        type: { summary: "boolean" },
+      },
+    },
+    closeModal: {
+      name: "closeModal",
+      type: { name: "func", required: false },
+      description:
+        "Specify a handler for closing modal. The handler should care of closing modal, e.g. changing open prop.",
+      table: {
+        type: { summary: "func" },
+      },
+    },
+    title: {
+      name: "title",
+      type: { name: "string", required: false },
+      description: "Specify the title of Modal",
+    },
+    children: {
+      name: "children",
+      type: { name: "node", required: false },
+      description: "Provide the contents of your Modal",
+      table: {
+        type: { summary: "node" },
+      },
+      control: {
+        disable: true,
+      },
+    },
+    firstButtonDisabled: {
+      name: "firstbuttonDisabled",
+      type: { name: "boolean", required: false },
+      description:
+        "Specify whether the first Button should be disabled, or not",
+      defaultValue: false,
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+    },
+    firstButtonText: {
+      name: "firstButtonText",
+      type: { name: "string", required: false },
+      description: "Specify the text for the primary button.",
+    },
+    firstButtonOnClick: {
+      name: "firstButtonOnClick",
+      description:
+        "You can handle the function props when clicking first button.",
+      type: { required: false },
+      table: {
+        type: {
+          summary: "func",
+        },
+      },
+    },
+    secondaryButtonDisabled: {
+      name: "secondarybuttonDisabled",
+      type: { name: "boolean", required: false },
+      description:
+        "Specify whether the secondary Button should be disabled, or not",
+      defaultValue: false,
+      table: {
+        type: {
+          name: "boolean",
+        },
+      },
+    },
+    secondaryButtonText: {
+      name: "secondaryButton",
+      type: { name: "string", required: false },
+      description: "Specify the text for the secondary button.",
+    },
+    secondaryButtonOnClick: {
+      name: "secondaryButtonOnClick",
+      description:
+        "You can handle the function props when clicking secondary button.",
+      type: { required: false },
+      table: {
+        type: {
+          summary: "func",
+        },
+      },
+    },
+    zIndex: {
+      name: "zIndex",
+      type: { required: false },
+      description: "You can handle the z-index property of the Modal.",
+    },
+  }}
+/>
+
+# Modal
+
+## Overview
+
+`Modal` allows you to use its bespoke set of contents. children prop maps to the modal body content.
+
+export const Template = (args) => <Modal {...args} />;
+
+<Canvas>
+  <Story
+    name="Primary"
+    args={{
+      title: "Modal title is here",
+      children: (
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Laboriosamfacere vitae quis aperiam laudantium, nisi sequi a quaerat
+          veniamvoluptatibus, dolorum ipsam commodi. Unde impedit dolorem
+          reiciendisducimus inventore facilis
+        </p>
+      ),
+      firstButtonText: "Confirm",
+      secondaryButtonText: "Cancel",
+      zIndex: 300,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Story id="feature-button--primary" />
+
+## Component Api
+
+<ArgsTable story="Primary" />

@@ -1,0 +1,94 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs";
+import DropDown from "./DropDown";
+
+<Meta
+  title="Components/DropDown"
+  component={DropDown}
+  argTypes={{
+    items: {
+      name: "items",
+      description:
+        "We try to stay as generic as possible here to allow individuals to pass in a collection of whatever kind of data structure they prefer.",
+      type: { name: "array", required: false },
+      table: {
+        type: {
+          summary: "array",
+        },
+      },
+      control: {
+        type: null,
+      },
+    },
+    label: {
+      name: "label",
+      type: { name: "string", required: false },
+      description: "Specify the label of the DropDown.",
+      defaultValue: "DropDown label",
+    },
+    hideLabel: {
+      name: "hideLabel",
+      type: { name: "boolean", required: false },
+      description: "Controlling the displaying label.",
+      defaultValue: false,
+    },
+    warn: {
+      name: "warn",
+      type: { name: "string", required: false },
+      description: "Specify the warning of the DropDown.",
+      defaultValue: "This is some helper text",
+    },
+    hideWarn: {
+      name: "hideWarn",
+      type: { name: "boolean", required: false },
+      description: "Controlling the displaying warning.",
+      defaultValue: false,
+    },
+    size: {
+      name: "size",
+      type: { name: "select", required: false },
+      description: "Specify the size of the DropDown.",
+      table: {
+        type: { summary: `small middle large` },
+      },
+      defaultValue: "middle",
+      options: ["small", "middle", "large"],
+    },
+    zIndex: {
+      name: "zIndex",
+      type: { name: "number", required: false },
+      description: "Handling the z-index property of the DropDown.",
+      defaultValue: 300,
+    },
+  }}
+/>
+
+# DropDown
+
+## Overview
+
+Dropdowns present a list of options from which a user can select one option, or several. A selected option can represent a value in a form, or can be used as an action to filter or sort existing content.
+
+export const Template = (args) => <DropDown {...args} />;
+
+<Canvas>
+  <Story
+    name="Primary"
+    args={{
+      items: [
+        { id: "option1", text: "text1", disabled: true },
+        { id: "option2", text: "text2" },
+        { id: "option3", text: "text3" },
+        { id: "option4", text: "text4" },
+        { id: "option5", text: "text5", disabled: true },
+        { id: "option6", text: "text6" },
+        { id: "option7", text: "text7" },
+      ],
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Component Api
+
+<ArgsTable story="Primary" />

@@ -1,0 +1,49 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs";
+import Loading from "./Loading";
+
+<Meta
+  title="Components/Loading"
+  component={Loading}
+  argTypes={{
+    size: {
+      name: "size",
+      type: { name: "select", required: false },
+      description: "Specify the size of the Loading animation.",
+      table: {
+        type: {
+          summary: `small middle large`,
+        },
+        defaultValue: { summary: "middle" },
+      },
+      defaultValue: "middle",
+      options: ["small", "middle", "large"],
+    },
+    active: {
+      name: "active",
+      type: { name: "boolean", required: false },
+      description:
+        "Specify whether you want the loading indicator to be spinning or not.",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: true },
+      },
+      defaultValue: true,
+    },
+  }}
+/>
+
+# Loading
+
+## Overview
+
+export const Template = (args) => <Loading {...args} />;
+
+<Canvas>
+  <Story name="Primary" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Component Api
+
+<ArgsTable story="Primary" />

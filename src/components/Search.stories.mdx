@@ -1,0 +1,48 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs";
+import Search from "./Search";
+
+<Meta
+  title="Components/Search"
+  component={Search}
+  argTypes={{
+    defaultValue: {
+      name: "defaultValue",
+      type: { name: "string", required: false },
+      description: "Setting the default value in input box.",
+      defaultValue: "",
+    },
+    disabled: {
+      name: "disabled",
+      type: { name: "boolean", required: false },
+      description: "handling the disabled state of the Search.",
+      defaultValue: false,
+    },
+    autoComplete: {
+      name: "autoComplete",
+      type: { name: "select", required: false },
+      description:
+        "Specify an optional value for the autocomplete property on the underlying `<input>`, defaults to 'off'.",
+      defaultValue: "off",
+      options: ["on", "off"],
+      table: {
+        type: {
+          summary: `on off`,
+        },
+      },
+    },
+  }}
+/>
+
+# Search
+
+## Overview
+
+export const Template = (args) => <Search {...args} />;
+
+<Canvas>
+  <Story name="Primary">{Template.bind({})}</Story>
+</Canvas>
+
+## Component Api
+
+<ArgsTable story="Primary" />

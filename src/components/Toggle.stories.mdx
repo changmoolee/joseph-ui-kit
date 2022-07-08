@@ -1,0 +1,84 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs";
+import Toggle from "./Toggle";
+
+<Meta
+  title="Components/Toggle"
+  component={Toggle}
+  argTypes={{
+    size: {
+      name: "size",
+      type: { name: "select", required: false },
+      description: "Specify the size of the Toggle.",
+      defaultValue: "middle",
+      options: ["small", "middle", "large"],
+      table: {
+        defaultValue: { summary: "middle" },
+        type: {
+          summary: `small middle large`,
+        },
+      },
+    },
+    hideHeaderlabel: {
+      name: "hideHeaderlabel",
+      type: { name: "boolean", required: false },
+      description: "Specify whether the header label should be hidden, or not",
+      defaultValue: false,
+    },
+    headerlabel: {
+      name: "headerlabel",
+      type: { name: "string", required: false },
+      description:
+        "Provide the text that will be read by a screen reader when visiting this control.",
+      defaultValue: "Toggle element label",
+    },
+    hideSidelabel: {
+      name: "hideSidelabel",
+      type: { name: "boolean", required: false },
+      description: "Specify whether the label should be hidden, or not",
+      defaultValue: false,
+    },
+    labelA: {
+      name: "labelA",
+      type: { name: "string", required: false },
+      description: "Specify the label for the `off` position",
+      defaultValue: "On",
+    },
+    labelB: {
+      name: "labelB",
+      type: { name: "string", required: false },
+      description: "Specify the label for the `on` position",
+      defaultValue: "Off",
+    },
+    onClick: {
+      name: "onClick",
+      type: { required: false },
+      description:
+        "Provide an event listener that is called when the control is clicked.",
+      table: {
+        type: { summary: "func" },
+      },
+    },
+  }}
+/>
+
+# Toggle
+
+## Overview
+
+export const Template = (args) => <Toggle {...args} />;
+
+<Canvas>
+  <Story name="Primary" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Component Api
+
+<ArgsTable story="Primary" />
+
+<Canvas>
+  <Story name="Mini Toggle" args={{ size: "mini" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

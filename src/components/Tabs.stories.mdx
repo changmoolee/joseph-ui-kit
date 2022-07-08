@@ -1,0 +1,76 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs";
+import Tabs from "./Tabs";
+
+<Meta
+  title="Components/Tabs"
+  component={Tabs}
+  argTypes={{
+    width: {
+      description:
+        "Handling the width of the Tabs. ('px' and '%' units are ok.)",
+      type: { required: false },
+    },
+    height: {
+      description:
+        "Handling the height of the Tabs. ('px' and '%' units are ok.)",
+      type: { required: false },
+    },
+    children: {
+      name: "children",
+      description:
+        "Provide child elements to be rendered inside of the Tabs. These elements should render either 'TabsList' or 'TabsDescription'.",
+      table: {
+        type: { summary: "node" },
+      },
+      control: {
+        type: null,
+      },
+    },
+  }}
+/>
+
+# Tabs
+
+## Overview
+
+export const Template = (args) => <Tabs {...args} />;
+
+<Canvas>
+  <Story
+    name="Primary"
+    args={{
+      width: "600px",
+      height: "50px",
+      children: (
+        <Tabs>
+          <TabList>
+            <Tab>child1</Tab>
+            <Tab>child2</Tab>
+            <Tab>child3</Tab>
+            <Tab>child4</Tab>
+          </TabList>
+          <TabsDescriptions>
+            <TabsDescription>
+              <div>child1</div>
+            </TabsDescription>
+            <TabsDescription>
+              <div>child2</div>
+            </TabsDescription>
+            <TabsDescription>
+              <div>child3</div>
+            </TabsDescription>
+            <TabsDescription>
+              <div>child4</div>
+            </TabsDescription>
+          </TabsDescriptions>
+        </Tabs>
+      ),
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Component Api
+
+<ArgsTable story="Primary" />
