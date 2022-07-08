@@ -20,7 +20,7 @@ const button = (open: boolean) => css`
   border: none;
   border-top: 1px solid #d1d1d1;
   border-bottom: ${open ? null : "1px solid #d1d1d1"};
-  background-color: #fff;
+  background-color: white;
   box-sizing: border-box;
   :hover {
     background-color: #e8e8e8;
