@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": false,
   "main": "components/index.js",
-  "repository": "https://github.com/changmoolee/joseph-ui-kit.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/changmoolee/joseph-ui-kit.git"
+  },
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
@@ -27,7 +30,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "chromatic": "npx chromatic --project-token=0449ad2768f7"
   },
   "eslintConfig": {
     "extends": [
@@ -74,5 +78,11 @@
     "chromatic": "^6.7.0",
     "prop-types": "^15.8.1",
     "webpack": "^5.73.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/changmoolee/joseph-ui-kit/issues"
+  },
+  "readme": "ERROR: No README data found!",
+  "homepage": "https://github.com/changmoolee/joseph-ui-kit#readme",
+  "_id": "joseph-ui-kit@0.1.0"
 }

@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { useState } from "react";
-import { mainColor } from "../../styled";
 
 const box = (width: string, height: string) => css`
   width: ${width};
@@ -16,7 +15,7 @@ const item = (clicked: number, index: number) => {
     align-items: center;
     margin: 0;
     border: none;
-    border-top: ${clicked === index ? `2px solid ${mainColor}` : null};
+    border-top: ${clicked === index ? `2px solid #0e62fe` : null};
     background-color: ${clicked === index ? "#f4f4f4" : "#e0e0e0"};
     span {
       margin-top: ${clicked === index ? "-2px" : "0"};
