@@ -4,10 +4,7 @@
   "version": "0.1.0",
   "private": false,
   "main": "dist/index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/changmoolee/joseph-ui-kit.git"
-  },
+  "repository": "git+https://github.com/changmoolee/joseph-ui-kit.git",
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
@@ -33,7 +30,8 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "chromatic": "npx chromatic --project-token=0449ad2768f7"
+    "chromatic": "npx chromatic --project-token=0449ad2768f7",
+    "release": "auto shipit --base-branch=main"
   },
   "babel": {
     "presets": [
