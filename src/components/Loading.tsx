@@ -29,7 +29,7 @@ type LoadingProps = {
 };
 
 const Loading = ({ size, active }: LoadingProps) => {
-  let loadingSize = 0;
+  let loadingSize = 40;
 
   if (size === "small") {
     loadingSize = 40;

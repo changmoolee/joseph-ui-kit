@@ -1,11 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { useState, useRef, useLayoutEffect } from "react";
+import React, { useState, useRef, useLayoutEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
 const container = css`
   position: relative;
+  display: inline-block;
 `;
 
 const titleAndWarnText = css`
@@ -108,7 +109,7 @@ type DropDownProps = {
 };
 
 const DropDown = ({
-  items,
+  items = [{ id: "ExampleId", text: "example" }],
   label,
   hideLabel,
   warn,
@@ -124,7 +125,7 @@ const DropDown = ({
   };
 
   const closeSuggestion = () => {
-    setOpen((open) => !open);
+    setOpen(false);
   };
 
   const clickItem = (index: number) => {
@@ -132,6 +133,7 @@ const DropDown = ({
   };
 
   const buttonRef = useRef<any>(null);
+  const suggestionRef = useRef<any>(null);
 
   useLayoutEffect(() => {
     if (buttonRef.current !== null && !open) {
@@ -140,14 +142,19 @@ const DropDown = ({
   });
 
   return (
-    <label htmlFor="dropdown" css={container} onClick={handleSuggestion}>
-      {hideLabel ? null : <div css={titleAndWarnText}>{label}</div>}
+    <div css={container}>
+      {hideLabel ? null : (
+        <label htmlFor="dropdown" css={titleAndWarnText}>
+          {label}
+        </label>
+      )}
       <button
         id="dropdown"
         ref={buttonRef}
         tabIndex={-1}
         css={button(open, size)}
         onBlur={closeSuggestion}
+        onClick={handleSuggestion}
       >
         <span>{items[seletedItem].text}</span>
         <div css={arrowIcon}>
@@ -158,14 +165,17 @@ const DropDown = ({
           )}
         </div>
       </button>
+
       {open ? (
-        <div css={suggestion(open, zIndex)}>
+        <div ref={suggestionRef} css={suggestion(open, zIndex)}>
           {items.map((item, index) => (
             <div
               key={item.id}
               css={suggestionItem(index, seletedItem, size, item.disabled)}
               onMouseDown={() => {
-                clickItem(index);
+                if (!item.disabled) {
+                  clickItem(index);
+                }
               }}
             >
               <span>{item.text}</span>
@@ -174,7 +184,7 @@ const DropDown = ({
         </div>
       ) : null}
       {hideWarn ? null : <div css={titleAndWarnText}>{warn}</div>}
-    </label>
+    </div>
   );
 };
 export default DropDown;

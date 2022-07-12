@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
@@ -67,7 +67,7 @@ const Toggle = ({
   hideSidelabel,
   labelA,
   labelB,
-  onClick,
+  onClick = () => {},
 }: ToggleProps) => {
   const [toggled, setToggled] = useState(false);
 

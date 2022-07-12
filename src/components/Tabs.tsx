@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const box = (width: string, height: string) => css`
   width: ${width};

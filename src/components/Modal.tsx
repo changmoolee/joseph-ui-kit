@@ -2,6 +2,7 @@
 import { css } from "@emotion/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import React from "react";
 
 const dim = (zIndex: number) => css`
   position: fixed;
@@ -123,10 +124,10 @@ const Modal = ({
   children,
   firstButtonDisabled,
   firstButtonText,
-  firstButtonOnClick,
+  firstButtonOnClick = () => {},
   secondaryButtonDisabled,
   secondaryButtonText,
-  secondaryButtonOnClick,
+  secondaryButtonOnClick = () => {},
   zIndex,
 }: ModalProps) => {
   return open ? (

@@ -59,17 +59,25 @@ type ButtonProps = {
 };
 
 const Button = ({
-  name,
-  bgColor,
+  name = "Primary",
+  bgColor = "#0e62fe",
   border,
   color,
   size,
   tabIndex,
-  hover,
-  active,
-  onClick,
-  onMouseEnter,
-  onMouseLeave,
+  hover = {
+    border: "none",
+    bgColor: "#024fe5",
+    color: "white",
+  },
+  active = {
+    border: "none",
+    bgColor: "#022b9d",
+    color: "white",
+  },
+  onClick = () => {},
+  onMouseEnter = () => {},
+  onMouseLeave = () => {},
 }: ButtonProps) => {
   return (
     <button
