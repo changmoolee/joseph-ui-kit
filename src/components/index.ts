@@ -1,12 +1,12 @@
-import Accordion from "./Accordion";
-import Button from "./Button";
-import DropDown from "./DropDown";
-import Loading from "./Loading";
-import Modal from "./Modal";
-import Search from "./Search";
-import SkeletonUI from "./SkeletonUI";
-import Tabs from "./Tabs";
-import Toggle from "./Toggle";
+import Accordion from "./Accordion/Accordion";
+import Button from "./Button/Button";
+import DropDown from "./DropDown/DropDown";
+import Loading from "./Loading/Loading";
+import Modal from "./Modal/Modal";
+import Search from "./Search/Search";
+import SkeletonUI from "./SkeletonUI/SkeletonUI";
+import Tabs from "./Tabs/Tabs";
+import Toggle from "./Toggle/Toggle";
 
 export {
   Accordion,
