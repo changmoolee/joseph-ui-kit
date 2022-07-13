@@ -1,5 +1,6 @@
-import { addParameters } from "@storybook/react";
+import { addParameters, addDecorator } from "@storybook/react";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
+import GlobalStyle from "../src/shared/Global";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -23,3 +24,10 @@ export const parameters = {
 };
 
 addParameters({ viewport: { viewports: INITIAL_VIEWPORTS } });
+
+addDecorator((Story) => (
+  <>
+    <GlobalStyle />
+    {Story()}
+  </>
+));
