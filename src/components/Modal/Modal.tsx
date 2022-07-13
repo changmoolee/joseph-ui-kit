@@ -37,7 +37,7 @@ const Modal = ({
       <div css={style.dim(zIndex)} onClick={closeModal} />
       <div css={style.box(zIndex)}>
         <div css={style.header}>
-          <div css={style.style.title}>
+          <div css={style.title}>
             <div css={style.label}>Account resources</div>
             {title}
           </div>
@@ -45,7 +45,7 @@ const Modal = ({
             <FontAwesomeIcon icon={faXmark} />
           </div>
         </div>
-        <article css={style.style.description}>{children}</article>
+        <article css={style.description}>{children}</article>
         <div css={style.buttons}>
           {secondaryButtonDisabled ? null : (
             <button

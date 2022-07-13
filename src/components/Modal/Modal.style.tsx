@@ -52,20 +52,19 @@ export const label = css`
 
 export const closeBox = css``;
 
-export const style = {
-  title: css`
-    display: flex;
-    flex-direction: column;
-    font-size: 20px;
-    color: #161616;
-    white-space: nowrap;
-  `,
-  description: css`
-    padding: 0 16px;
-    margin-top: 8px;
-    margin-bottom: 16px;
-  `,
-};
+export const title = css`
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  color: #161616;
+  white-space: nowrap;
+`;
+
+export const description = css`
+  padding: 0 16px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+`;
 
 export const buttons = css`
   width: 100%;
