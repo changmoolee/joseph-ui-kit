@@ -4,8 +4,14 @@ import React from "react";
 
 const container = (
   bgColor: string,
-  hover: { border: string; bgColor: string; color: string },
-  active: { border: string; bgColor: string; color: string },
+  hover: { bgColor: string; color: string },
+  active: { bgColor: string; color: string },
+  focus: {
+    bgColor: string;
+    color: string;
+    outline: string;
+    outlineOffset: string;
+  },
   border: string,
   color: string,
   size: string
@@ -28,17 +34,18 @@ const container = (
   background-color: ${bgColor || "transparent"};
   font-size: 14px;
   color: ${color};
+
   :hover {
-    border: ${hover && hover.border};
     background-color: ${hover && hover.bgColor};
     color: ${hover && hover.color};
   }
   :focus {
-    border-width: 4px;
-    border-style: double;
+    background-color: ${focus && focus.bgColor};
+    color: ${focus && focus.color};
+    outline: ${focus && focus.outline};
+    outline-offset: ${focus && focus.outlineOffset};
   }
   :active {
-    border: ${active && active.border};
     background-color: ${active && active.bgColor};
     color: ${active && active.color};
   }
@@ -51,8 +58,14 @@ type ButtonProps = {
   color: string;
   size: string;
   tabIndex: number;
-  hover: { border: string; bgColor: string; color: string };
-  active: { border: string; bgColor: string; color: string };
+  hover: { bgColor: string; color: string };
+  active: { bgColor: string; color: string };
+  focus: {
+    bgColor: string;
+    color: string;
+    outline: string;
+    outlineOffset: string;
+  };
   onClick: () => void;
   onMouseEnter: () => void;
   onMouseLeave: () => void;
@@ -62,18 +75,22 @@ const Button = ({
   name = "Primary",
   bgColor = "#0e62fe",
   border,
-  color,
+  color = "white",
   size,
   tabIndex,
   hover = {
-    border: "none",
     bgColor: "#024fe5",
     color: "white",
   },
   active = {
-    border: "none",
     bgColor: "#022b9d",
     color: "white",
+  },
+  focus = {
+    bgColor: "#0e62fe",
+    color: "white",
+    outline: "4px double white",
+    outlineOffset: "-4px",
   },
   onClick = () => {},
   onMouseEnter = () => {},
@@ -81,7 +98,7 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <button
-      css={container(bgColor, hover, active, border, color, size)}
+      css={container(bgColor, hover, active, focus, border, color, size)}
       tabIndex={tabIndex}
       onClick={onClick}
       onMouseEnter={onMouseEnter}
