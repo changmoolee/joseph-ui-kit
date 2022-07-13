@@ -68,14 +68,14 @@ import Toggle from "./Toggle";
 export const Template = (args) => <Toggle {...args} />;
 
 <Canvas>
-  <Story name="Primary" args={{}}>
+  <Story name="Default" args={{}}>
     {Template.bind({})}
   </Story>
 </Canvas>
 
 ## Component Api
 
-<ArgsTable story="Primary" />
+<ArgsTable story="Default" />
 
 <Canvas>
   <Story name="Mini Toggle" args={{ size: "mini" }}>

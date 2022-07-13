@@ -1,0 +1,42 @@
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
+
+export const container = css`
+  width: 100%;
+  font-size: 14px;
+  color: #161616;
+`;
+
+export const button = (open: boolean) => css`
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  border: none;
+  border-top: 1px solid #d1d1d1;
+  border-bottom: ${open ? null : "1px solid #d1d1d1"};
+  background-color: #fff;
+  box-sizing: border-box;
+  :hover {
+    background-color: #e8e8e8;
+  }
+  :focus {
+    outline: 2px solid #0f62fe;
+  }
+`;
+
+export const arrowIcon = css`
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const content = (open: boolean) => css`
+  width: 100%;
+  padding: 8px 25% 24px 16px;
+  border-bottom: ${open ? "1px solid #d1d1d1" : null};
+  box-sizing: border-box;
+`;

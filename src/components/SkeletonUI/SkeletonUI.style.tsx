@@ -2,7 +2,7 @@
 import React from "react";
 import { css, keyframes } from "@emotion/react";
 
-const animation = keyframes`
+export const animation = keyframes`
   0% {
       background-position: 0 0%;
   }
@@ -14,7 +14,7 @@ const animation = keyframes`
   }
 `;
 
-const container = (width: string) => css`
+export const container = (width: string) => css`
   > * {
     animation: ${animation};
     animation-duration: 3s;
@@ -30,13 +30,3 @@ const container = (width: string) => css`
   }
   width: ${width};
 `;
-
-interface SkeletonUIProps extends React.HTMLAttributes<any> {
-  width: string;
-}
-
-const SkeletonUI: React.FC<SkeletonUIProps> = ({ width, children }) => {
-  return <div css={container(width)}>{children}</div>;
-};
-
-export default SkeletonUI;

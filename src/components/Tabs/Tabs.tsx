@@ -1,37 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import React, { useState } from "react";
-
-const box = (width: string, height: string) => css`
-  width: ${width};
-  height: ${height};
-  display: flex;
-`;
-const item = (clicked: number, index: number) => {
-  return css`
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    border: none;
-    border-top: ${clicked === index ? `2px solid #0e62fe` : null};
-    background-color: ${clicked === index ? "#f4f4f4" : "#e0e0e0"};
-    span {
-      margin-top: ${clicked === index ? "-2px" : "0"};
-      font-weight: ${clicked === index ? "800" : "400"};
-      color: ${clicked === index ? "black" : "#525253"};
-    }
-    :hover {
-      background-color: #d1d1d1;
-    }
-  `;
-};
-
-const text = css`
-  color: white;
-  opacity: 0.5;
-`;
+import * as style from "./Tabs.style";
 
 type TabsProps = {
   width: string;
@@ -51,15 +21,15 @@ const Tabs = ({ width, height, children }: TabsProps) => {
 
   return (
     <div>
-      <div css={box(width, height)}>
+      <div css={style.box(width, height)}>
         {TabList &&
           TabList.map((tab: any, index: number) => (
             <button
               key={tab}
-              css={item(clicked, index)}
+              css={style.item(clicked, index)}
               onClick={() => handleClick(index)}
             >
-              <span css={text}>{tab.props.children}</span>
+              <span css={style.text}>{tab.props.children}</span>
             </button>
           ))}
       </div>
