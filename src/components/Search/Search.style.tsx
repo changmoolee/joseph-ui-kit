@@ -13,6 +13,7 @@ export const container = (disabled: boolean) => css`
   opacity: ${disabled ? 0.5 : 1};
   cursor: ${disabled ? "not-allowed" : "auto"};
   :focus-within {
+    border-bottom: 1px solid transparent;
     outline-width: 2px;
     outline-style: solid;
     outline-color: #0f62fe;
