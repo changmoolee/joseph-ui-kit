@@ -16,7 +16,7 @@ export const button = (open: boolean) => css`
   padding: 0 16px;
   border: none;
   border-top: 1px solid #d1d1d1;
-  border-bottom: ${open ? null : "1px solid #d1d1d1"};
+  border-bottom: ${open ? "1px solid transparent" : "1px solid #d1d1d1"};
   background-color: #fff;
   box-sizing: border-box;
   :hover {
