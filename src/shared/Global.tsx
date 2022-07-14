@@ -4,6 +4,7 @@ const style = css`
   html,
   body,
   div,
+  span,
   button {
     font-family: "IBM Plex Sans", sans-serif;
     font-weight: 400;

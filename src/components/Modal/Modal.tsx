@@ -1,9 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import * as style from "./Modal.style";
+import Close from "../../assets/icon/Close";
 
 type ModalProps = {
   open: boolean;
@@ -37,14 +36,12 @@ const Modal = ({
       <div css={style.dim(zIndex)} onClick={closeModal} />
       <div css={style.box(zIndex)}>
         <div css={style.header}>
-          <div css={style.title}>
-            <div css={style.label}>Account resources</div>
-            {title}
-          </div>
-          <div css={style.closeBox} onClick={closeModal}>
-            <FontAwesomeIcon icon={faXmark} />
-          </div>
+          <div css={style.label}>Account resources</div>
+          <div css={style.title}>{title}</div>
         </div>
+        <button css={style.closeBox} onClick={closeModal}>
+          <Close width={20} height={20} />
+        </button>
         <article css={style.description}>{children}</article>
         <div css={style.buttons}>
           {secondaryButtonDisabled ? null : (

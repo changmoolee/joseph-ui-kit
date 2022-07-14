@@ -27,11 +27,13 @@ export const button = (open: boolean) => css`
   }
 `;
 
-export const arrowIcon = css`
+export const arrowIcon = (open: boolean) => css`
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: ${open ? "rotate(180deg)" : "rotate(0deg)"};
+  transition: all linear 0.05s;
 `;
 
 export const content = (open: boolean) => css`

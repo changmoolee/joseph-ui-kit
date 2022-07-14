@@ -1,9 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import * as style from "./Toggle.style";
+import Check from "../../assets/icon/Check";
 
 type ToggleProps = {
   size: string;
@@ -53,8 +52,8 @@ const Toggle = ({
             handleToggle();
           }}
         >
-          <div>
-            {size === "mini" ? <FontAwesomeIcon icon={faCheck} /> : null}
+          <div css={style.checkBox}>
+            {size === "mini" && toggled ? <Check /> : null}
           </div>
         </button>
         {hideSidelabel ? null : (

@@ -40,6 +40,12 @@ export const toggle = (toggleSize: number, toggleOn: boolean) => {
   `;
 };
 
+export const checkBox = css`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const toggleText = css`
   margin-left: 10px;
   font-size: 14px;

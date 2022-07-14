@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass, faXmark } from "@fortawesome/free-solid-svg-icons";
 import * as style from "./Search.style";
+import Close from "../../assets/icon/Close";
+import Magnifier from "../../assets/icon/Magnifier";
 
 type SearchProps = {
   defaultValue: string;
@@ -25,7 +25,7 @@ const Search = ({ defaultValue, disabled, autoComplete }: SearchProps) => {
   return (
     <label htmlFor="search" css={style.container(disabled)}>
       <span css={style.searchIcon}>
-        <FontAwesomeIcon icon={faMagnifyingGlass} />
+        <Magnifier />
       </span>
       <input
         id="search"
@@ -37,7 +37,7 @@ const Search = ({ defaultValue, disabled, autoComplete }: SearchProps) => {
         onChange={updateValue}
       />
       <span css={style.clearIcon(disabled)} onClick={clearInput}>
-        <FontAwesomeIcon icon={faXmark} />
+        <Close width={16} height={16} />
       </span>
     </label>
   );

@@ -1,9 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import * as style from "./Accordion.style";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import React, { useState } from "react";
+import Angle from "../../assets/icon/Angle";
 
 type AccordionProps = {
   title: string;
@@ -21,12 +20,8 @@ const Accordion = ({ title, children }: AccordionProps) => {
     <div css={style.container}>
       <button tabIndex={-1} css={style.button(open)} onClick={handleAccordion}>
         {title}
-        <div css={style.arrowIcon}>
-          {open ? (
-            <FontAwesomeIcon icon={faAngleUp} />
-          ) : (
-            <FontAwesomeIcon icon={faAngleDown} />
-          )}
+        <div css={style.arrowIcon(open)}>
+          <Angle />
         </div>
       </button>
       {open ? <div css={style.content(open)}>{children}</div> : null}

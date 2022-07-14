@@ -35,9 +35,10 @@ export const box = (zIndex: number) => css`
 export const header = css`
   width: 100%;
   height: 50px;
+  position: relative;
   display: flex;
-  justify-content: space-between;
-  padding: 16px;
+  flex-direction: column;
+  padding: 16px 48px 0px 16px;
   padding-bottom: 0;
   margin-bottom: 8px;
   box-sizing: border-box;
@@ -50,7 +51,24 @@ export const label = css`
   white-space: nowrap;
 `;
 
-export const closeBox = css``;
+export const closeBox = css`
+  position: absolute;
+  right: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+  :hover {
+    background-color: #e8e8e8;
+  }
+  :focus {
+    outline: 2px solid #0e62fe;
+  }
+`;
 
 export const title = css`
   display: flex;
