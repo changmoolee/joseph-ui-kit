@@ -9,7 +9,7 @@ type TabsProps = {
   children: JSX.Element;
 };
 
-const Tabs = ({ width, height, children }: TabsProps) => {
+const Tabs = ({ width = "600px", height = "50px", children }: TabsProps) => {
   const TabList = children?.props.children[0].props.children;
   const TabsDescription = children?.props.children[1].props.children;
 
@@ -26,10 +26,12 @@ const Tabs = ({ width, height, children }: TabsProps) => {
           TabList.map((tab: any, index: number) => (
             <button
               key={tab}
-              css={style.item(clicked, index)}
-              onClick={() => handleClick(index)}
+              css={style.item(clicked, index, tab.props.disabled)}
+              onClick={() => {
+                if (!tab.props.disabled) handleClick(index);
+              }}
             >
-              <span css={style.text}>{tab.props.children}</span>
+              <span>{tab.props.children}</span>
             </button>
           ))}
       </div>

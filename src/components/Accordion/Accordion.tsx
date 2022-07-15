@@ -9,7 +9,7 @@ type AccordionProps = {
   children: JSX.Element;
 };
 
-const Accordion = ({ title, children }: AccordionProps) => {
+const Accordion = ({ title = "title", children = <></> }: AccordionProps) => {
   const [open, setOpen] = useState(false);
 
   const handleAccordion = () => {

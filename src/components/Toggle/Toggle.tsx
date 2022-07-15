@@ -15,12 +15,12 @@ type ToggleProps = {
 };
 
 const Toggle = ({
-  size,
-  hideHeaderlabel,
-  headerlabel,
-  hideSidelabel,
-  labelA,
-  labelB,
+  size = "middle",
+  hideHeaderlabel = false,
+  headerlabel = "Toggle element label",
+  hideSidelabel = false,
+  labelA = "On",
+  labelB = "Off",
   onClick = () => {},
 }: ToggleProps) => {
   const [toggled, setToggled] = useState(false);

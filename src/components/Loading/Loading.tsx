@@ -8,7 +8,7 @@ type LoadingProps = {
   active: boolean;
 };
 
-const Loading = ({ size, active }: LoadingProps) => {
+const Loading = ({ size = "middle", active = true }: LoadingProps) => {
   let loadingSize = 40;
 
   if (size === "small") {

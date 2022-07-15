@@ -6,28 +6,35 @@ export const box = (width: string, height: string) => css`
   height: ${height};
   display: flex;
 `;
-export const item = (clicked: number, index: number) => {
+export const item = (clicked: number, index: number, disabled: boolean) => {
   return css`
     flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
+    font-size: 14px;
     border: none;
-    border-top: ${clicked === index ? `2px solid #0e62fe` : null};
-    background-color: ${clicked === index ? "#f4f4f4" : "#e0e0e0"};
+    border-top: ${clicked === index
+      ? `2px solid #0e62fe`
+      : `2px solid transparent`};
+    background-color: ${disabled
+      ? "#c6c6c6"
+      : clicked === index
+      ? "#f4f4f4"
+      : "#e0e0e0"};
+    cursor: ${disabled ? "not-allowed" : "pointer"};
     span {
       margin-top: ${clicked === index ? "-2px" : "0"};
-      font-weight: ${clicked === index ? "800" : "400"};
-      color: ${clicked === index ? "black" : "#525253"};
+      font-weight: ${clicked === index ? "600" : "400"};
+      color: ${disabled
+        ? "#8d8d8d"
+        : clicked === index
+        ? "#161616"
+        : "#525252"};
     }
     :hover {
-      background-color: #d1d1d1;
+      background-color: ${disabled ? "#c6c6c6" : "#d1d1d1"};
     }
   `;
 };
-
-export const text = css`
-  color: white;
-  opacity: 0.5;
-`;

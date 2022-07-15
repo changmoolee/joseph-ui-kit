@@ -11,7 +11,11 @@ type SearchProps = {
   autoComplete: string;
 };
 
-const Search = ({ defaultValue, disabled, autoComplete }: SearchProps) => {
+const Search = ({
+  defaultValue = "",
+  disabled = false,
+  autoComplete = "off",
+}: SearchProps) => {
   const [value, setValue] = useState("");
 
   const clearInput = () => {

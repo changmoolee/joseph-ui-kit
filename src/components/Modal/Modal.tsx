@@ -19,17 +19,17 @@ type ModalProps = {
 };
 
 const Modal = ({
-  open,
-  closeModal,
-  title,
-  children,
-  firstButtonDisabled,
-  firstButtonText,
+  open = true,
+  closeModal = () => {},
+  title = "title",
+  children = <></>,
+  firstButtonDisabled = false,
+  firstButtonText = "Confirm",
   firstButtonOnClick = () => {},
-  secondaryButtonDisabled,
-  secondaryButtonText,
+  secondaryButtonDisabled = false,
+  secondaryButtonText = "Cancel",
   secondaryButtonOnClick = () => {},
-  zIndex,
+  zIndex = 300,
 }: ModalProps) => {
   return open ? (
     <>

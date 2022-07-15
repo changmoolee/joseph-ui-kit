@@ -30,12 +30,12 @@ const DropDown = ({
     { id: "id1", text: "text1" },
     { id: "id2", text: "text2" },
   ],
-  label,
-  hideLabel,
-  warn,
-  hideWarn,
-  size,
-  zIndex,
+  label = "label",
+  hideLabel = false,
+  warn = "warn",
+  hideWarn = false,
+  size = "middle",
+  zIndex = 300,
 }: DropDownProps) => {
   const [open, setOpen] = useState(false);
   const [seletedItem, setSeletedItem] = useState(0);

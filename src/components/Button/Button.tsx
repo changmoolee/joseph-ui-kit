@@ -26,10 +26,10 @@ type ButtonProps = {
 const Button = ({
   name = "Default",
   bgColor = "#0e62fe",
-  border,
+  border = "none",
   color = "white",
-  size,
-  tabIndex,
+  size = "middle",
+  tabIndex = 0,
   hover = {
     bgColor: "#024fe5",
     color: "white",
