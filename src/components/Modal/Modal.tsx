@@ -3,19 +3,20 @@ import { css } from "@emotion/react";
 import React from "react";
 import * as style from "./Modal.style";
 import Close from "../../assets/icon/Close";
+import Button from "../Button/Button";
 
 type ModalProps = {
-  open: boolean;
-  closeModal: () => void;
-  title: string;
-  children: JSX.Element;
-  firstButtonDisabled: boolean;
-  firstButtonText: string;
-  firstButtonOnClick: () => void;
-  secondaryButtonDisabled: boolean;
-  secondaryButtonText: string;
-  secondaryButtonOnClick: () => void;
-  zIndex: number;
+  open?: boolean;
+  closeModal?: () => void;
+  title?: string;
+  children?: JSX.Element;
+  firstButtonDisabled?: boolean;
+  firstButtonText?: string;
+  firstButtonOnClick?: () => void;
+  secondaryButtonDisabled?: boolean;
+  secondaryButtonText?: string;
+  secondaryButtonOnClick?: () => void;
+  zIndex?: number;
 };
 
 const Modal = ({

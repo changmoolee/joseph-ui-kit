@@ -42,7 +42,7 @@ export const Template = (args) => <Tabs {...args} />;
       width: "600px",
       height: "50px",
       children: (
-        <Tabs>
+        <>
           <TabList>
             <Tab>child1</Tab>
             <Tab disabled>child2</Tab>
@@ -63,7 +63,7 @@ export const Template = (args) => <Tabs {...args} />;
               <div>child4</div>
             </TabsDescription>
           </TabsDescriptions>
-        </Tabs>
+        </>
       ),
     }}
   >

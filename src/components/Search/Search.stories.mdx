@@ -5,11 +5,10 @@ import Search from "./Search";
   title="Components/Search"
   component={Search}
   argTypes={{
-    defaultValue: {
-      name: "defaultValue",
-      type: { name: "string", required: false },
-      description: "Setting the default value in input box.",
-      defaultValue: "",
+    width: {
+      description:
+        "Handling the width of the Search. ('px' and '%' units are ok.)",
+      type: { required: false },
     },
     disabled: {
       name: "disabled",
@@ -29,6 +28,10 @@ import Search from "./Search";
           summary: `on off`,
         },
       },
+    },
+    placeholder: {
+      description: "Specify the placeholder of the Search.",
+      type: { name: "string", required: false },
     },
   }}
 />

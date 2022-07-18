@@ -12,8 +12,8 @@ export const titleAndWarnText = css`
   color: gray;
 `;
 
-export const button = (open: boolean, size: string) => css`
-  width: 400px;
+export const button = (width: string, open: boolean, size: string) => css`
+  width: ${width};
   height: ${size === "small" ? "32px" : size === "middle" ? "40px" : "48px"};
   display: flex;
   justify-content: space-between;

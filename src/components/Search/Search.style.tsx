@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-export const container = (disabled: boolean) => css`
-  width: 400px;
+export const container = (width: string, disabled: boolean) => css`
+  width: ${width};
   height: 40px;
   display: flex;
   justify-content: center;
@@ -46,4 +46,7 @@ export const input = css`
   border: none;
   outline: none;
   cursor: inherit;
+  ::placeholder {
+    opacity: 0.5;
+  }
 `;

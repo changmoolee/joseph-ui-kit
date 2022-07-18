@@ -5,13 +5,13 @@ import * as style from "./Toggle.style";
 import Check from "../../assets/icon/Check";
 
 type ToggleProps = {
-  size: string;
-  hideHeaderlabel: boolean;
-  headerlabel: string;
-  hideSidelabel: boolean;
-  labelA: string;
-  labelB: string;
-  onClick: () => void;
+  size?: string;
+  hideHeaderlabel?: boolean;
+  headerlabel?: string;
+  hideSidelabel?: boolean;
+  labelA?: string;
+  labelB?: string;
+  onClick?: () => void;
 };
 
 const Toggle = ({

@@ -4,7 +4,7 @@ import { css, keyframes } from "@emotion/react";
 import * as style from "./SkeletonUI.style";
 
 interface SkeletonUIProps extends React.HTMLAttributes<any> {
-  width: string;
+  width?: string;
 }
 
 const SkeletonUI: React.FC<SkeletonUIProps> = ({ width, children }) => {

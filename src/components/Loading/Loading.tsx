@@ -4,8 +4,8 @@ import React from "react";
 import * as style from "./Loading.style";
 
 type LoadingProps = {
-  size: string;
-  active: boolean;
+  size?: string;
+  active?: boolean;
 };
 
 const Loading = ({ size = "middle", active = true }: LoadingProps) => {

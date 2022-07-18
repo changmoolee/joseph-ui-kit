@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-export const container = css`
-  width: 100%;
+export const container = (width: string) => css`
+  width: ${width};
   font-size: 14px;
   color: #161616;
 `;

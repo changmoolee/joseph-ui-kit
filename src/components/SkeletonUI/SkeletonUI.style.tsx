@@ -14,7 +14,7 @@ export const animation = keyframes`
   }
 `;
 
-export const container = (width: string) => css`
+export const container = (width?: string) => css`
   > * {
     animation: ${animation};
     animation-duration: 3s;

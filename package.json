@@ -1,11 +1,11 @@
 {
   "name": "joseph-ui-kit",
   "description": "ui-kit that make user convenient",
-  "version": "0.2.5",
+  "version": "0.3.7",
   "private": false,
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "main": "dist/components/index.js",
+  "module": "dist/components/index.js",
+  "typings": "dist/components/index.d.ts",
   "repository": "git+https://github.com/changmoolee/joseph-ui-kit.git",
   "dependencies": {
     "@emotion/react": "^11.9.3",

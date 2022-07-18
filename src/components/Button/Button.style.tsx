@@ -2,18 +2,18 @@
 import { css } from "@emotion/react";
 
 export const container = (
-  bgColor: string,
-  hover: { bgColor: string; color: string },
-  active: { bgColor: string; color: string },
-  focus: {
-    bgColor: string;
-    color: string;
-    outline: string;
-    outlineOffset: string;
+  bgColor?: string,
+  hover?: { bgColor?: string; color?: string },
+  active?: { bgColor?: string; color?: string },
+  focus?: {
+    bgColor?: string;
+    color?: string;
+    outline?: string;
+    outlineOffset?: string;
   },
-  border: string,
-  color: string,
-  size: string
+  border?: string,
+  color?: string,
+  size?: string
 ) => css`
   height: ${size === "small"
     ? "32px"

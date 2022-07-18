@@ -4,14 +4,14 @@ import React, { useState } from "react";
 import * as style from "./Tabs.style";
 
 type TabsProps = {
-  width: string;
-  height: string;
-  children: JSX.Element;
+  width?: string;
+  height?: string;
+  children?: JSX.Element;
 };
 
 const Tabs = ({ width = "600px", height = "50px", children }: TabsProps) => {
-  const TabList = children?.props.children[0].props.children;
-  const TabsDescription = children?.props.children[1].props.children;
+  const TabListArr = children?.props.children[0].props.children;
+  const TabsDescriptionArr = children?.props.children[1].props.children;
 
   const [clicked, setClicked] = useState(0);
 
@@ -22,10 +22,10 @@ const Tabs = ({ width = "600px", height = "50px", children }: TabsProps) => {
   return (
     <div>
       <div css={style.box(width, height)}>
-        {TabList &&
-          TabList.map((tab: any, index: number) => (
+        {TabListArr &&
+          TabListArr.map((tab: any, index: number) => (
             <button
-              key={tab}
+              key={tab + index}
               css={style.item(clicked, index, tab.props.disabled)}
               onClick={() => {
                 if (!tab.props.disabled) handleClick(index);
@@ -35,7 +35,10 @@ const Tabs = ({ width = "600px", height = "50px", children }: TabsProps) => {
             </button>
           ))}
       </div>
-      <div>{TabsDescription && TabsDescription[clicked]?.props.children}</div>
+
+      <div>
+        {TabsDescriptionArr && TabsDescriptionArr[clicked]?.props.children}
+      </div>
     </div>
   );
 };
@@ -43,18 +46,26 @@ const Tabs = ({ width = "600px", height = "50px", children }: TabsProps) => {
 export default Tabs;
 
 type TabsChildProps = {
-  children: JSX.Element;
+  children?: JSX.Element | JSX.Element[];
+};
+
+type TabProps = {
+  children?: string;
+};
+
+type TabsDescriptionProps = {
+  children?: JSX.Element | JSX.Element[] | string;
 };
 
 export const TabList = ({ children }: TabsChildProps) => {
-  return <div>{children}</div>;
+  return <>{children}</>;
 };
-export const Tab = ({ children }: TabsChildProps) => {
-  return <div>{children}</div>;
+export const Tab = ({ children }: TabProps) => {
+  return <>{children}</>;
 };
 export const TabsDescriptions = ({ children }: TabsChildProps) => {
-  return <div>{children}</div>;
+  return <>{children}</>;
 };
-export const TabsDescription = ({ children }: TabsChildProps) => {
-  return <div>{children}</div>;
+export const TabsDescription = ({ children }: TabsDescriptionProps) => {
+  return <>{children}</>;
 };

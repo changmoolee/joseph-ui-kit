@@ -6,15 +6,17 @@ import Close from "../../assets/icon/Close";
 import Magnifier from "../../assets/icon/Magnifier";
 
 type SearchProps = {
-  defaultValue: string;
-  disabled: boolean;
-  autoComplete: string;
+  width?: string;
+  disabled?: boolean;
+  autoComplete?: string;
+  placeholder?: string;
 };
 
 const Search = ({
-  defaultValue = "",
+  width = "100%",
   disabled = false,
   autoComplete = "off",
+  placeholder = "placeholder",
 }: SearchProps) => {
   const [value, setValue] = useState("");
 
@@ -27,17 +29,17 @@ const Search = ({
   };
 
   return (
-    <label htmlFor="search" css={style.container(disabled)}>
+    <label htmlFor="search" css={style.container(width, disabled)}>
       <span css={style.searchIcon}>
         <Magnifier />
       </span>
       <input
         id="search"
         css={style.input}
-        defaultValue={defaultValue}
         disabled={disabled}
         autoComplete={autoComplete}
         value={value}
+        placeholder={placeholder}
         onChange={updateValue}
       />
       <span css={style.clearIcon(disabled)} onClick={clearInput}>

@@ -4,23 +4,23 @@ import React from "react";
 import * as style from "./Button.style";
 
 type ButtonProps = {
-  name: string;
-  bgColor: string;
-  border: string;
-  color: string;
-  size: string;
-  tabIndex: number;
-  hover: { bgColor: string; color: string };
-  active: { bgColor: string; color: string };
-  focus: {
-    bgColor: string;
-    color: string;
-    outline: string;
-    outlineOffset: string;
+  name?: string;
+  bgColor?: string;
+  border?: string;
+  color?: string;
+  size?: string;
+  tabIndex?: number;
+  hover?: { bgColor?: string; color?: string };
+  active?: { bgColor?: string; color?: string };
+  focus?: {
+    bgColor?: string;
+    color?: string;
+    outline?: string;
+    outlineOffset?: string;
   };
-  onClick: () => void;
-  onMouseEnter: () => void;
-  onMouseLeave: () => void;
+  onClick?: () => void;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 };
 
 const Button = ({

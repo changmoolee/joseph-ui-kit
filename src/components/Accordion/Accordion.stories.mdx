@@ -5,6 +5,11 @@ import Accordion from "./Accordion";
   title="Components/Accordion"
   component={Accordion}
   argTypes={{
+    width: {
+      description:
+        "Handling the width of the Accordion. ('px' and '%' units are ok.)",
+      type: { required: false },
+    },
     title: {
       name: "title",
       description: "Specify the title of the Accordion.",

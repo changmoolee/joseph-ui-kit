@@ -5,7 +5,8 @@ import * as style from "./DropDown.style";
 import Angle from "../../assets/icon/Angle";
 
 type DropDownProps = {
-  items: (
+  width?: string;
+  items?: (
     | {
         id: string;
         text: string;
@@ -17,15 +18,16 @@ type DropDownProps = {
         disabled?: undefined;
       }
   )[];
-  label: string;
-  hideLabel: boolean;
-  warn: string;
-  hideWarn: boolean;
-  size: string;
-  zIndex: number;
+  label?: string;
+  hideLabel?: boolean;
+  warn?: string;
+  hideWarn?: boolean;
+  size?: string;
+  zIndex?: number;
 };
 
 const DropDown = ({
+  width = "400px",
   items = [
     { id: "id1", text: "text1" },
     { id: "id2", text: "text2" },
@@ -72,7 +74,7 @@ const DropDown = ({
         id="dropdown"
         ref={buttonRef}
         tabIndex={-1}
-        css={style.button(open, size)}
+        css={style.button(width, open, size)}
         onBlur={closeSuggestion}
         onClick={handleSuggestion}
       >
