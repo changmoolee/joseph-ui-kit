@@ -43,9 +43,9 @@ export const arrowIcon = (open: boolean) => css`
   transition: all linear 0.05s;
 `;
 
-export const suggestion = (open: boolean, zIndex: number) => css`
+export const suggestion = (width: string, open: boolean, zIndex: number) => css`
   position: absolute;
-  width: 400px;
+  width: ${width};
   height: 200px;
   background-color: #f4f4f4;
   overflow-x: none;

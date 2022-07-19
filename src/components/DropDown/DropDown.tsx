@@ -85,7 +85,7 @@ const DropDown = ({
       </button>
 
       {open ? (
-        <div ref={suggestionRef} css={style.suggestion(open, zIndex)}>
+        <div ref={suggestionRef} css={style.suggestion(width, open, zIndex)}>
           {items.map((item, index) => (
             <div
               key={item.id}
