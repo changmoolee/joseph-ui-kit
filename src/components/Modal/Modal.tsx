@@ -9,7 +9,7 @@ type ModalProps = {
   open?: boolean;
   closeModal?: () => void;
   title?: string;
-  children?: JSX.Element;
+  children?: JSX.Element | JSX.Element[];
   firstButtonDisabled?: boolean;
   firstButtonText?: string;
   firstButtonOnClick?: () => void;

@@ -7,7 +7,7 @@ import Angle from "../../assets/icon/Angle";
 type AccordionProps = {
   width?: string;
   title?: string;
-  children?: JSX.Element;
+  children?: JSX.Element | JSX.Element[];
 };
 
 const Accordion = ({
