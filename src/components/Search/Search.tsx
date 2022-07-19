@@ -6,6 +6,7 @@ import Close from "../../assets/icon/Close";
 import Magnifier from "../../assets/icon/Magnifier";
 
 type SearchProps = {
+  inputRef?: React.MutableRefObject<HTMLInputElement | null>;
   width?: string;
   disabled?: boolean;
   autoComplete?: string;
@@ -13,6 +14,7 @@ type SearchProps = {
 };
 
 const Search = ({
+  inputRef,
   width = "100%",
   disabled = false,
   autoComplete = "off",
@@ -35,6 +37,7 @@ const Search = ({
       </span>
       <input
         id="search"
+        ref={inputRef}
         css={style.input}
         disabled={disabled}
         autoComplete={autoComplete}
