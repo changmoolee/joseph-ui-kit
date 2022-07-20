@@ -5,9 +5,9 @@ export const container = (width: string, disabled: boolean) => css`
   width: ${width};
   height: 40px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  border-bottom: ${disabled ? "0" : "1px solid black"};
+  border-bottom: ${disabled ? "1px solid transparent" : "1px solid black"};
   background-color: #f4f4f4;
   color: #525252;
   opacity: ${disabled ? 0.5 : 1};
@@ -20,15 +20,15 @@ export const container = (width: string, disabled: boolean) => css`
   }
 `;
 export const searchIcon = css`
-  width: 10%;
-  height: 100%;
+  width: 40px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 export const clearIcon = (disabled: boolean) => css`
-  width: 10%;
-  height: 100%;
+  width: 40px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,7 +39,7 @@ export const clearIcon = (disabled: boolean) => css`
 `;
 
 export const input = css`
-  width: 80%;
+  flex-grow: 1;
   height: 100%;
   padding: 0;
   background-color: transparent;
