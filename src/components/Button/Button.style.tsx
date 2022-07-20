@@ -2,6 +2,7 @@
 import { css } from "@emotion/react";
 
 export const container = (
+  padding?: string,
   bgColor?: string,
   hover?: { bgColor?: string; color?: string },
   active?: { bgColor?: string; color?: string },
@@ -28,7 +29,7 @@ export const container = (
     : "32px"};
   display: flex;
   align-items: center;
-  padding: 3px 60px 3px 12px;
+  padding: ${padding};
   border: ${border || "none"};
   background-color: ${bgColor || "transparent"};
   font-size: 14px;

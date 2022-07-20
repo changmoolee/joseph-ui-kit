@@ -5,6 +5,7 @@ import * as style from "./Button.style";
 
 type ButtonProps = {
   name?: string;
+  padding: string;
   bgColor?: string;
   border?: string;
   color?: string;
@@ -25,6 +26,7 @@ type ButtonProps = {
 
 const Button = ({
   name = "Default",
+  padding = "3px 60px 3px 12px",
   bgColor = "#0e62fe",
   border = "none",
   color = "white",
@@ -50,7 +52,16 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <button
-      css={style.container(bgColor, hover, active, focus, border, color, size)}
+      css={style.container(
+        padding,
+        bgColor,
+        hover,
+        active,
+        focus,
+        border,
+        color,
+        size
+      )}
       tabIndex={tabIndex}
       onClick={onClick}
       onMouseEnter={onMouseEnter}
