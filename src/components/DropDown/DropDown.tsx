@@ -57,11 +57,11 @@ const DropDown = ({
   const buttonRef = useRef<any>(null);
   const suggestionRef = useRef<any>(null);
 
-  useLayoutEffect(() => {
-    if (buttonRef.current !== null && !open) {
-      buttonRef.current.focus();
-    }
-  });
+  // useLayoutEffect(() => {
+  //   if (buttonRef.current !== null && !open) {
+  //     buttonRef.current.focus();
+  //   }
+  // });
 
   return (
     <div css={style.container}>
