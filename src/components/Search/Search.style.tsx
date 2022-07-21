@@ -10,6 +10,7 @@ export const container = (width: string, disabled: boolean) => css`
   border-bottom: ${disabled ? "1px solid transparent" : "1px solid black"};
   background-color: #f4f4f4;
   color: #525252;
+  box-sizing: border-box;
   opacity: ${disabled ? 0.5 : 1};
   cursor: ${disabled ? "not-allowed" : "auto"};
   :focus-within {
