@@ -5,7 +5,7 @@ import * as style from "./Button.style";
 
 type ButtonProps = {
   name?: string;
-  padding: string;
+  padding?: string;
   bgColor?: string;
   border?: string;
   color?: string;

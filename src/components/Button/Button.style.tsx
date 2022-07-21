@@ -34,6 +34,7 @@ export const container = (
   background-color: ${bgColor || "transparent"};
   font-size: 14px;
   color: ${color};
+  white-space: nowrap;
 
   :hover {
     background-color: ${hover && hover.bgColor};
