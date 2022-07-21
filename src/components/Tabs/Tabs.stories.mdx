@@ -37,15 +37,15 @@ export const Template = (args) => <Tabs {...args} />;
 
 <Canvas>
   <Story
-    name="Primary"
+    name="Default"
     args={{
       width: "600px",
       height: "50px",
       children: (
-        <Tabs>
+        <>
           <TabList>
             <Tab>child1</Tab>
-            <Tab>child2</Tab>
+            <Tab disabled>child2</Tab>
             <Tab>child3</Tab>
             <Tab>child4</Tab>
           </TabList>
@@ -63,7 +63,7 @@ export const Template = (args) => <Tabs {...args} />;
               <div>child4</div>
             </TabsDescription>
           </TabsDescriptions>
-        </Tabs>
+        </>
       ),
     }}
   >
@@ -73,4 +73,4 @@ export const Template = (args) => <Tabs {...args} />;
 
 ## Component Api
 
-<ArgsTable story="Primary" />
+<ArgsTable story="Default" />

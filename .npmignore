@@ -1,2 +1,8 @@
 node_modules/
 package-lock.json
+.github
+.storybook
+storybook-static
+src
+.env
+tsconfig.json

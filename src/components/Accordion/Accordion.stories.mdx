@@ -5,6 +5,11 @@ import Accordion from "./Accordion";
   title="Components/Accordion"
   component={Accordion}
   argTypes={{
+    width: {
+      description:
+        "Handling the width of the Accordion. ('px' and '%' units are ok.)",
+      type: { required: false },
+    },
     title: {
       name: "title",
       description: "Specify the title of the Accordion.",
@@ -39,7 +44,7 @@ export const Template = (args) => <Accordion {...args} />;
 
 <Canvas>
   <Story
-    name="Primary"
+    name="Default"
     args={{
       title: "title is here.",
       children: (
@@ -58,4 +63,4 @@ export const Template = (args) => <Accordion {...args} />;
 
 ## Component Api
 
-<ArgsTable story="Primary" />
+<ArgsTable story="Default" />

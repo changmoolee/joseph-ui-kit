@@ -1,12 +1,8 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    // "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -16,11 +12,15 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    // "isolatedModules": true,
+    // "noEmit": true,
+    "jsx": "react-jsx",
+    // "declarationDir": "dist/types",
+    "outDir": "dist",
+    "declaration": true
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src/**/*.tsx", "src/components/index.ts"],
+  "exclude": ["**/*.stories.tsx", "**/*.test.tsx"]
+
+  // "include": ["src"]
 }
