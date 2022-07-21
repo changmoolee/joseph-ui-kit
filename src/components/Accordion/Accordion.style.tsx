@@ -24,6 +24,7 @@ export const button = (open: boolean) => css`
   }
   :focus {
     outline: 2px solid #0f62fe;
+    outline-offset: -2px;
   }
 `;
 
