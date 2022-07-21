@@ -18,6 +18,7 @@ export const container = (width: string, disabled: boolean) => css`
     outline-width: 2px;
     outline-style: solid;
     outline-color: #0f62fe;
+    outline-offset: -2px;
   }
 `;
 export const searchIcon = css`

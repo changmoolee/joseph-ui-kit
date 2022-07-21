@@ -30,11 +30,11 @@ export const button = (width: string, open: boolean, size: string) => css`
   }
   :focus {
     outline: ${open ? "none" : "2px solid #0f62fe"};
+    outline-offset: -2px;
   }
 `;
 
 export const arrowIcon = (open: boolean) => css`
-  width: 10%;
   height: 100%;
   display: flex;
   justify-content: center;

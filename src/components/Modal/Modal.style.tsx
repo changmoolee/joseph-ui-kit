@@ -67,6 +67,7 @@ export const closeBox = css`
   }
   :focus {
     outline: 2px solid #0e62fe;
+    outline-offset: -2px;
   }
 `;
 
