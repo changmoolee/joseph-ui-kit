@@ -25,7 +25,6 @@ export const item = (clicked: number, index: number, disabled: boolean) => {
       : "#e0e0e0"};
     cursor: ${disabled ? "not-allowed" : "pointer"};
     span {
-      margin-top: ${clicked === index ? "-2px" : "0"};
       font-weight: ${clicked === index ? "600" : "400"};
       color: ${disabled
         ? "#8d8d8d"
@@ -35,6 +34,10 @@ export const item = (clicked: number, index: number, disabled: boolean) => {
     }
     :hover {
       background-color: ${disabled ? "#c6c6c6" : "#d1d1d1"};
+    }
+    :focus {
+      outline: ${disabled ? "none" : "2px solid #0e62fe"};
+      outline-offset: ${disabled ? "none" : "-2px"};
     }
   `;
 };
