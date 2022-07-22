@@ -29,7 +29,7 @@ const Accordion = ({
           <Angle />
         </div>
       </button>
-      {open ? <div css={style.content(open)}>{children}</div> : null}
+      <div css={style.content(open)}>{children}</div>
     </div>
   );
 };

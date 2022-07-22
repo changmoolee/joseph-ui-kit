@@ -39,6 +39,7 @@ export const arrowIcon = (open: boolean) => css`
 
 export const content = (open: boolean) => css`
   width: 100%;
+  display: ${open ? "block" : "none"};
   padding: 8px 25% 24px 16px;
   border-bottom: ${open ? "1px solid #d1d1d1" : null};
   box-sizing: border-box;
