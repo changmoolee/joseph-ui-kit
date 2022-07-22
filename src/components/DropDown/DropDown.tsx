@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import React, { useState, useRef, useLayoutEffect } from "react";
+import React, { useState } from "react";
 import * as style from "./DropDown.style";
 import Angle from "../../assets/icon/Angle";
 
@@ -8,13 +8,13 @@ type DropDownProps = {
   width?: string;
   items?: (
     | {
-        id: string;
-        text: string;
+        id: number | string;
+        value: number | string;
         disabled: boolean;
       }
     | {
-        id: string;
-        text: string;
+        id: number | string;
+        value: number | string;
         disabled?: undefined;
       }
   )[];
@@ -24,13 +24,19 @@ type DropDownProps = {
   hideWarn?: boolean;
   size?: string;
   zIndex?: number;
+  setSelected?: React.Dispatch<
+    React.SetStateAction<{
+      id: number | string;
+      value: number | string;
+    }>
+  >;
 };
 
 const DropDown = ({
   width = "400px",
   items = [
-    { id: "id1", text: "text1" },
-    { id: "id2", text: "text2" },
+    { id: "id1", value: "text1" },
+    { id: "id2", value: "text2" },
   ],
   label = "label",
   hideLabel = false,
@@ -38,6 +44,7 @@ const DropDown = ({
   hideWarn = false,
   size = "middle",
   zIndex = 300,
+  setSelected = () => {},
 }: DropDownProps) => {
   const [open, setOpen] = useState(false);
   const [seletedItem, setSeletedItem] = useState(0);
@@ -50,12 +57,16 @@ const DropDown = ({
     setOpen(false);
   };
 
-  const clickItem = (index: number) => {
+  const clickItem = (
+    id: number | string,
+    value: number | string,
+    index: number
+  ) => {
     setSeletedItem(index);
+    setSelected({ id: id, value: value });
   };
 
-  const buttonRef = useRef<any>(null);
-  const suggestionRef = useRef<any>(null);
+  // const buttonRef = useRef<any>(null);
 
   // useLayoutEffect(() => {
   //   if (buttonRef.current !== null && !open) {
@@ -72,20 +83,19 @@ const DropDown = ({
       )}
       <button
         id="dropdown"
-        ref={buttonRef}
         tabIndex={-1}
         css={style.button(width, open, size)}
         onBlur={closeSuggestion}
         onClick={handleSuggestion}
       >
-        <span>{items[seletedItem].text}</span>
+        <span>{items[seletedItem].value}</span>
         <div css={style.arrowIcon(open)}>
           <Angle />
         </div>
       </button>
 
       {open ? (
-        <div ref={suggestionRef} css={style.suggestion(width, open, zIndex)}>
+        <div css={style.suggestion(width, open, zIndex)}>
           {items.map((item, index) => (
             <div
               key={item.id}
@@ -97,11 +107,11 @@ const DropDown = ({
               )}
               onMouseDown={() => {
                 if (!item.disabled) {
-                  clickItem(index);
+                  clickItem(item.id, item.value, index);
                 }
               }}
             >
-              <span>{item.text}</span>
+              <span>{item.value}</span>
             </div>
           ))}
         </div>
