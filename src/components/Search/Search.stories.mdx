@@ -9,6 +9,7 @@ import Search from "./Search";
       description:
         "Handling the width of the Search. ('px' and '%' units are ok.)",
       type: { required: false },
+      defaultValue: "",
     },
     disabled: {
       name: "disabled",
@@ -32,6 +33,29 @@ import Search from "./Search";
     placeholder: {
       description: "Specify the placeholder of the Search.",
       type: { name: "string", required: false },
+      defaultValue: "",
+    },
+    inputRef: {
+      name: "inputRef",
+      type: { required: false },
+      description:
+        "You can get the input's current value by using this property. Make a ref object by using useRef hook in React and give it to this inputRef property.",
+      table: {
+        type: {
+          summary: "func",
+        },
+      },
+    },
+    onKeyUp: {
+      name: "onKeyUp",
+      type: { required: false },
+      description:
+        "Provide an optional function to be called when a key event occured",
+      table: {
+        type: {
+          summary: "func",
+        },
+      },
     },
   }}
 />

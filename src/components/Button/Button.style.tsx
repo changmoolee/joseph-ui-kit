@@ -35,6 +35,7 @@ export const container = (
   font-size: 14px;
   color: ${color};
   white-space: nowrap;
+  cursor: pointer;
 
   :hover {
     background-color: ${hover && hover.bgColor};
