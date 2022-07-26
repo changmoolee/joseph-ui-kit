@@ -12,6 +12,7 @@ export const item = (clicked: number, index: number, disabled: boolean) => {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0;
     margin: 0;
     font-size: 14px;
     border: none;
