@@ -14,12 +14,12 @@ export const dim = (zIndex: number) => css`
   }
 `;
 
-export const box = (zIndex: number) => css`
+export const box = (width: string, zIndex: number) => css`
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 500px;
+  width: ${width};
   display: flex;
   flex-direction: column;
   align-items: center;
