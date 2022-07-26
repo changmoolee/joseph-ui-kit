@@ -9,6 +9,7 @@ type ModalProps = {
   open?: boolean;
   closeModal?: () => void;
   width?: string;
+  height?: string;
   label?: string;
   title?: string;
   children?: JSX.Element | JSX.Element[];
@@ -25,6 +26,7 @@ const Modal = ({
   open = true,
   closeModal = () => {},
   width = "500px",
+  height = "300px",
   label = "Account resources",
   title = "title",
   children = <></>,
@@ -40,7 +42,7 @@ const Modal = ({
   return open ? (
     <>
       <div css={style.dim(zIndex)} onClick={closeModal} />
-      <div css={style.box(width, zIndex)}>
+      <div css={style.box(width, height, zIndex)}>
         <div css={style.header}>
           <div css={style.label}>{label}</div>
           <div css={style.title}>{title}</div>
