@@ -59,7 +59,7 @@ type TabProps = {
   onClick?: () => void;
 };
 
-type TabsDescriptionProps = {
+type TabPanelProps = {
   children?: JSX.Element | JSX.Element[] | string;
 };
 
@@ -69,9 +69,9 @@ export const TabList = ({ children }: TabsChildProps) => {
 export const Tab = ({ children, onClick }: TabProps) => {
   return <span onClick={onClick}>{children}</span>;
 };
-export const TabsDescriptions = ({ children }: TabsChildProps) => {
+export const TabPanels = ({ children }: TabsChildProps) => {
   return <>{children}</>;
 };
-export const TabsDescription = ({ children }: TabsDescriptionProps) => {
+export const TabPanel = ({ children }: TabPanelProps) => {
   return <>{children}</>;
 };

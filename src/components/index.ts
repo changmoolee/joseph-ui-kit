@@ -7,6 +7,7 @@ import Search from "./Search/Search";
 import SkeletonUI from "./SkeletonUI/SkeletonUI";
 import Tabs from "./Tabs/Tabs";
 import Toggle from "./Toggle/Toggle";
+import { TabList, Tab, TabPanels, TabPanel } from "./Tabs/Tabs";
 
 export {
   Accordion,
@@ -17,6 +18,10 @@ export {
   Search,
   SkeletonUI,
   Tabs,
+  TabList,
+  Tab,
+  TabPanels,
+  TabPanel,
   Toggle,
 };
 
