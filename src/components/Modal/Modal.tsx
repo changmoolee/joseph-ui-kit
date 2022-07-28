@@ -50,7 +50,7 @@ const Modal = ({
         <button css={style.closeBox} onClick={closeModal}>
           <Close width={20} height={20} />
         </button>
-        <article css={style.description}>{children}</article>
+        <div css={style.description}>{children}</div>
         <div css={style.buttons}>
           {secondaryButtonDisabled ? null : (
             <button

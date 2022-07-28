@@ -31,7 +31,6 @@ export const box = (width: string, height: string, zIndex: number) => css`
   @media screen and (max-width: 672px) {
     width: 100%;
     height: 100%;
-    justify-content: space-between;
   }
 `;
 
@@ -83,9 +82,8 @@ export const title = css`
 `;
 
 export const description = css`
-  padding: 0 16px;
-  margin-top: 8px;
-  margin-bottom: 16px;
+  width: 100%;
+  height: 100%;
 `;
 
 export const buttons = css`
