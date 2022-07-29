@@ -1,18 +1,20 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { UtilityStyles, BodyStyles } from "../Typography/Typography";
 
 export const container = css`
   position: relative;
   display: inline-block;
 `;
 
-export const titleAndWarnText = css`
+export const label = css`
+  ${UtilityStyles.external.label01}
   margin: 5px 0px;
-  font-size: 12px;
   color: gray;
 `;
 
 export const button = (width: string, open: boolean, size: string) => css`
+  ${BodyStyles.external.bodyCompact01}
   width: ${width};
   height: ${size === "small" ? "32px" : size === "middle" ? "40px" : "48px"};
   display: flex;
@@ -22,7 +24,6 @@ export const button = (width: string, open: boolean, size: string) => css`
   border: none;
   border-bottom: 1px solid #d1d1d1;
   background-color: #f4f4f4;
-  font-size: 14px;
   color: #161616;
   box-sizing: border-box;
   :hover {
@@ -78,10 +79,17 @@ export const suggestionItem = (
     opacity: ${disabled ? "0.3" : "1"};
   }
   span {
+    ${BodyStyles.external.bodyCompact01}
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     border-bottom: 2px solid #e8e8e8;
   }
+`;
+
+export const helperText = css`
+  ${UtilityStyles.external.helperText01}
+  margin: 5px 0px;
+  color: gray;
 `;

@@ -77,7 +77,7 @@ const DropDown = ({
   return (
     <div css={style.container}>
       {hideLabel ? null : (
-        <label htmlFor="dropdown" css={style.titleAndWarnText}>
+        <label htmlFor="dropdown" css={style.label}>
           {label}
         </label>
       )}
@@ -116,7 +116,7 @@ const DropDown = ({
           ))}
         </div>
       ) : null}
-      {hideWarn ? null : <div css={style.titleAndWarnText}>{warn}</div>}
+      {hideWarn ? null : <div css={style.helperText}>{warn}</div>}
     </div>
   );
 };

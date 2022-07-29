@@ -1,5 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import {
+  UtilityStyles,
+  BodyStyles,
+  FixedHeadingStyles,
+} from "../Typography/Typography";
 
 export const dim = (zIndex: number) => css`
   position: fixed;
@@ -47,8 +52,8 @@ export const header = css`
 `;
 
 export const label = css`
+  ${UtilityStyles.external.label01}
   margin-bottom: 4px;
-  font-size: 12px;
   color: #525252;
   white-space: nowrap;
 `;
@@ -74,6 +79,7 @@ export const closeBox = css`
 `;
 
 export const title = css`
+  ${FixedHeadingStyles.external.heading03}
   display: flex;
   flex-direction: column;
   font-size: 20px;
@@ -82,6 +88,7 @@ export const title = css`
 `;
 
 export const description = css`
+  ${BodyStyles.external.body01}
   width: 100%;
   height: 100%;
 `;

@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { BodyStyles } from "../Typography/Typography";
 
 export const container = (
   padding?: string,
@@ -16,6 +17,7 @@ export const container = (
   color?: string,
   size?: string
 ) => css`
+  ${BodyStyles.external.bodyCompact01}
   height: ${size === "small"
     ? "32px"
     : size === "middle"
@@ -32,7 +34,6 @@ export const container = (
   padding: ${padding};
   border: ${border || "none"};
   background-color: ${bgColor || "transparent"};
-  font-size: 14px;
   color: ${color};
   white-space: nowrap;
   cursor: pointer;
