@@ -24,10 +24,39 @@ import { Button } from "../Button/Button";
         type: { summary: "func" },
       },
     },
+    width: {
+      name: "width",
+      type: { name: "string", required: false },
+      description:
+        "You can handle the width property of Modal (min-width : 150px).",
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    height: {
+      name: "height",
+      type: { name: "string", required: false },
+      description:
+        "You can handle the height property of Modal (min-height : 150px)",
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    label: {
+      name: "label",
+      type: { name: "string", required: false },
+      description: "Specify the label of Modal",
+      table: {
+        type: { summary: "string" },
+      },
+    },
     title: {
       name: "title",
       type: { name: "string", required: false },
       description: "Specify the title of Modal",
+      table: {
+        type: { summary: "string" },
+      },
     },
     children: {
       name: "children",
@@ -118,7 +147,7 @@ export const Template = (args) => <Modal {...args} />;
     args={{
       title: "Modal title is here",
       children: (
-        <p>
+        <p style={{ padding: "20px" }}>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit.
           Laboriosamfacere vitae quis aperiam laudantium, nisi sequi a quaerat
           veniamvoluptatibus, dolorum ipsam commodi. Unde impedit dolorem

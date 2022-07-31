@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { BodyStyles } from "../Typography/Typography";
 
 export const container = (width: string, disabled: boolean) => css`
   width: ${width};
@@ -41,6 +42,7 @@ export const clearIcon = (disabled: boolean) => css`
 `;
 
 export const input = css`
+  ${BodyStyles.external.bodyCompact01}
   flex-grow: 1;
   height: 100%;
   padding: 0;

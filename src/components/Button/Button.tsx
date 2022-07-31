@@ -4,6 +4,7 @@ import React from "react";
 import * as style from "./Button.style";
 
 type ButtonProps = {
+  kind?: string;
   name?: string;
   padding?: string;
   bgColor?: string;
@@ -25,6 +26,7 @@ type ButtonProps = {
 };
 
 const Button = ({
+  kind = "default",
   name = "Default",
   padding = "3px 60px 3px 12px",
   bgColor = "#0e62fe",
@@ -50,6 +52,76 @@ const Button = ({
   onMouseEnter = () => {},
   onMouseLeave = () => {},
 }: ButtonProps) => {
+  if (kind === "default") {
+    bgColor = "#0e62fe";
+    hover = {
+      bgColor: "#024fe5",
+    };
+    focus = {
+      outline: "4px double white",
+      outlineOffset: "-4px",
+    };
+    active = {
+      bgColor: "#022b9d",
+    };
+  } else if (kind === "danger") {
+    bgColor = "#da1e28";
+    border = "none";
+    hover = {
+      bgColor: "#b91823",
+    };
+    focus = {
+      outline: "4px double white",
+      outlineOffset: "-4px",
+    };
+    active = {
+      bgColor: "#760c11",
+    };
+  } else if (kind === "ghost") {
+    bgColor = "white";
+    hover = {
+      bgColor: "#e8e8e8",
+    };
+    focus = {
+      outline: "2px solid #0e62fe",
+      outlineOffset: "1px",
+    };
+    active = {
+      bgColor: "#c5c5c5",
+    };
+    color = "#0e62fe";
+  } else if (kind === "secondary") {
+    bgColor = "#393939";
+    hover = {
+      bgColor: "#424242",
+    };
+    focus = {
+      outline: "4px double white",
+      outlineOffset: "-4px",
+    };
+    active = {
+      bgColor: "#6e6e6e",
+    };
+  } else if (kind === "tertiary") {
+    bgColor = "transparent";
+    hover = {
+      bgColor: "#024fe5",
+      color: "white",
+    };
+    active = {
+      bgColor: "#022b9d",
+      color: "white",
+    };
+    focus = {
+      bgColor: "#024fe5",
+      color: "white",
+      outline: "4px double white",
+      outlineOffset: "-4px",
+    };
+    color = "#0e62fe";
+    border = "1px solid #0e62fe";
+  }
+
   return (
     <button
       css={style.container(

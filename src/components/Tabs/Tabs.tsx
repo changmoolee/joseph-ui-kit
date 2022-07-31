@@ -28,7 +28,12 @@ const Tabs = ({ width = "600px", height = "50px", children }: TabsProps) => {
               key={tab + index}
               css={style.item(clicked, index, tab.props.disabled)}
               onClick={() => {
-                if (!tab.props.disabled) handleClick(index);
+                if (!tab.props.disabled) {
+                  handleClick(index);
+                  if (tab.props.onClick) {
+                    tab.props.onClick();
+                  }
+                }
               }}
             >
               <span>{tab.props.children}</span>
@@ -51,21 +56,22 @@ type TabsChildProps = {
 
 type TabProps = {
   children?: string;
+  onClick?: () => void;
 };
 
-type TabsDescriptionProps = {
+type TabPanelProps = {
   children?: JSX.Element | JSX.Element[] | string;
 };
 
 export const TabList = ({ children }: TabsChildProps) => {
   return <>{children}</>;
 };
-export const Tab = ({ children }: TabProps) => {
+export const Tab = ({ children, onClick }: TabProps) => {
+  return <span onClick={onClick}>{children}</span>;
+};
+export const TabPanels = ({ children }: TabsChildProps) => {
   return <>{children}</>;
 };
-export const TabsDescriptions = ({ children }: TabsChildProps) => {
-  return <>{children}</>;
-};
-export const TabsDescription = ({ children }: TabsDescriptionProps) => {
+export const TabPanel = ({ children }: TabPanelProps) => {
   return <>{children}</>;
 };

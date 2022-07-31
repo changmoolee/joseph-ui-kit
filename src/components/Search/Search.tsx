@@ -11,6 +11,7 @@ type SearchProps = {
   disabled?: boolean;
   autoComplete?: string;
   placeholder?: string;
+  onKeyUp?: (event: any) => void;
 };
 
 const Search = ({
@@ -19,6 +20,7 @@ const Search = ({
   disabled = false,
   autoComplete = "off",
   placeholder = "placeholder",
+  onKeyUp = () => {},
 }: SearchProps) => {
   const [value, setValue] = useState("");
 
@@ -44,6 +46,7 @@ const Search = ({
         value={value}
         placeholder={placeholder}
         onChange={updateValue}
+        onKeyUp={onKeyUp}
       />
       <span css={style.clearIcon(disabled)} onClick={clearInput}>
         <Close width={16} height={16} />

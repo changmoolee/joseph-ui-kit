@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { BodyStyles, FixedHeadingStyles } from "../Typography/Typography";
 
 export const box = (width: string, height: string) => css`
   width: ${width};
@@ -12,6 +13,7 @@ export const item = (clicked: number, index: number, disabled: boolean) => {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0;
     margin: 0;
     font-size: 14px;
     border: none;
@@ -25,7 +27,9 @@ export const item = (clicked: number, index: number, disabled: boolean) => {
       : "#e0e0e0"};
     cursor: ${disabled ? "not-allowed" : "pointer"};
     span {
-      font-weight: ${clicked === index ? "600" : "400"};
+      ${clicked === index
+        ? `${FixedHeadingStyles.external.headingCompact01}`
+        : `${BodyStyles.external.bodyCompact01}`};
       color: ${disabled
         ? "#8d8d8d"
         : clicked === index

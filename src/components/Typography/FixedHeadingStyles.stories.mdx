@@ -1,0 +1,103 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs";
+import Typography from "./Typography";
+import { UtilityStyles, BodyStyles, FixedHeadingStyles } from "./Typography";
+
+<Meta
+  title="Components/Typography/FixedHeadingStyles"
+  component={Typography}
+  argTypes={{
+    style: {
+      table: {
+        disable: true,
+      },
+    },
+  }}
+/>
+
+# Typography
+
+## Overview
+
+Our approach to the typographic system uses IBM Plex as its typeface. It has been carefully engineered with suitable scales, styles, and weights to help create clear hierarchies and organize information that guides users through IBM products or experiences.
+
+export const Template = (args) => <Typography {...args} />;
+
+## FixedHeadingStyles
+
+### headingCompact01
+
+<Canvas>
+  <Story
+    name="headingCompact01"
+    args={{ style: FixedHeadingStyles.inline.headingCompact01 }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### headingCompact02
+
+<Canvas>
+  <Story
+    name="headingCompact02"
+    args={{ style: FixedHeadingStyles.inline.headingCompact02 }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### heading01
+
+<Canvas>
+  <Story name="heading01" args={{ style: FixedHeadingStyles.inline.heading01 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### heading02
+
+<Canvas>
+  <Story name="heading02" args={{ style: FixedHeadingStyles.inline.heading02 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### heading03
+
+<Canvas>
+  <Story name="heading03" args={{ style: FixedHeadingStyles.inline.heading03 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### heading04
+
+<Canvas>
+  <Story name="heading04" args={{ style: FixedHeadingStyles.inline.heading04 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### heading05
+
+<Canvas>
+  <Story name="heading05" args={{ style: FixedHeadingStyles.inline.heading05 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### heading06
+
+<Canvas>
+  <Story name="heading06" args={{ style: FixedHeadingStyles.inline.heading06 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### heading07
+
+<Canvas>
+  <Story name="heading07" args={{ style: FixedHeadingStyles.inline.heading07 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

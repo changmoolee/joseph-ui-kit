@@ -1,0 +1,95 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs";
+import Typography from "./Typography";
+import { UtilityStyles, BodyStyles, FixedHeadingStyles } from "./Typography";
+
+<Meta
+  title="Components/Typography/UtilityStyles"
+  component={Typography}
+  argTypes={{
+    style: {
+      table: {
+        disable: true,
+      },
+    },
+  }}
+/>
+
+# Typography
+
+## Overview
+
+Our approach to the typographic system uses IBM Plex as its typeface. It has been carefully engineered with suitable scales, styles, and weights to help create clear hierarchies and organize information that guides users through IBM products or experiences.
+
+export const Template = (args) => <Typography {...args} />;
+
+## UtilityStyles
+
+### code01
+
+<Canvas>
+  <Story name="code01" args={{ style: UtilityStyles.inline.code01 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### code02
+
+<Canvas>
+  <Story name="code02" args={{ style: UtilityStyles.inline.code02 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### label01
+
+<Canvas>
+  <Story name="label01" args={{ style: UtilityStyles.inline.label01 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### label02
+
+<Canvas>
+  <Story name="label02" args={{ style: UtilityStyles.inline.label02 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### helperText01
+
+<Canvas>
+  <Story
+    name="helperText01"
+    args={{ style: UtilityStyles.inline.helperText01 }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### helperText02
+
+<Canvas>
+  <Story
+    name="helperText02"
+    args={{ style: UtilityStyles.inline.helperText02 }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### legal01
+
+<Canvas>
+  <Story name="legal01" args={{ style: UtilityStyles.inline.legal01 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### legal02
+
+<Canvas>
+  <Story name="legal02" args={{ style: UtilityStyles.inline.legal02 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

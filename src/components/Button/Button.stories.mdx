@@ -123,17 +123,7 @@ export const Template = (args) => <Button {...args} />;
   <Story
     name="Default"
     args={{
-      bgColor: "#0e62fe",
-      hover: {
-        bgColor: "#024fe5",
-      },
-      focus: {
-        outline: "4px double white",
-        outlineOffset: "-4px",
-      },
-      active: {
-        bgColor: "#022b9d",
-      },
+      kind: "default",
     }}
   >
     {Template.bind({})}
@@ -148,18 +138,7 @@ export const Template = (args) => <Button {...args} />;
   <Story
     name="Danger"
     args={{
-      bgColor: "#da1e28",
-      border: "none",
-      hover: {
-        bgColor: "#b91823",
-      },
-      focus: {
-        outline: "4px double white",
-        outlineOffset: "-4px",
-      },
-      active: {
-        bgColor: "#760c11",
-      },
+      kind: "danger",
     }}
   >
     {Template.bind({})}
@@ -170,19 +149,7 @@ export const Template = (args) => <Button {...args} />;
   <Story
     name="Ghost"
     args={{
-      bgColor: "white",
-      hover: {
-        bgColor: "#e8e8e8",
-      },
-      focus: {
-        outline: "2px solid #0e62fe",
-        outlineOffset: "1px",
-      },
-      active: {
-        bgColor: "#c5c5c5",
-        border: "1px solid white",
-      },
-      color: "#0e62fe",
+      kind: "ghost",
     }}
   >
     {Template.bind({})}
@@ -193,17 +160,7 @@ export const Template = (args) => <Button {...args} />;
   <Story
     name="Secondary"
     args={{
-      bgColor: "#393939",
-      hover: {
-        bgColor: "#424242",
-      },
-      focus: {
-        outline: "4px double white",
-        outlineOffset: "-4px",
-      },
-      active: {
-        bgColor: "#6e6e6e",
-      },
+      kind: "secondary",
     }}
   >
     {Template.bind({})}
@@ -214,23 +171,7 @@ export const Template = (args) => <Button {...args} />;
   <Story
     name="Tertiary"
     args={{
-      bgColor: "transparent",
-      hover: {
-        bgColor: "#024fe5",
-        color: "white",
-      },
-      active: {
-        bgColor: "#022b9d",
-        color: "white",
-      },
-      focus: {
-        bgColor: "#024fe5",
-        color: "white",
-        outline: "4px double white",
-        outlineOffset: "-4px",
-      },
-      color: "#0e62fe",
-      border: "1px solid #0e62fe",
+      kind: "tertiary",
     }}
   >
     {Template.bind({})}

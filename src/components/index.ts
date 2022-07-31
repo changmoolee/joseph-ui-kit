@@ -7,6 +7,12 @@ import Search from "./Search/Search";
 import SkeletonUI from "./SkeletonUI/SkeletonUI";
 import Tabs from "./Tabs/Tabs";
 import Toggle from "./Toggle/Toggle";
+import { TabList, Tab, TabPanels, TabPanel } from "./Tabs/Tabs";
+import {
+  UtilityStyles,
+  BodyStyles,
+  FixedHeadingStyles,
+} from "./Typography/Typography";
 
 export {
   Accordion,
@@ -17,7 +23,14 @@ export {
   Search,
   SkeletonUI,
   Tabs,
+  TabList,
+  Tab,
+  TabPanels,
+  TabPanel,
   Toggle,
+  UtilityStyles,
+  BodyStyles,
+  FixedHeadingStyles,
 };
 
 //    "build": "cross-env BABEL_ENV=production babel src -d dist",

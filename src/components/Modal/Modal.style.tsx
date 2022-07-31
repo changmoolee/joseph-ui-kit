@@ -1,5 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import {
+  UtilityStyles,
+  BodyStyles,
+  FixedHeadingStyles,
+} from "../Typography/Typography";
 
 export const dim = (zIndex: number) => css`
   position: fixed;
@@ -14,12 +19,15 @@ export const dim = (zIndex: number) => css`
   }
 `;
 
-export const box = (zIndex: number) => css`
+export const box = (width: string, height: string, zIndex: number) => css`
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 500px;
+  min-width: 150px;
+  width: ${width};
+  min-height: 150px;
+  height: ${height};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,7 +36,6 @@ export const box = (zIndex: number) => css`
   @media screen and (max-width: 672px) {
     width: 100%;
     height: 100%;
-    justify-content: space-between;
   }
 `;
 
@@ -45,8 +52,8 @@ export const header = css`
 `;
 
 export const label = css`
+  ${UtilityStyles.external.label01}
   margin-bottom: 4px;
-  font-size: 12px;
   color: #525252;
   white-space: nowrap;
 `;
@@ -72,6 +79,7 @@ export const closeBox = css`
 `;
 
 export const title = css`
+  ${FixedHeadingStyles.external.heading03}
   display: flex;
   flex-direction: column;
   font-size: 20px;
@@ -80,12 +88,14 @@ export const title = css`
 `;
 
 export const description = css`
-  padding: 0 16px;
-  margin-top: 8px;
-  margin-bottom: 16px;
+  ${BodyStyles.external.body01}
+  width: 100%;
+  height: 100%;
 `;
 
 export const buttons = css`
+  position: absolute;
+  bottom: 0;
   width: 100%;
   display: flex;
   justify-content: flex-end;
