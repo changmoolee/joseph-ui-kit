@@ -253,19 +253,19 @@ export const FixedHeadingStyles = {
     heading05: `
       font-size: 32px;
       line-height: 40px;
-      fontWeight: 400;
+      font-weight: 400;
       letter-spacing: 0px;
     `,
     heading06: `
       font-size: 42px;
       line-height: 50px;
-      fontWeight: 300;
+      font-weight: 300;
       letter-spacing: 0px;
     `,
     heading07: `
-      fontSize: 54px;
+      font-size: 54px;
       line-height: 64px;
-      fontWeight: 300;
+      font-weight: 300;
       letter-spacing: 0px;
     `,
   },
