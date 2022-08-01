@@ -1,10 +1,8 @@
 import { Global, css } from "@emotion/react";
+import reset from "./reset";
 
 const style = css`
-  body {
-    font-family: "IBM Plex Sans", sans-serif;
-    font-weight: 400;
-  }
+  ${reset}
 `;
 
 const GlobalStyle = () => <Global styles={style} />;
