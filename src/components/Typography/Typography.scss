@@ -1,40 +1,48 @@
 @mixin UtilityStyles($type) {
   @if ($type == code01) {
+    font-family: "IBM Plex Mono", monospace;
     font-size: 12px;
     line-height: 16px;
     font-weight: 400;
     letter-spacing: 0.32px;
   } @else if ($type == code02) {
+    font-family: "IBM Plex Mono", monospace;
     font-size: 14px;
     line-height: 20px;
     font-weight: 400;
     letter-spacing: 0.32px;
   } @else if ($type == label01) {
+    font-family: "IBM Plex Sans", sans-serif;
     font-size: 12px;
     line-height: 16px;
     font-weight: 400;
     letter-spacing: 0.32px;
   } @else if ($type == label02) {
+    font-family: "IBM Plex Sans", sans-serif;
     font-size: 14px;
     line-height: 18px;
     font-weight: 400;
     letter-spacing: 0.16px;
   } @else if ($type == helperText01) {
+    font-family: "IBM Plex Sans", sans-serif;
     font-size: 12px;
     line-height: 16px;
     font-weight: 400;
     letter-spacing: 0.32px;
   } @else if ($type == helperText02) {
+    font-family: "IBM Plex Sans", sans-serif;
     font-size: 14px;
     line-height: 18px;
     font-weight: 400;
     letter-spacing: 0.16px;
   } @else if ($type == legal01) {
+    font-family: "IBM Plex Sans", sans-serif;
     font-size: 12px;
     line-height: 16px;
     font-weight: 400;
     letter-spacing: 0.32px;
   } @else if ($type == legal02) {
+    font-family: "IBM Plex Sans", sans-serif;
     font-size: 14px;
     line-height: 18px;
     font-weight: 400;
@@ -44,21 +52,25 @@
 
 @mixin BodyStyles($type) {
   @if ($type == bodyCompact01) {
+    font-family: "IBM Plex Sans", sans-serif;
     font-size: 14px;
     line-height: 18px;
     font-weight: 400;
     letter-spacing: 0.16px;
   } @else if ($type == bodyCompact02) {
+    font-family: "IBM Plex Sans", sans-serif;
     font-size: 16px;
     line-height: 22px;
     font-weight: 400;
     letter-spacing: 0px;
   } @else if ($type == body01) {
+    font-family: "IBM Plex Sans", sans-serif;
     font-size: 14px;
     line-height: 20px;
     font-weight: 400;
     letter-spacing: 0.16px;
   } @else if ($type == body02) {
+    font-family: "IBM Plex Sans", sans-serif;
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
@@ -68,46 +80,55 @@
 
 @mixin FixedHeadingStyles($type) {
   @if ($type == headingCompact01) {
+    font-family: "IBM Plex Sans", sans-serif;
     font-size: 14px;
     line-height: 18px;
     font-weight: 400;
     letter-spacing: 0.16px;
   } @else if ($type == headingCompact02) {
+    font-family: "IBM Plex Sans", sans-serif;
     font-size: 16px;
     line-height: 22px;
     font-weight: 400;
     letter-spacing: 0px;
   } @else if ($type == heading01) {
+    font-family: "IBM Plex Sans", sans-serif;
     font-size: 14px;
     line-height: 20px;
     font-weight: 600;
     letter-spacing: 0.16px;
   } @else if ($type == heading02) {
+    font-family: "IBM Plex Sans", sans-serif;
     font-size: 16px;
     line-height: 24px;
     font-weight: 600;
     letter-spacing: 0px;
   } @else if ($type == heading03) {
+    font-family: "IBM Plex Sans", sans-serif;
     font-size: 20px;
     line-height: 28px;
     font-weight: 400;
     letter-spacing: 0px;
   } @else if ($type == heading04) {
+    font-family: "IBM Plex Sans", sans-serif;
     font-size: 28px;
     line-height: 36px;
     font-weight: 400;
     letter-spacing: 0px;
   } @else if ($type == heading05) {
+    font-family: "IBM Plex Sans", sans-serif;
     font-size: 32px;
     line-height: 40px;
     font-weight: 400;
     letter-spacing: 0px;
   } @else if ($type == heading06) {
+    font-family: "IBM Plex Sans", sans-serif;
     font-size: 42px;
     line-height: 50px;
     font-weight: 300;
     letter-spacing: 0px;
   } @else if ($type == heading07) {
+    font-family: "IBM Plex Sans", sans-serif;
     font-size: 54px;
     line-height: 64px;
     font-weight: 300;
