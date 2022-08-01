@@ -5,6 +5,14 @@ import DropDown from "./DropDown";
   title="Components/DropDown"
   component={DropDown}
   argTypes={{
+    width: {
+      name: "width",
+      type: { name: "string", required: false },
+      description: "You can handle the width property of DropDown.",
+      table: {
+        type: { summary: "string" },
+      },
+    },
     items: {
       name: "items",
       description:
@@ -58,6 +66,17 @@ import DropDown from "./DropDown";
       type: { name: "number", required: false },
       description: "Handling the z-index property of the DropDown.",
       defaultValue: 300,
+    },
+    onChange: {
+      name: "onChange",
+      type: { required: false },
+      description:
+        "onChange is a utility for this controlled component to communicate to a consuming component what kind of internal state changes are occurring.",
+      table: {
+        type: {
+          summary: "func",
+        },
+      },
     },
   }}
 />
