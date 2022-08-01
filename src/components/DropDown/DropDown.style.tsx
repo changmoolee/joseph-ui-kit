@@ -52,6 +52,7 @@ export const suggestion = (width: string, open: boolean, zIndex: number) => css`
   overflow-x: none;
   overflow-y: auto;
   outline: ${open ? "1px solid #0f62fe" : "none"};
+  outline-offset: -1px;
   z-index: ${zIndex};
 `;
 

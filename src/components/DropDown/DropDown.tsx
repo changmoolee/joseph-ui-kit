@@ -24,12 +24,9 @@ type DropDownProps = {
   hideWarn?: boolean;
   size?: string;
   zIndex?: number;
-  setSelected?: React.Dispatch<
-    React.SetStateAction<{
-      id: number | string;
-      value: number | string;
-    }>
-  >;
+  onChange?: (data: {
+    selectedItem: { id: number | string; value: number | string };
+  }) => void;
 };
 
 const DropDown = ({
@@ -44,7 +41,7 @@ const DropDown = ({
   hideWarn = false,
   size = "middle",
   zIndex = 300,
-  setSelected = () => {},
+  onChange = () => {},
 }: DropDownProps) => {
   const [open, setOpen] = useState(false);
   const [seletedItem, setSeletedItem] = useState(0);
@@ -63,16 +60,8 @@ const DropDown = ({
     index: number
   ) => {
     setSeletedItem(index);
-    setSelected({ id: id, value: value });
+    onChange({ selectedItem: { id: id, value: value } });
   };
-
-  // const buttonRef = useRef<any>(null);
-
-  // useLayoutEffect(() => {
-  //   if (buttonRef.current !== null && !open) {
-  //     buttonRef.current.focus();
-  //   }
-  // });
 
   return (
     <div css={style.container}>
@@ -95,9 +84,9 @@ const DropDown = ({
       </button>
 
       {open ? (
-        <div css={style.suggestion(width, open, zIndex)}>
+        <ul css={style.suggestion(width, open, zIndex)}>
           {items.map((item, index) => (
-            <div
+            <li
               key={item.id}
               css={style.suggestionItem(
                 index,
@@ -112,9 +101,9 @@ const DropDown = ({
               }}
             >
               <span>{item.value}</span>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       ) : null}
       {hideWarn ? null : <div css={style.helperText}>{warn}</div>}
     </div>
