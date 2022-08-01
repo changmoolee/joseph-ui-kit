@@ -35,22 +35,22 @@ import Search from "./Search";
       type: { name: "string", required: false },
       defaultValue: "",
     },
-    inputRef: {
-      name: "inputRef",
+    onKeyDown: {
+      name: "onKeyDown",
       type: { required: false },
       description:
-        "You can get the input's current value by using this property. Make a ref object by using useRef hook in React and give it to this inputRef property.",
+        "Provide an optional function to be called when a key event occured",
       table: {
         type: {
           summary: "func",
         },
       },
     },
-    onKeyUp: {
-      name: "onKeyUp",
+    onChange: {
+      name: "onChange",
       type: { required: false },
       description:
-        "Provide an optional function to be called when a key event occured",
+        "onChange is a utility for this controlled component to communicate to a consuming component what kind of internal state changes are occurring.",
       table: {
         type: {
           summary: "func",
