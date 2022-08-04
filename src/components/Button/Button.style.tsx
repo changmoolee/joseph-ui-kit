@@ -17,7 +17,7 @@ export const container = (
   color?: string,
   size?: string
 ) => css`
-  ${BodyStyles.external.bodyCompact01}
+  ${BodyStyles.bodyCompact01}
   height: ${size === "small"
     ? "32px"
     : size === "middle"

@@ -42,7 +42,7 @@ export const clearIcon = (disabled: boolean) => css`
 `;
 
 export const input = css`
-  ${BodyStyles.external.bodyCompact01}
+  ${BodyStyles.bodyCompact01}
   flex-grow: 1;
   height: 100%;
   padding: 0;

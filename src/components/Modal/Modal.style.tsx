@@ -52,7 +52,7 @@ export const header = css`
 `;
 
 export const label = css`
-  ${UtilityStyles.external.label01}
+  ${UtilityStyles.label01}
   margin-bottom: 4px;
   color: #525252;
   white-space: nowrap;
@@ -79,7 +79,7 @@ export const closeBox = css`
 `;
 
 export const title = css`
-  ${FixedHeadingStyles.external.heading03}
+  ${FixedHeadingStyles.heading03}
   display: flex;
   flex-direction: column;
   font-size: 20px;
@@ -88,7 +88,7 @@ export const title = css`
 `;
 
 export const description = css`
-  ${BodyStyles.external.body01}
+  ${BodyStyles.body01}
   width: 100%;
   height: 100%;
 `;
