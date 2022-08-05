@@ -1,7 +1,7 @@
 {
   "name": "joseph-ui-kit",
   "description": "ui-kit that make user convenient",
-  "version": "0.6.3",
+  "version": "0.6.6",
   "private": false,
   "main": "dist/components/index.js",
   "module": "dist/components/index.js",

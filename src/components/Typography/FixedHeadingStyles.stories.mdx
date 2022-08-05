@@ -1,17 +1,11 @@
 import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs";
-import Typography from "./Typography";
 import { UtilityStyles, BodyStyles, FixedHeadingStyles } from "./Typography";
+import { FixedHeadingStylesStory } from "./StoriesExample";
 
 <Meta
   title="Components/Typography/FixedHeadingStyles"
-  component={Typography}
-  argTypes={{
-    style: {
-      table: {
-        disable: true,
-      },
-    },
-  }}
+  component={FixedHeadingStylesStory}
+  argTypes={{}}
 />
 
 # Typography
@@ -20,7 +14,7 @@ import { UtilityStyles, BodyStyles, FixedHeadingStyles } from "./Typography";
 
 Our approach to the typographic system uses IBM Plex as its typeface. It has been carefully engineered with suitable scales, styles, and weights to help create clear hierarchies and organize information that guides users through IBM products or experiences.
 
-export const Template = (args) => <Typography {...args} />;
+export const Template = (args) => <FixedHeadingStylesStory {...args} />;
 
 ## FixedHeadingStyles
 
@@ -29,7 +23,7 @@ export const Template = (args) => <Typography {...args} />;
 <Canvas>
   <Story
     name="headingCompact01"
-    args={{ style: FixedHeadingStyles.inline.headingCompact01 }}
+    args={{ type: FixedHeadingStyles.headingCompact01 }}
   >
     {Template.bind({})}
   </Story>
@@ -40,7 +34,7 @@ export const Template = (args) => <Typography {...args} />;
 <Canvas>
   <Story
     name="headingCompact02"
-    args={{ style: FixedHeadingStyles.inline.headingCompact02 }}
+    args={{ type: FixedHeadingStyles.headingCompact02 }}
   >
     {Template.bind({})}
   </Story>
@@ -49,7 +43,7 @@ export const Template = (args) => <Typography {...args} />;
 ### heading01
 
 <Canvas>
-  <Story name="heading01" args={{ style: FixedHeadingStyles.inline.heading01 }}>
+  <Story name="heading01" args={{ type: FixedHeadingStyles.heading01 }}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -57,7 +51,7 @@ export const Template = (args) => <Typography {...args} />;
 ### heading02
 
 <Canvas>
-  <Story name="heading02" args={{ style: FixedHeadingStyles.inline.heading02 }}>
+  <Story name="heading02" args={{ type: FixedHeadingStyles.heading02 }}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -65,7 +59,7 @@ export const Template = (args) => <Typography {...args} />;
 ### heading03
 
 <Canvas>
-  <Story name="heading03" args={{ style: FixedHeadingStyles.inline.heading03 }}>
+  <Story name="heading03" args={{ type: FixedHeadingStyles.heading03 }}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -73,7 +67,7 @@ export const Template = (args) => <Typography {...args} />;
 ### heading04
 
 <Canvas>
-  <Story name="heading04" args={{ style: FixedHeadingStyles.inline.heading04 }}>
+  <Story name="heading04" args={{ type: FixedHeadingStyles.heading04 }}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -81,7 +75,7 @@ export const Template = (args) => <Typography {...args} />;
 ### heading05
 
 <Canvas>
-  <Story name="heading05" args={{ style: FixedHeadingStyles.inline.heading05 }}>
+  <Story name="heading05" args={{ type: FixedHeadingStyles.heading05 }}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -89,7 +83,7 @@ export const Template = (args) => <Typography {...args} />;
 ### heading06
 
 <Canvas>
-  <Story name="heading06" args={{ style: FixedHeadingStyles.inline.heading06 }}>
+  <Story name="heading06" args={{ type: FixedHeadingStyles.heading06 }}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -97,7 +91,7 @@ export const Template = (args) => <Typography {...args} />;
 ### heading07
 
 <Canvas>
-  <Story name="heading07" args={{ style: FixedHeadingStyles.inline.heading07 }}>
+  <Story name="heading07" args={{ type: FixedHeadingStyles.heading07 }}>
     {Template.bind({})}
   </Story>
 </Canvas>

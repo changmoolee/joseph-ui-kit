@@ -32,7 +32,3 @@ export {
   BodyStyles,
   FixedHeadingStyles,
 };
-
-//    "build": "cross-env BABEL_ENV=production babel src -d dist",
-//  "compile": "npx babel src/components --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.js,stories.mdx,__snapshots__",
-//     "module": "esnext",
