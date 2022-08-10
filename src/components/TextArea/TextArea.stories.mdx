@@ -1,0 +1,76 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs";
+import TextArea from "./TextArea";
+
+<Meta
+  title="Components/TextArea"
+  component={TextArea}
+  argTypes={{
+    width: {
+      description:
+        "Handling the width of the TextArea. ('px' and '%' units are ok.)",
+      type: { required: false },
+      defaultValue: "",
+    },
+    maxLength: {
+      description: "Handling the maxLength of the TextArea.",
+      type: { name: "number", required: false },
+      defaultValue: "",
+    },
+    disabled: {
+      name: "disabled",
+      type: { name: "boolean", required: false },
+      description: "handling the disabled state of the TextArea.",
+      defaultValue: false,
+    },
+    placeholder: {
+      description: "Specify the placeholder of the TextArea.",
+      type: { name: "string", required: false },
+      defaultValue: "placeholder",
+    },
+    label: {
+      name: "label",
+      type: { name: "string", required: false },
+      description: "Specify the label of the TextArea.",
+      defaultValue: "TextArea label",
+    },
+    hideLabel: {
+      name: "hideLabel",
+      type: { name: "boolean", required: false },
+      description: "Controlling the displaying label.",
+      defaultValue: false,
+    },
+    warn: {
+      name: "warn",
+      type: { name: "string", required: false },
+      description: "Specify the warning of the TextArea.",
+      defaultValue: "This is some helper text",
+    },
+    hideWarn: {
+      name: "hideWarn",
+      type: { name: "boolean", required: false },
+      description: "Controlling the displaying warning.",
+      defaultValue: false,
+    },
+    onChange: {
+      name: "onChange",
+      type: { required: false },
+      description:
+        "onChange is a utility for this controlled component to communicate to a consuming component what kind of internal state changes are occurring.",
+      table: {
+        type: {
+          summary: "func",
+        },
+      },
+    },
+  }}
+/>
+
+# TextArea
+
+## Overview
+
+export const Template = (args) => <TextArea {...args} />;
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
