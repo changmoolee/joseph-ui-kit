@@ -54,6 +54,7 @@ const TextInput = ({
           disabled={disabled}
           value={value}
           placeholder={placeholder}
+          autoComplete="off"
           onChange={updateValue}
         />
       </div>
