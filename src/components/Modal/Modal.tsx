@@ -15,10 +15,12 @@ type ModalProps = {
   children?: JSX.Element | JSX.Element[];
   firstButtonDisabled?: boolean;
   firstButtonText?: string;
-  firstButtonOnClick?: () => void;
+  firstButtonOnClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
   secondaryButtonDisabled?: boolean;
   secondaryButtonText?: string;
-  secondaryButtonOnClick?: () => void;
+  secondaryButtonOnClick?:
+    | React.MouseEventHandler<HTMLButtonElement>
+    | undefined;
   zIndex?: number;
 };
 

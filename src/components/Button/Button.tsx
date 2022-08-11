@@ -20,9 +20,9 @@ type ButtonProps = {
     outline?: string;
     outlineOffset?: string;
   };
-  onClick?: () => void;
-  onMouseEnter?: () => void;
-  onMouseLeave?: () => void;
+  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  onMouseEnter?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  onMouseLeave?: React.MouseEventHandler<HTMLButtonElement> | undefined;
 };
 
 const Button = ({

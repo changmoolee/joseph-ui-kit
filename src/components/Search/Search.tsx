@@ -10,7 +10,7 @@ type SearchProps = {
   disabled?: boolean;
   autoComplete?: string;
   placeholder?: string;
-  onKeyDown?: (event: any) => void;
+  onKeyDown?: React.KeyboardEventHandler<HTMLInputElement> | undefined;
   onChange?: (data: { value: string }) => void;
 };
 

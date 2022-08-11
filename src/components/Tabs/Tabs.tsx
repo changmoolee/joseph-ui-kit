@@ -56,7 +56,7 @@ type TabsChildProps = {
 
 type TabProps = {
   children?: string;
-  onClick?: () => void;
+  onClick?: React.MouseEventHandler<HTMLSpanElement> | undefined;
 };
 
 type TabPanelProps = {
