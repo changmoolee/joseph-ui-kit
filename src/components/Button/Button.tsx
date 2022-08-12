@@ -6,6 +6,7 @@ import * as style from "./Button.style";
 type ButtonProps = {
   kind?: string;
   name?: string;
+  width?: string;
   padding?: string;
   bgColor?: string;
   border?: string;
@@ -28,6 +29,7 @@ type ButtonProps = {
 const Button = ({
   kind = "default",
   name = "Default",
+  width = "auto",
   padding = "3px 60px 3px 12px",
   bgColor = "#0e62fe",
   border = "none",
@@ -125,6 +127,7 @@ const Button = ({
   return (
     <button
       css={style.container(
+        width,
         padding,
         bgColor,
         hover,

@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 import { BodyStyles } from "../Typography/Typography";
 
 export const container = (
+  width?: string,
   padding?: string,
   bgColor?: string,
   hover?: { bgColor?: string; color?: string },
@@ -31,10 +32,12 @@ export const container = (
     : "32px"};
   display: flex;
   align-items: center;
+  width: ${width};
   padding: ${padding};
   border: ${border || "none"};
   background-color: ${bgColor || "transparent"};
   color: ${color};
+  box-sizing: border-box;
   white-space: nowrap;
   cursor: pointer;
 

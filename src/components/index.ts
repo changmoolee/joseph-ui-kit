@@ -8,6 +8,8 @@ import SkeletonUI from "./SkeletonUI/SkeletonUI";
 import Tabs from "./Tabs/Tabs";
 import Toggle from "./Toggle/Toggle";
 import { TabList, Tab, TabPanels, TabPanel } from "./Tabs/Tabs";
+import TextInput from "./TextInput/TextInput";
+import TextArea from "./TextArea/TextArea";
 import {
   UtilityStyles,
   BodyStyles,
@@ -28,6 +30,8 @@ export {
   TabPanels,
   TabPanel,
   Toggle,
+  TextInput,
+  TextArea,
   UtilityStyles,
   BodyStyles,
   FixedHeadingStyles,
