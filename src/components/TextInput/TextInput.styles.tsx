@@ -2,7 +2,7 @@
 import { css } from "@emotion/react";
 import { UtilityStyles, BodyStyles } from "../Typography/Typography";
 
-export const container = (width: string, disabled: boolean) => css`
+export const wrapper = (width: string, disabled: boolean) => css`
   width: ${width};
   height: 40px;
   display: flex;

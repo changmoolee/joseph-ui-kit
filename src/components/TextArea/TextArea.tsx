@@ -38,13 +38,13 @@ const TextArea = ({
     onChange({ value: value });
   };
   return (
-    <>
+    <div>
       {hideLabel ? null : (
         <label htmlFor="textarea">
           <div css={style.label(disabled)}>{label}</div>
         </label>
       )}
-      <div css={style.container(width, disabled)}>
+      <div css={style.wrapper(width, disabled)}>
         <textarea
           id="textarea"
           css={style.textarea}
@@ -58,7 +58,7 @@ const TextArea = ({
         />
       </div>
       {hideWarn ? null : <div css={style.helperText(disabled)}>{warn}</div>}
-    </>
+    </div>
   );
 };
 

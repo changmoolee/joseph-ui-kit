@@ -39,13 +39,13 @@ const TextInput = ({
   };
 
   return (
-    <>
+    <div>
       {hideLabel ? null : (
         <label htmlFor="textinput">
           <div css={style.label(disabled)}>{label}</div>
         </label>
       )}
-      <div css={style.container(width, disabled)}>
+      <div css={style.wrapper(width, disabled)}>
         <input
           id="textinput"
           css={style.input}
@@ -59,7 +59,7 @@ const TextInput = ({
         />
       </div>
       {hideWarn ? null : <div css={style.helperText(disabled)}>{warn}</div>}
-    </>
+    </div>
   );
 };
 
