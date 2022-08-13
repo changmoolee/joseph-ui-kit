@@ -17,7 +17,7 @@ type TextInputProps = {
 };
 
 const TextInput = ({
-  width = "400px",
+  width = "100%",
   type = "text",
   maxLength = 10,
   disabled = false,
