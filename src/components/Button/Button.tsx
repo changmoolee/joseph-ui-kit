@@ -7,6 +7,7 @@ type ButtonProps = {
   kind?: string;
   name?: string;
   width?: string;
+  position?: string;
   padding?: string;
   bgColor?: string;
   border?: string;
@@ -30,6 +31,7 @@ const Button = ({
   kind = "default",
   name = "Default",
   width = "auto",
+  position = "left",
   padding = "3px 60px 3px 12px",
   bgColor = "#0e62fe",
   border = "none",
@@ -128,6 +130,7 @@ const Button = ({
     <button
       css={style.container(
         width,
+        position,
         padding,
         bgColor,
         hover,

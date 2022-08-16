@@ -4,6 +4,7 @@ import { BodyStyles } from "../Typography/Typography";
 
 export const container = (
   width?: string,
+  position?: string,
   padding?: string,
   bgColor?: string,
   hover?: { bgColor?: string; color?: string },
@@ -31,6 +32,11 @@ export const container = (
     ? "80px"
     : "32px"};
   display: flex;
+  justify-content: ${position === "right"
+    ? "flex-end"
+    : position === "center"
+    ? "center"
+    : "flex-start"};
   align-items: center;
   width: ${width};
   padding: ${padding};
