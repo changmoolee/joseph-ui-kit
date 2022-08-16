@@ -5,6 +5,7 @@ import React, { useState } from "react";
 
 type TextAreaProps = {
   width?: string;
+  defaultValue: string;
   rows?: number;
   maxLength?: number;
   disabled?: boolean;
@@ -18,6 +19,7 @@ type TextAreaProps = {
 
 const TextArea = ({
   width = "100%",
+  defaultValue = "",
   rows = 5,
   maxLength = 1000,
   disabled = false,
@@ -28,7 +30,7 @@ const TextArea = ({
   hideWarn = false,
   onChange = () => {},
 }: TextAreaProps) => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(defaultValue);
 
   const updateValue = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     const {

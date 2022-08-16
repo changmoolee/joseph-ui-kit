@@ -6,6 +6,7 @@ import React, { useState } from "react";
 type TextInputProps = {
   width?: string;
   type?: string;
+  defaultValue: string;
   maxLength?: number;
   disabled?: boolean;
   placeholder?: string;
@@ -19,6 +20,7 @@ type TextInputProps = {
 const TextInput = ({
   width = "100%",
   type = "text",
+  defaultValue = "",
   maxLength = 10,
   disabled = false,
   placeholder = "placeholder",
@@ -28,7 +30,7 @@ const TextInput = ({
   hideWarn = false,
   onChange = () => {},
 }: TextInputProps) => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(defaultValue);
 
   const updateValue = (event: React.ChangeEvent<HTMLInputElement>) => {
     const {
