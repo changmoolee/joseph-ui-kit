@@ -6,7 +6,7 @@ import React, { useState } from "react";
 type TextInputProps = {
   width?: string;
   type?: string;
-  defaultValue: string;
+  defaultValue?: string;
   maxLength?: number;
   disabled?: boolean;
   placeholder?: string;
@@ -41,13 +41,13 @@ const TextInput = ({
   };
 
   return (
-    <div>
+    <div css={style.container(width)}>
       {hideLabel ? null : (
         <label htmlFor="textinput">
           <div css={style.label(disabled)}>{label}</div>
         </label>
       )}
-      <div css={style.wrapper(width, disabled)}>
+      <div css={style.wrapper(disabled)}>
         <input
           id="textinput"
           css={style.input}

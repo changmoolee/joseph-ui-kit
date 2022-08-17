@@ -5,7 +5,7 @@ import React, { useState } from "react";
 
 type TextAreaProps = {
   width?: string;
-  defaultValue: string;
+  defaultValue?: string;
   rows?: number;
   maxLength?: number;
   disabled?: boolean;
@@ -40,13 +40,13 @@ const TextArea = ({
     onChange({ value: value });
   };
   return (
-    <div>
+    <div css={style.container(width)}>
       {hideLabel ? null : (
         <label htmlFor="textarea">
           <div css={style.label(disabled)}>{label}</div>
         </label>
       )}
-      <div css={style.wrapper(width, disabled)}>
+      <div css={style.wrapper(disabled)}>
         <textarea
           id="textarea"
           css={style.textarea}

@@ -2,8 +2,12 @@
 import { css } from "@emotion/react";
 import { UtilityStyles, BodyStyles } from "../Typography/Typography";
 
-export const wrapper = (width: string, disabled: boolean) => css`
+export const container = (width: string) => css`
   width: ${width};
+`;
+
+export const wrapper = (disabled: boolean) => css`
+  width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
