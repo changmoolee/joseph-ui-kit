@@ -35,6 +35,7 @@ export const textarea = css`
   border: none;
   outline: none;
   box-sizing: border-box;
+  resize: none;
   cursor: inherit;
   ::placeholder {
     opacity: 0.5;
