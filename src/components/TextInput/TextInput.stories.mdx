@@ -5,6 +5,11 @@ import TextInput from "./TextInput";
   title="Components/TextInput"
   component={TextInput}
   argTypes={{
+    id: {
+      description: "Handling the id of the input tag.",
+      type: { required: false },
+      defaultValue: "textinput",
+    },
     width: {
       description:
         "Handling the width of the TextInput. ('px' and '%' units are ok.)",

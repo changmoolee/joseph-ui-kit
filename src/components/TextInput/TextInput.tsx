@@ -4,6 +4,7 @@ import * as style from "./TextInput.styles";
 import React, { useState } from "react";
 
 type TextInputProps = {
+  id?: string;
   width?: string;
   type?: string;
   defaultValue?: string;
@@ -18,6 +19,7 @@ type TextInputProps = {
 };
 
 const TextInput = ({
+  id = "textinput",
   width = "100%",
   type = "text",
   defaultValue = "",
@@ -43,13 +45,13 @@ const TextInput = ({
   return (
     <div css={style.container(width)}>
       {hideLabel ? null : (
-        <label htmlFor="textinput">
+        <label htmlFor={id}>
           <div css={style.label(disabled)}>{label}</div>
         </label>
       )}
       <div css={style.wrapper(disabled)}>
         <input
-          id="textinput"
+          id={id}
           css={style.input}
           type={type}
           maxLength={maxLength}

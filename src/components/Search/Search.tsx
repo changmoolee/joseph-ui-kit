@@ -6,6 +6,7 @@ import Close from "../../assets/icon/Close";
 import Magnifier from "../../assets/icon/Magnifier";
 
 type SearchProps = {
+  id?: string;
   width?: string;
   disabled?: boolean;
   autoComplete?: string;
@@ -15,6 +16,7 @@ type SearchProps = {
 };
 
 const Search = ({
+  id = "search",
   width = "100%",
   disabled = false,
   autoComplete = "off",
@@ -34,12 +36,12 @@ const Search = ({
   };
 
   return (
-    <label htmlFor="search" css={style.container(width, disabled)}>
+    <label htmlFor={id} css={style.container(width, disabled)}>
       <span css={style.searchIcon}>
         <Magnifier />
       </span>
       <input
-        id="search"
+        id={id}
         css={style.input}
         disabled={disabled}
         autoComplete={autoComplete}

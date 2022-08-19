@@ -5,6 +5,11 @@ import TextArea from "./TextArea";
   title="Components/TextArea"
   component={TextArea}
   argTypes={{
+    id: {
+      description: "Handling the id of the input tag.",
+      type: { required: false },
+      defaultValue: "textarea",
+    },
     width: {
       description:
         "Handling the width of the TextArea. ('px' and '%' units are ok.)",

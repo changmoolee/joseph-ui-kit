@@ -5,6 +5,11 @@ import Search from "./Search";
   title="Components/Search"
   component={Search}
   argTypes={{
+    id: {
+      description: "Handling the id of the input tag.",
+      type: { required: false },
+      defaultValue: "search",
+    },
     width: {
       description:
         "Handling the width of the Search. ('px' and '%' units are ok.)",

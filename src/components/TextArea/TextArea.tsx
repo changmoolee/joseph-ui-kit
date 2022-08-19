@@ -4,6 +4,7 @@ import * as style from "./TextArea.styles";
 import React, { useState } from "react";
 
 type TextAreaProps = {
+  id?: string;
   width?: string;
   defaultValue?: string;
   rows?: number;
@@ -18,6 +19,7 @@ type TextAreaProps = {
 };
 
 const TextArea = ({
+  id = "textarea",
   width = "100%",
   defaultValue = "",
   rows = 5,
@@ -42,13 +44,13 @@ const TextArea = ({
   return (
     <div css={style.container(width)}>
       {hideLabel ? null : (
-        <label htmlFor="textarea">
+        <label htmlFor={id}>
           <div css={style.label(disabled)}>{label}</div>
         </label>
       )}
       <div css={style.wrapper(disabled)}>
         <textarea
-          id="textarea"
+          id={id}
           css={style.textarea}
           rows={rows}
           maxLength={maxLength}
