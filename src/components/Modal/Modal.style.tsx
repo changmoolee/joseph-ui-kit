@@ -26,7 +26,6 @@ export const box = (width: string, height: string, zIndex: number) => css`
   transform: translate(-50%, -50%);
   min-width: 150px;
   width: ${width};
-  min-height: 150px;
   height: ${height};
   display: flex;
   flex-direction: column;
@@ -94,8 +93,6 @@ export const description = css`
 `;
 
 export const buttons = css`
-  position: absolute;
-  bottom: 0;
   width: 100%;
   display: flex;
   justify-content: flex-end;

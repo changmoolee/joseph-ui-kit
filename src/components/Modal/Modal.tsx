@@ -28,7 +28,7 @@ const Modal = ({
   open = true,
   closeModal = () => {},
   width = "500px",
-  height = "300px",
+  height = "auto",
   label = "Account resources",
   title = "title",
   children = <></>,
