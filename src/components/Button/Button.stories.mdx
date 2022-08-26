@@ -5,6 +5,20 @@ import Button from "./Button";
   title="Components/Button"
   component={Button}
   argTypes={{
+    kind: {
+      name: "kind",
+      type: { name: "select", required: false },
+      description: "Handliing the kind of the Button.",
+      defaultValue: "default",
+      options: ["primary", "secondary", "tertiary", "ghost", "danger"],
+    },
+    type: {
+      name: "type",
+      type: { name: "select", required: false },
+      description: "Handliing the type of the button tag.",
+      defaultValue: "button",
+      options: ["button", "reset", "submit"],
+    },
     name: {
       name: "name",
       type: { name: "string", required: false },
@@ -19,9 +33,10 @@ import Button from "./Button";
     },
     position: {
       name: "position",
-      type: { name: "string", required: false },
+      type: { name: "select", required: false },
       description: "Handliing the position of the text in the Button.",
       defaultValue: "left",
+      options: ["left", "center", "right"],
     },
     padding: {
       name: "padding",

@@ -43,7 +43,6 @@ export const container = (
   border: ${border || "none"};
   background-color: ${bgColor || "transparent"};
   color: ${color};
-  box-sizing: border-box;
   white-space: nowrap;
   cursor: pointer;
 

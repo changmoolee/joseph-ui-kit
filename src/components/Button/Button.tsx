@@ -5,6 +5,7 @@ import * as style from "./Button.style";
 
 type ButtonProps = {
   kind?: string;
+  type?: "button" | "submit" | "reset" | undefined;
   name?: string;
   width?: string;
   position?: string;
@@ -12,7 +13,7 @@ type ButtonProps = {
   bgColor?: string;
   border?: string;
   color?: string;
-  size?: string;
+  size?: "small" | "middle" | "large" | "xlarge" | "2xlarge";
   tabIndex?: number;
   hover?: { bgColor?: string; color?: string };
   active?: { bgColor?: string; color?: string };
@@ -29,6 +30,7 @@ type ButtonProps = {
 
 const Button = ({
   kind = "default",
+  type = "button",
   name = "Default",
   width = "auto",
   position = "left",
@@ -140,6 +142,7 @@ const Button = ({
         color,
         size
       )}
+      type={type}
       tabIndex={tabIndex}
       onClick={onClick}
       onMouseEnter={onMouseEnter}
