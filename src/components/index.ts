@@ -10,6 +10,8 @@ import Toggle from "./Toggle/Toggle";
 import { TabList, Tab, TabPanels, TabPanel } from "./Tabs/Tabs";
 import TextInput from "./TextInput/TextInput";
 import TextArea from "./TextArea/TextArea";
+import FileUploader from "./FileUploader/FileUploader";
+import FileUploaderDropContainer from "./FileUploaderDropContainer/FileUploaderDropContainer";
 import {
   UtilityStyles,
   BodyStyles,
@@ -32,6 +34,8 @@ export {
   Toggle,
   TextInput,
   TextArea,
+  FileUploader,
+  FileUploaderDropContainer,
   UtilityStyles,
   BodyStyles,
   FixedHeadingStyles,

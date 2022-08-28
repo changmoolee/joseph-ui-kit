@@ -6,9 +6,9 @@ import Close from "../../assets/icon/Close";
 import Button from "../Button/Button";
 
 interface FileUploaderProps {
-  buttonKind: string;
-  buttonName: string;
-  onChange: (
+  buttonKind?: string;
+  buttonName?: string;
+  onChange?: (
     event: React.ChangeEvent<HTMLInputElement>,
     data: { result: string }
   ) => void;

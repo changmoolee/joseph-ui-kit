@@ -2,9 +2,7 @@
 import { css } from "@emotion/react";
 import { BodyStyles } from "../Typography/Typography";
 
-export const uploadImageContainer = css`
-  width: auto;
-`;
+export const uploadImageContainer = css``;
 
 export const uploadedFileContainer = css`
   ${BodyStyles.bodyCompact01}
