@@ -1,0 +1,51 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs";
+import FileUploader from "./FileUploader";
+
+<Meta
+  title="Components/FileUploader"
+  component={FileUploader}
+  argTypes={{
+    buttonKind: {
+      name: "buttonKind",
+      type: { name: "select", required: false },
+      description: "Handliing the kind of the Button in FileUploader ui.",
+      defaultValue: "default",
+      options: ["primary", "secondary", "tertiary", "ghost", "danger"],
+    },
+    buttonName: {
+      name: "buttonName",
+      type: { name: "string", required: false },
+      description: "Specify the name of the Button in FileUploader ui.",
+      defaultValue: "Add file",
+    },
+    onChange: {
+      name: "onChange",
+      type: { required: false },
+      description:
+        "onChange is a utility for this controlled component to communicate to a consuming component what kind of internal state changes are occurring.",
+      table: {
+        type: {
+          summary: "func",
+        },
+      },
+    },
+  }}
+/>
+
+# FileUploader
+
+## Overview
+
+File uploaders allow users to a file to upload to a specific location.
+
+export const Template = (args) => <FileUploader {...args} />;
+
+<Canvas>
+  <Story name="Default" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Component Api
+
+<ArgsTable story="Default" />
