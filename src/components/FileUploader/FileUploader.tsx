@@ -57,17 +57,15 @@ const FileUploader = ({
   return (
     <>
       <div css={style.uploadImageContainer}>
-        <>
-          <Button kind={buttonKind} name={buttonName} onClick={onClickInput} />
-          {attachment ? (
-            <div css={style.uploadedFileContainer}>
-              <span css={style.filename}>{filename}</span>
-              <button css={style.closeIcon} onClick={clearUploadedFile}>
-                <Close width={16} height={16} />
-              </button>
-            </div>
-          ) : null}
-        </>
+        <Button kind={buttonKind} name={buttonName} onClick={onClickInput} />
+        {attachment ? (
+          <div css={style.uploadedFileContainer}>
+            <span css={style.filename}>{filename}</span>
+            <button css={style.closeIcon} onClick={clearUploadedFile}>
+              <Close width={16} height={16} />
+            </button>
+          </div>
+        ) : null}
       </div>
       <input
         style={{ display: "none" }}

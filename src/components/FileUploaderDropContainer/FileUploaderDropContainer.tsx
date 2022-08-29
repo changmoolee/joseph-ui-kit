@@ -2,13 +2,10 @@
 import { css } from "@emotion/react";
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import Button from "../Button/Button";
-import {
-  uploadImageContainer,
-  uploadImage,
-  uploadImageButton,
-} from "./FileUploaderDropContainer.styles";
+import * as style from "./FileUploaderDropContainer.styles";
 
 interface FileUploaderDropContainerProps {
+  width?: string;
   labelText?: string;
   onChange?: (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -17,6 +14,7 @@ interface FileUploaderDropContainerProps {
 }
 
 const FileUploaderDropContainer = ({
+  width = "320px",
   labelText = "Drag and drop files here or click to upload",
   onChange = () => {},
 }: FileUploaderDropContainerProps) => {
@@ -101,14 +99,18 @@ const FileUploaderDropContainer = ({
 
   return (
     <>
-      <div css={uploadImageContainer}>
+      <div css={style.uploadImageContainer(width)}>
         {attachment ? (
           <>
-            <img css={uploadImage} src={attachment} alt="uploadedImage" />
-            <Button name="이미지 삭제" onClick={clearUploadedFile} />
+            <img css={style.uploadImage} src={attachment} alt="uploadedImage" />
+            <Button
+              name="이미지 삭제"
+              width="min-content"
+              onClick={clearUploadedFile}
+            />
           </>
         ) : (
-          <label htmlFor="upload" css={uploadImageButton} ref={divRef}>
+          <label htmlFor="upload" css={style.uploadImageButton} ref={divRef}>
             <span>{labelText}</span>
           </label>
         )}

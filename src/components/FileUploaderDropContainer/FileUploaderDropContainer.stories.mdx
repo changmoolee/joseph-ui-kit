@@ -5,6 +5,26 @@ import FileUploaderDropContainer from "./FileUploaderDropContainer";
   title="Components/FileUploaderDropContainer"
   component={FileUploaderDropContainer}
   argTypes={{
+    width: {
+      name: "width",
+      type: { name: "string", required: false },
+      description:
+        "You can handle the width property of FileUploaderDropContainer.",
+      table: {
+        type: { summary: "string" },
+      },
+      defaultValue: "320px",
+    },
+    height: {
+      name: "height",
+      type: { name: "string", required: false },
+      description:
+        "You can handle the height property of FileUploaderDropContainer.",
+      table: {
+        type: { summary: "string" },
+      },
+      defaultValue: "96px",
+    },
     labelText: {
       name: "labelText",
       type: { name: "string", required: false },
