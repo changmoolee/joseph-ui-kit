@@ -6,7 +6,7 @@ import Close from "../../assets/icon/Close";
 import Button from "../Button/Button";
 
 interface FileUploaderProps {
-  buttonKind?: string;
+  buttonKind?: "default" | "secondary" | "tertiary" | "ghost" | "danger";
   buttonName?: string;
   onChange?: (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -15,7 +15,7 @@ interface FileUploaderProps {
 }
 
 const FileUploader = ({
-  buttonKind = "primary",
+  buttonKind = "default",
   buttonName = "Add file",
   onChange = () => {},
 }: FileUploaderProps) => {

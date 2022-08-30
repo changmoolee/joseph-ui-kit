@@ -37,7 +37,7 @@ const Toggle = ({
     toggleSize = 48;
   } else if (size === "large") {
     toggleSize = 56;
-  } else {
+  } else if (size === "mini") {
     toggleSize = 32;
   }
 

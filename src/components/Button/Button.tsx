@@ -4,11 +4,11 @@ import React from "react";
 import * as style from "./Button.style";
 
 type ButtonProps = {
-  kind?: string;
-  type?: "button" | "submit" | "reset" | undefined;
+  kind?: "default" | "secondary" | "tertiary" | "ghost" | "danger";
+  type?: "button" | "submit" | "reset";
   name?: string;
   width?: string;
-  position?: string;
+  position?: "left" | "center" | "right";
   padding?: string;
   bgColor?: string;
   border?: string;

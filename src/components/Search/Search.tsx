@@ -9,7 +9,7 @@ type SearchProps = {
   id?: string;
   width?: string;
   disabled?: boolean;
-  autoComplete?: string;
+  autoComplete?: "on" | "off";
   placeholder?: string;
   onKeyDown?: React.KeyboardEventHandler<HTMLInputElement> | undefined;
   onChange?: (data: { value: string }) => void;
