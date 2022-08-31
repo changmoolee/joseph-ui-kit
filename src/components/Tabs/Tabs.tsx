@@ -23,9 +23,9 @@ const Tabs = ({ width = "600px", height = "50px", children }: TabsProps) => {
     <div>
       <div css={style.box(width, height)}>
         {TabListArr &&
-          TabListArr.map((tab: any, index: number) => (
+          TabListArr.map((tab: JSX.Element, index: number) => (
             <button
-              key={tab + index}
+              key={index}
               css={style.item(clicked, index, tab.props.disabled)}
               onClick={() => {
                 if (!tab.props.disabled) {
@@ -36,7 +36,7 @@ const Tabs = ({ width = "600px", height = "50px", children }: TabsProps) => {
                 }
               }}
             >
-              <span>{tab.props.children}</span>
+              <span>{tab}</span>
             </button>
           ))}
       </div>
