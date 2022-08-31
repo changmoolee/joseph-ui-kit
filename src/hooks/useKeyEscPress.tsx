@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 
-export const useKeyEscPress = (closeModal: any) => {
+type useKeyEscPressProps = () => void;
+
+export const useKeyEscPress = (closeModal: useKeyEscPressProps) => {
   useEffect(() => {
-    const EscPressEvent = (event: any) => {
+    const EscPressEvent = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         closeModal();
       }

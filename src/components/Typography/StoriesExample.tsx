@@ -17,7 +17,7 @@ export const UtilityStylesStory = ({ type }: StylesStoryProps) => {
   );
 };
 
-export const BodyStylesStory = ({ type }: any) => {
+export const BodyStylesStory = ({ type }: StylesStoryProps) => {
   return (
     <div
       css={css`
@@ -29,7 +29,7 @@ export const BodyStylesStory = ({ type }: any) => {
   );
 };
 
-export const FixedHeadingStylesStory = ({ type }: any) => {
+export const FixedHeadingStylesStory = ({ type }: StylesStoryProps) => {
   return (
     <div
       css={css`
