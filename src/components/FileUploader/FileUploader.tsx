@@ -8,6 +8,7 @@ import Button from "../Button/Button";
 interface FileUploaderProps {
   buttonKind?: "default" | "secondary" | "tertiary" | "ghost" | "danger";
   buttonName?: string;
+  fileSize?: number;
   onChange?: (
     event: React.ChangeEvent<HTMLInputElement>,
     data: { result: string }
@@ -17,6 +18,7 @@ interface FileUploaderProps {
 const FileUploader = ({
   buttonKind = "default",
   buttonName = "Add file",
+  fileSize = 0.5,
   onChange = () => {},
 }: FileUploaderProps) => {
   const [attachment, setAttachment] = useState("");
@@ -27,24 +29,31 @@ const FileUploader = ({
     inputRef.current?.click();
   };
 
-  const onFileChange = (event: any) => {
+  const onFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const {
       target: { files },
     } = event;
 
+    if (files === null) throw Error("적절한 파일이 입력되지 않았습니다.");
+
     const theFile = files[0];
+
+    if (theFile.size > 1024 * 1024 * fileSize) {
+      throw Error(
+        `업로드할 수 있는 이미지 파일은 ${fileSize}MB 이하 사이즈만 가능합니다.`
+      );
+    }
 
     setFilename(theFile.name);
 
     const reader = new FileReader();
 
-    reader.onloadend = (finishedEvent: any) => {
-      const {
-        currentTarget: { result },
-      } = finishedEvent;
-
-      setAttachment(result);
-      onChange(event, { result: result });
+    reader.onloadend = (finishedEvent: ProgressEvent<FileReader>) => {
+      const result = (finishedEvent.currentTarget as FileReader).result;
+      if (typeof result === "string") {
+        setAttachment(result);
+        onChange(event, { result: result });
+      }
     };
     reader.readAsDataURL(theFile);
   };

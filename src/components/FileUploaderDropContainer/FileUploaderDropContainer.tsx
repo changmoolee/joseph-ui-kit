@@ -7,8 +7,9 @@ import * as style from "./FileUploaderDropContainer.styles";
 interface FileUploaderDropContainerProps {
   width?: string;
   labelText?: string;
+  fileSize?: number;
   onChange?: (
-    event: React.ChangeEvent<HTMLInputElement>,
+    event: React.ChangeEvent<HTMLInputElement> | DragEvent,
     data: { result: string }
   ) => void;
 }
@@ -16,6 +17,7 @@ interface FileUploaderDropContainerProps {
 const FileUploaderDropContainer = ({
   width = "320px",
   labelText = "Drag and drop files here or click to upload",
+  fileSize = 0.5,
   onChange = () => {},
 }: FileUploaderDropContainerProps) => {
   const divRef = useRef<HTMLLabelElement | null>(null);
@@ -25,44 +27,53 @@ const FileUploaderDropContainer = ({
     setAttachment("");
   };
 
-  const onFileChange = (event: any) => {
+  const onFileChange = (
+    event: React.ChangeEvent<HTMLInputElement> | DragEvent
+  ) => {
     let files;
-    if (event.type === "drop") {
+    if (event instanceof DragEvent && event.dataTransfer !== null) {
       files = event.dataTransfer.files;
     } else {
-      files = event.target.files;
+      files = (event.target as HTMLInputElement).files;
     }
+
+    if (files === null) throw Error("적절한 파일이 입력되지 않았습니다.");
 
     const theFile = files[0];
 
+    if (theFile.size > 1024 * 1024 * fileSize) {
+      throw Error(
+        `업로드할 수 있는 이미지 파일은 ${fileSize}MB 이하 사이즈만 가능합니다.`
+      );
+    }
+
     const reader = new FileReader();
 
-    reader.onloadend = (finishedEvent: any) => {
-      const {
-        currentTarget: { result },
-      } = finishedEvent;
-
-      setAttachment(result);
-      onChange(event, { result: result });
+    reader.onloadend = (finishedEvent: ProgressEvent<FileReader>) => {
+      const result = (finishedEvent.currentTarget as FileReader).result;
+      if (typeof result === "string") {
+        setAttachment(result);
+        onChange(event, { result: result });
+      }
     };
     reader.readAsDataURL(theFile);
   };
 
   const initDragEvents = (): void => {
     if (divRef.current !== null) {
-      divRef.current.addEventListener("dragenter", (e) => {
+      divRef.current.addEventListener("dragenter", (e: DragEvent) => {
         e.preventDefault();
         e.stopPropagation();
       });
-      divRef.current.addEventListener("dragover", (e) => {
+      divRef.current.addEventListener("dragover", (e: DragEvent) => {
         e.preventDefault();
         e.stopPropagation();
       });
-      divRef.current.addEventListener("dragleave", (e) => {
+      divRef.current.addEventListener("dragleave", (e: DragEvent) => {
         e.preventDefault();
         e.stopPropagation();
       });
-      divRef.current.addEventListener("drop", (e) => {
+      divRef.current.addEventListener("drop", (e: DragEvent) => {
         e.preventDefault();
         e.stopPropagation();
         onFileChange(e);
@@ -72,19 +83,19 @@ const FileUploaderDropContainer = ({
 
   const exitDragEvents = (): void => {
     if (divRef.current !== null) {
-      divRef.current.removeEventListener("dragenter", (e) => {
+      divRef.current.removeEventListener("dragenter", (e: DragEvent) => {
         e.preventDefault();
         e.stopPropagation();
       });
-      divRef.current.removeEventListener("dragover", (e) => {
+      divRef.current.removeEventListener("dragover", (e: DragEvent) => {
         e.preventDefault();
         e.stopPropagation();
       });
-      divRef.current.removeEventListener("dragleave", (e) => {
+      divRef.current.removeEventListener("dragleave", (e: DragEvent) => {
         e.preventDefault();
         e.stopPropagation();
       });
-      divRef.current.removeEventListener("drop", (e) => {
+      divRef.current.removeEventListener("drop", (e: DragEvent) => {
         e.preventDefault();
         e.stopPropagation();
         onFileChange(e);

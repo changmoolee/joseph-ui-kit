@@ -23,6 +23,16 @@ import FileUploaderDropContainer from "./FileUploaderDropContainer";
         type: { summary: "string" },
       },
     },
+    fileSize: {
+      name: "fileSize",
+      type: { name: "number", required: false },
+      description:
+        "You can handle the size of the image file you want to upload. (The standard unit is 'megabytes')",
+      table: {
+        type: { summary: "number" },
+      },
+      defaultValue: 0.5,
+    },
     onChange: {
       name: "onChange",
       type: { required: false },
