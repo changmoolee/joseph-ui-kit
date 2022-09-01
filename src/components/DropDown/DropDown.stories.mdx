@@ -8,7 +8,8 @@ import DropDown from "./DropDown";
     width: {
       name: "width",
       type: { name: "string", required: false },
-      description: "You can handle the width property of DropDown.",
+      description:
+        "DropDown의 너비를 설정합니다.('px' 및 '%' 단위가 가능합니다.)",
       table: {
         type: { summary: "string" },
       },
@@ -16,7 +17,7 @@ import DropDown from "./DropDown";
     items: {
       name: "items",
       description:
-        "We try to stay as generic as possible here to allow individuals to pass in a collection of whatever kind of data structure they prefer.",
+        "DropDown의 내부 아이템리스트를 구성할 데이터 배열을 설정합니다. 배열 내 데이터 구조는 `{id: string;, value: string;}` 형태로 갖춰야 합니다.",
       type: { name: "array", required: false },
       table: {
         type: {
@@ -30,31 +31,33 @@ import DropDown from "./DropDown";
     label: {
       name: "label",
       type: { name: "string", required: false },
-      description: "Specify the label of the DropDown.",
+      description: "DropDown의 상단에 위치한 label 텍스트를 설정합니다.",
       defaultValue: "DropDown label",
     },
     hideLabel: {
       name: "hideLabel",
       type: { name: "boolean", required: false },
-      description: "Controlling the displaying label.",
+      description:
+        "DropDown의 상단에 위치한 label 텍스트 표시 여부를 설정합니다.",
       defaultValue: false,
     },
     warn: {
       name: "warn",
       type: { name: "string", required: false },
-      description: "Specify the warning of the DropDown.",
+      description: "DropDown의 하단에 위치한 warn 경고문을 설정합니다.",
       defaultValue: "This is some helper text",
     },
     hideWarn: {
       name: "hideWarn",
       type: { name: "boolean", required: false },
-      description: "Controlling the displaying warning.",
+      description:
+        "DropDown의 하단에 위치한 warn 경고문 표시 여부를 설정합니다.",
       defaultValue: false,
     },
     size: {
       name: "size",
       type: { name: "select", required: false },
-      description: "Specify the size of the DropDown.",
+      description: "DropDowne의 높이 사이즈를 설정합니다.",
       table: {
         type: { summary: `small middle large` },
       },
@@ -64,14 +67,14 @@ import DropDown from "./DropDown";
     zIndex: {
       name: "zIndex",
       type: { name: "number", required: false },
-      description: "Handling the z-index property of the DropDown.",
+      description: "DropDowne의 z-index 값을 설정합니다.",
       defaultValue: 300,
     },
     onChange: {
       name: "onChange",
       type: { required: false },
       description:
-        "onChange is a utility for this controlled component to communicate to a consuming component what kind of internal state changes are occurring.",
+        "onChange 매개변수를 사용함으로써 DropDown의 선택된 내부 값을 가져올 수 있습니다.",
       table: {
         type: {
           summary: "func",
@@ -85,9 +88,16 @@ import DropDown from "./DropDown";
 
 ## Overview
 
-Dropdowns present a list of options from which a user can select one option, or several. A selected option can represent a value in a form, or can be used as an action to filter or sort existing content.
+DropDown은 사용자가 하나 또는 여러 옵션을 선택할 수 있는 옵션 목록을 제공합니다. <br/><br/> 선택한 옵션은 양식의 값을 나타내거나, 기존 콘텐츠를 필터링하거나, 정렬하는 작업으로 사용할 수 있습니다.
 
 export const Template = (args) => <DropDown {...args} />;
+
+## How to use
+
+- 'items' props에는 아래 예시의 코드와 같이 `[{id: "", value: ""}]` 구조를 가진 배열을 넣어줘야 합니다.<br/><br/>
+- 'label, warn, width' 등 props로 자유로운 커스터마이징이 가능합니다.<br/><br/>
+- 'onChange' props를 통해서 DropDown의 선택된 값을 가져올 수 있습니다.
+  `ex) onChange={(data) => console.log(data)}`
 
 <Canvas>
   <Story

@@ -1,10 +1,13 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { BodyStyles } from "../Typography/Typography";
+import { UtilityStyles, BodyStyles } from "../Typography/Typography";
 
-export const container = (width: string, disabled: boolean) => css`
+export const container = (width: string) => css`
   width: ${width};
-  height: 40px;
+`;
+
+export const wrapper = (disabled: boolean) => css`
+  width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -22,35 +25,33 @@ export const container = (width: string, disabled: boolean) => css`
     outline-offset: -2px;
   }
 `;
-export const searchIcon = css`
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-export const clearIcon = (disabled: boolean) => css`
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: ${disabled ? "not-allowed" : "pointer"};
-  :hover {
-    background-color: ${disabled ? "none" : "#e8e8e8"};
-  }
-`;
 
-export const input = css`
+export const textarea = css`
   ${BodyStyles.bodyCompact01}
-  flex-grow: 1;
+  width: 100%;
   height: 100%;
-  padding: 0;
+  padding: 16px;
   background-color: transparent;
   border: none;
   outline: none;
+  box-sizing: border-box;
+  resize: none;
   cursor: inherit;
   ::placeholder {
     opacity: 0.5;
   }
+`;
+
+export const label = (disabled: boolean) => css`
+  ${UtilityStyles.label01}
+  margin: 5px 0px;
+  color: #525252;
+  opacity: ${disabled ? 0.3 : 1};
+`;
+
+export const helperText = (disabled: boolean) => css`
+  ${UtilityStyles.helperText01}
+  margin: 5px 0px;
+  color: #525252;
+  opacity: ${disabled ? 0.3 : 1};
 `;

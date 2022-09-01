@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import { BodyStyles, UtilityStyles } from "../Typography/Typography";
 
 export const labelText = css`
-  ${UtilityStyles.external.label01}
+  ${UtilityStyles.label01}
   margin-bottom: 16px;
   font-size: 12px;
   color: #525252;
@@ -49,6 +49,6 @@ export const checkBox = css`
 `;
 
 export const toggleText = css`
-  ${BodyStyles.external.bodyCompact01}
+  ${BodyStyles.bodyCompact01}
   margin-left: 10px;
 `;

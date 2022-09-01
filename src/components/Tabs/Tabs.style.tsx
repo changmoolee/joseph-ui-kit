@@ -28,8 +28,8 @@ export const item = (clicked: number, index: number, disabled: boolean) => {
     cursor: ${disabled ? "not-allowed" : "pointer"};
     span {
       ${clicked === index
-        ? `${FixedHeadingStyles.external.headingCompact01}`
-        : `${BodyStyles.external.bodyCompact01}`};
+        ? `${FixedHeadingStyles.headingCompact01}`
+        : `${BodyStyles.bodyCompact01}`};
       color: ${disabled
         ? "#8d8d8d"
         : clicked === index

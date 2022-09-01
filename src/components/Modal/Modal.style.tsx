@@ -26,7 +26,6 @@ export const box = (width: string, height: string, zIndex: number) => css`
   transform: translate(-50%, -50%);
   min-width: 150px;
   width: ${width};
-  min-height: 150px;
   height: ${height};
   display: flex;
   flex-direction: column;
@@ -52,7 +51,7 @@ export const header = css`
 `;
 
 export const label = css`
-  ${UtilityStyles.external.label01}
+  ${UtilityStyles.label01}
   margin-bottom: 4px;
   color: #525252;
   white-space: nowrap;
@@ -79,7 +78,7 @@ export const closeBox = css`
 `;
 
 export const title = css`
-  ${FixedHeadingStyles.external.heading03}
+  ${FixedHeadingStyles.heading03}
   display: flex;
   flex-direction: column;
   font-size: 20px;
@@ -88,14 +87,12 @@ export const title = css`
 `;
 
 export const description = css`
-  ${BodyStyles.external.body01}
+  ${BodyStyles.body01}
   width: 100%;
   height: 100%;
 `;
 
 export const buttons = css`
-  position: absolute;
-  bottom: 0;
   width: 100%;
   display: flex;
   justify-content: flex-end;

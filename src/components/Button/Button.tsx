@@ -4,13 +4,16 @@ import React from "react";
 import * as style from "./Button.style";
 
 type ButtonProps = {
-  kind?: string;
+  kind?: "default" | "secondary" | "tertiary" | "ghost" | "danger";
+  type?: "button" | "submit" | "reset";
   name?: string;
+  width?: string;
+  position?: "left" | "center" | "right";
   padding?: string;
   bgColor?: string;
   border?: string;
   color?: string;
-  size?: string;
+  size?: "small" | "middle" | "large" | "xlarge" | "2xlarge";
   tabIndex?: number;
   hover?: { bgColor?: string; color?: string };
   active?: { bgColor?: string; color?: string };
@@ -20,14 +23,17 @@ type ButtonProps = {
     outline?: string;
     outlineOffset?: string;
   };
-  onClick?: () => void;
-  onMouseEnter?: () => void;
-  onMouseLeave?: () => void;
+  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  onMouseEnter?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  onMouseLeave?: React.MouseEventHandler<HTMLButtonElement> | undefined;
 };
 
 const Button = ({
   kind = "default",
+  type = "button",
   name = "Default",
+  width = "auto",
+  position = "left",
   padding = "3px 60px 3px 12px",
   bgColor = "#0e62fe",
   border = "none",
@@ -125,6 +131,8 @@ const Button = ({
   return (
     <button
       css={style.container(
+        width,
+        position,
         padding,
         bgColor,
         hover,
@@ -134,6 +142,7 @@ const Button = ({
         color,
         size
       )}
+      type={type}
       tabIndex={tabIndex}
       onClick={onClick}
       onMouseEnter={onMouseEnter}

@@ -8,6 +8,10 @@ import SkeletonUI from "./SkeletonUI/SkeletonUI";
 import Tabs from "./Tabs/Tabs";
 import Toggle from "./Toggle/Toggle";
 import { TabList, Tab, TabPanels, TabPanel } from "./Tabs/Tabs";
+import TextInput from "./TextInput/TextInput";
+import TextArea from "./TextArea/TextArea";
+import FileUploader from "./FileUploader/FileUploader";
+import FileUploaderDropContainer from "./FileUploaderDropContainer/FileUploaderDropContainer";
 import {
   UtilityStyles,
   BodyStyles,
@@ -28,11 +32,11 @@ export {
   TabPanels,
   TabPanel,
   Toggle,
+  TextInput,
+  TextArea,
+  FileUploader,
+  FileUploaderDropContainer,
   UtilityStyles,
   BodyStyles,
   FixedHeadingStyles,
 };
-
-//    "build": "cross-env BABEL_ENV=production babel src -d dist",
-//  "compile": "npx babel src/components --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.js,stories.mdx,__snapshots__",
-//     "module": "esnext",

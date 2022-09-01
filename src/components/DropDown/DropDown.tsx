@@ -22,7 +22,7 @@ type DropDownProps = {
   hideLabel?: boolean;
   warn?: string;
   hideWarn?: boolean;
-  size?: string;
+  size?: "small" | "middle" | "large";
   zIndex?: number;
   onChange?: (data: {
     selectedItem: { id: number | string; value: number | string };

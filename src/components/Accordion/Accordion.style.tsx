@@ -9,7 +9,7 @@ export const container = (width: string) => css`
 `;
 
 export const button = (open: boolean) => css`
-  ${BodyStyles.external.body01}
+  ${BodyStyles.body01}
   width: 100%;
   height: 40px;
   display: flex;
@@ -40,10 +40,10 @@ export const arrowIcon = (open: boolean) => css`
 `;
 
 export const content = (open: boolean) => css`
-  ${BodyStyles.external.body01}
+  ${BodyStyles.body01}
   width: 100%;
   display: ${open ? "block" : "none"};
-  padding: 8px 25% 24px 16px;
+  padding: 8px 16px 24px 16px;
   border-bottom: ${open ? "1px solid #d1d1d1" : null};
   box-sizing: border-box;
 `;

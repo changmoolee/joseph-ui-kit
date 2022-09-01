@@ -8,54 +8,67 @@ import Toggle from "./Toggle";
     size: {
       name: "size",
       type: { name: "select", required: false },
-      description: "Specify the size of the Toggle.",
+      description: "Toggle의 높이 사이즈를 설정합니다.",
       defaultValue: "middle",
-      options: ["small", "middle", "large"],
+      options: ["small", "middle", "large", "mini"],
       table: {
         defaultValue: { summary: "middle" },
         type: {
-          summary: `small middle large`,
+          summary: `small middle large mini`,
         },
       },
     },
     hideHeaderlabel: {
       name: "hideHeaderlabel",
       type: { name: "boolean", required: false },
-      description: "Specify whether the header label should be hidden, or not",
+      description:
+        "Toggle의 상단에 위치한 label 텍스트 표시 여부를 설정합니다.",
       defaultValue: false,
     },
     headerlabel: {
       name: "headerlabel",
       type: { name: "string", required: false },
-      description:
-        "Provide the text that will be read by a screen reader when visiting this control.",
+      description: "Toggle의 상단에 위치한 label 텍스트를 설정합니다.",
       defaultValue: "Toggle element label",
     },
     hideSidelabel: {
       name: "hideSidelabel",
       type: { name: "boolean", required: false },
-      description: "Specify whether the label should be hidden, or not",
+      description:
+        "Toggle의 오른쪽 위치한 label 텍스트 표시 여부를 설정합니다.",
       defaultValue: false,
     },
     labelA: {
       name: "labelA",
       type: { name: "string", required: false },
-      description: "Specify the label for the `off` position",
+      description:
+        "Toggle의 오른쪽에 위치한 label 텍스트를 설정합니다. (Toggle이 open)",
       defaultValue: "On",
     },
     labelB: {
       name: "labelB",
       type: { name: "string", required: false },
-      description: "Specify the label for the `on` position",
+      description:
+        "Toggle의 오른쪽에 위치한 label 텍스트를 설정합니다.(Toggle이 close)",
       defaultValue: "Off",
     },
     onClick: {
       name: "onClick",
       type: { required: false },
-      description:
-        "Provide an event listener that is called when the control is clicked.",
+      description: "Toggle이 클릭될 때 실행할 함수를 설정할 수 있습니다.",
       table: {
         type: { summary: "func" },
+      },
+    },
+    onChange: {
+      name: "onChange",
+      type: { required: false },
+      description:
+        "onChange 매개변수를 사용함으로써 Toggle이 토글될 때마다 변하는 boolean 값을 가져올 수 있습니다.",
+      table: {
+        type: {
+          summary: "func",
+        },
       },
     },
   }}
@@ -65,7 +78,17 @@ import Toggle from "./Toggle";
 
 ## Overview
 
+Toggle은 ON 및 OFF와 같이 상호 배타적인 두 가지 상태가 있는 UI 컨트롤입니다. <br/><br/>
+사용자는 두가지 상태에 따라 원하는 설정을 택할 수 있습니다.
+
 export const Template = (args) => <Toggle {...args} />;
+
+## How to use
+
+- 'size, headerlabel, labelA, labelB' 등 props로 자유로운 Toggle 커스터마이징이 가능합니다.<br /><br />
+- 'onClick' props를 통해서 Toggle이 클릭될 때 실행할 함수를 설정할 수 있습니다.<br /><br />
+- 'onChange' props를 통해서 Toggle의 내부 boolean(true or false) 값을 가져올 수 있습니다.<br /><br />
+  `ex) onChange={(data) => console.log(data)}`
 
 <Canvas>
   <Story name="Default" args={{}}>
@@ -76,6 +99,8 @@ export const Template = (args) => <Toggle {...args} />;
 ## Component Api
 
 <ArgsTable story="Default" />
+
+### Mini Toggle
 
 <Canvas>
   <Story name="Mini Toggle" args={{ size: "mini" }}>

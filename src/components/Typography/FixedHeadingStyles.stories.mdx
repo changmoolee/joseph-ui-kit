@@ -1,26 +1,33 @@
 import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs";
-import Typography from "./Typography";
 import { UtilityStyles, BodyStyles, FixedHeadingStyles } from "./Typography";
+import { FixedHeadingStylesStory } from "./StoriesExample";
 
 <Meta
   title="Components/Typography/FixedHeadingStyles"
-  component={Typography}
-  argTypes={{
-    style: {
-      table: {
-        disable: true,
-      },
-    },
-  }}
+  component={FixedHeadingStylesStory}
+  argTypes={{}}
 />
 
 # Typography
 
 ## Overview
 
-Our approach to the typographic system uses IBM Plex as its typeface. It has been carefully engineered with suitable scales, styles, and weights to help create clear hierarchies and organize information that guides users through IBM products or experiences.
+IBM Plex를 서체로 사용합니다.
 
-export const Template = (args) => <Typography {...args} />;
+## How to use
+
+### Typography 모듈 적용하기
+
+1. Typography 모듈을 Import 합니다. <br/>`ex) import { UtilityStyles, BodyStyles } from "../Typography/Typography";`<br/><br/>
+2. 적용하길 원하는 컴포넌트에 코드를 추가합니다. <br/>`ex) ${BodyStyles.bodyCompact01}`
+
+### sass 파일에서 Typography 적용하기
+
+1. joseph-sass 패키지를 npm을 통해 다운 받습니다.<br/>`npm install joseph-sass`<br/><br/>
+2. 적용하길 원하는 sass파일 내에 `@use "joseph-sass/type"`명령어를 작성합니다.<br/><br/>
+3. 원하는 클래스나 엘리먼트에 명령어로 적용합니다.<br/>`@include type.UtilityStyles(helperText02)`<br/><br/>
+
+export const Template = (args) => <FixedHeadingStylesStory {...args} />;
 
 ## FixedHeadingStyles
 
@@ -29,7 +36,7 @@ export const Template = (args) => <Typography {...args} />;
 <Canvas>
   <Story
     name="headingCompact01"
-    args={{ style: FixedHeadingStyles.inline.headingCompact01 }}
+    args={{ type: FixedHeadingStyles.headingCompact01 }}
   >
     {Template.bind({})}
   </Story>
@@ -40,7 +47,7 @@ export const Template = (args) => <Typography {...args} />;
 <Canvas>
   <Story
     name="headingCompact02"
-    args={{ style: FixedHeadingStyles.inline.headingCompact02 }}
+    args={{ type: FixedHeadingStyles.headingCompact02 }}
   >
     {Template.bind({})}
   </Story>
@@ -49,7 +56,7 @@ export const Template = (args) => <Typography {...args} />;
 ### heading01
 
 <Canvas>
-  <Story name="heading01" args={{ style: FixedHeadingStyles.inline.heading01 }}>
+  <Story name="heading01" args={{ type: FixedHeadingStyles.heading01 }}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -57,7 +64,7 @@ export const Template = (args) => <Typography {...args} />;
 ### heading02
 
 <Canvas>
-  <Story name="heading02" args={{ style: FixedHeadingStyles.inline.heading02 }}>
+  <Story name="heading02" args={{ type: FixedHeadingStyles.heading02 }}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -65,7 +72,7 @@ export const Template = (args) => <Typography {...args} />;
 ### heading03
 
 <Canvas>
-  <Story name="heading03" args={{ style: FixedHeadingStyles.inline.heading03 }}>
+  <Story name="heading03" args={{ type: FixedHeadingStyles.heading03 }}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -73,7 +80,7 @@ export const Template = (args) => <Typography {...args} />;
 ### heading04
 
 <Canvas>
-  <Story name="heading04" args={{ style: FixedHeadingStyles.inline.heading04 }}>
+  <Story name="heading04" args={{ type: FixedHeadingStyles.heading04 }}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -81,7 +88,7 @@ export const Template = (args) => <Typography {...args} />;
 ### heading05
 
 <Canvas>
-  <Story name="heading05" args={{ style: FixedHeadingStyles.inline.heading05 }}>
+  <Story name="heading05" args={{ type: FixedHeadingStyles.heading05 }}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -89,7 +96,7 @@ export const Template = (args) => <Typography {...args} />;
 ### heading06
 
 <Canvas>
-  <Story name="heading06" args={{ style: FixedHeadingStyles.inline.heading06 }}>
+  <Story name="heading06" args={{ type: FixedHeadingStyles.heading06 }}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -97,7 +104,7 @@ export const Template = (args) => <Typography {...args} />;
 ### heading07
 
 <Canvas>
-  <Story name="heading07" args={{ style: FixedHeadingStyles.inline.heading07 }}>
+  <Story name="heading07" args={{ type: FixedHeadingStyles.heading07 }}>
     {Template.bind({})}
   </Story>
 </Canvas>

@@ -1,33 +1,40 @@
 import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs";
-import Typography from "./Typography";
 import { UtilityStyles, BodyStyles, FixedHeadingStyles } from "./Typography";
+import { UtilityStylesStory } from "./StoriesExample";
 
 <Meta
   title="Components/Typography/UtilityStyles"
-  component={Typography}
-  argTypes={{
-    style: {
-      table: {
-        disable: true,
-      },
-    },
-  }}
+  component={UtilityStylesStory}
+  argTypes={{}}
 />
 
 # Typography
 
 ## Overview
 
-Our approach to the typographic system uses IBM Plex as its typeface. It has been carefully engineered with suitable scales, styles, and weights to help create clear hierarchies and organize information that guides users through IBM products or experiences.
+IBM Plex를 서체로 사용합니다.
 
-export const Template = (args) => <Typography {...args} />;
+export const Template = (args) => <UtilityStylesStory {...args} />;
+
+## How to use
+
+### Typography 모듈 적용하기
+
+1. Typography 모듈을 Import 합니다. <br/>`ex) import { UtilityStyles, BodyStyles } from "../Typography/Typography";`<br/><br/>
+2. 적용하길 원하는 컴포넌트에 코드를 추가합니다. <br/>`ex) ${BodyStyles.bodyCompact01}`
+
+### sass 파일에서 Typography 적용하기
+
+1. joseph-sass 패키지를 npm을 통해 다운 받습니다.<br/>`npm install joseph-sass`<br/><br/>
+2. 적용하길 원하는 sass파일 내에 `@use "joseph-sass/type"`명령어를 작성합니다.<br/><br/>
+3. 원하는 클래스나 엘리먼트에 명령어로 적용합니다.<br/>`@include type.UtilityStyles(helperText02)`<br/><br/>
 
 ## UtilityStyles
 
 ### code01
 
 <Canvas>
-  <Story name="code01" args={{ style: UtilityStyles.inline.code01 }}>
+  <Story name="code01" args={{ type: UtilityStyles.code01 }}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -35,7 +42,7 @@ export const Template = (args) => <Typography {...args} />;
 ### code02
 
 <Canvas>
-  <Story name="code02" args={{ style: UtilityStyles.inline.code02 }}>
+  <Story name="code02" args={{ type: UtilityStyles.code02 }}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -43,7 +50,7 @@ export const Template = (args) => <Typography {...args} />;
 ### label01
 
 <Canvas>
-  <Story name="label01" args={{ style: UtilityStyles.inline.label01 }}>
+  <Story name="label01" args={{ type: UtilityStyles.label01 }}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -51,7 +58,7 @@ export const Template = (args) => <Typography {...args} />;
 ### label02
 
 <Canvas>
-  <Story name="label02" args={{ style: UtilityStyles.inline.label02 }}>
+  <Story name="label02" args={{ type: UtilityStyles.label02 }}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -59,10 +66,7 @@ export const Template = (args) => <Typography {...args} />;
 ### helperText01
 
 <Canvas>
-  <Story
-    name="helperText01"
-    args={{ style: UtilityStyles.inline.helperText01 }}
-  >
+  <Story name="helperText01" args={{ type: UtilityStyles.helperText01 }}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -70,10 +74,7 @@ export const Template = (args) => <Typography {...args} />;
 ### helperText02
 
 <Canvas>
-  <Story
-    name="helperText02"
-    args={{ style: UtilityStyles.inline.helperText02 }}
-  >
+  <Story name="helperText02" args={{ type: UtilityStyles.helperText02 }}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -81,7 +82,7 @@ export const Template = (args) => <Typography {...args} />;
 ### legal01
 
 <Canvas>
-  <Story name="legal01" args={{ style: UtilityStyles.inline.legal01 }}>
+  <Story name="legal01" args={{ type: UtilityStyles.legal01 }}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -89,7 +90,7 @@ export const Template = (args) => <Typography {...args} />;
 ### legal02
 
 <Canvas>
-  <Story name="legal02" args={{ style: UtilityStyles.inline.legal02 }}>
+  <Story name="legal02" args={{ type: UtilityStyles.legal02 }}>
     {Template.bind({})}
   </Story>
 </Canvas>

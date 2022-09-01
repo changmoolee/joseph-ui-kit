@@ -6,3 +6,4 @@ storybook-static
 src
 .env
 tsconfig.json
+StoriesExample.tsx

@@ -4,7 +4,7 @@ import React from "react";
 import * as style from "./Loading.style";
 
 type LoadingProps = {
-  size?: string;
+  size?: "small" | "middle" | "large";
   active?: boolean;
 };
 

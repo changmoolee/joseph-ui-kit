@@ -5,23 +5,27 @@ import Search from "./Search";
   title="Components/Search"
   component={Search}
   argTypes={{
+    id: {
+      description: "내부 `input`요소의 `id` 값을 설정합니다.",
+      type: { required: false },
+      defaultValue: "search",
+    },
     width: {
       description:
-        "Handling the width of the Search. ('px' and '%' units are ok.)",
+        "Search의 너비를 설정합니다 ('px' 및 '%' 단위가 가능합니다.)",
       type: { required: false },
       defaultValue: "",
     },
     disabled: {
       name: "disabled",
       type: { name: "boolean", required: false },
-      description: "handling the disabled state of the Search.",
+      description: "Search의 사용 불가능 여부를 설정합니다.",
       defaultValue: false,
     },
     autoComplete: {
       name: "autoComplete",
       type: { name: "select", required: false },
-      description:
-        "Specify an optional value for the autocomplete property on the underlying `<input>`, defaults to 'off'.",
+      description: "`input`요소의 autoComplete 속성값을 설정합니다.",
       defaultValue: "off",
       options: ["on", "off"],
       table: {
@@ -31,7 +35,7 @@ import Search from "./Search";
       },
     },
     placeholder: {
-      description: "Specify the placeholder of the Search.",
+      description: "`input`요소의 placeholder 속성값을 설정합니다.",
       type: { name: "string", required: false },
       defaultValue: "",
     },
@@ -39,18 +43,21 @@ import Search from "./Search";
       name: "onKeyDown",
       type: { required: false },
       description:
-        "Provide an optional function to be called when a key event occured",
+        "keyDown 이벤트가 발생할 때마다 실행할 함수를 설정할 수 있습니다.",
       table: {
         type: {
           summary: "func",
         },
+      },
+      control: {
+        type: null,
       },
     },
     onChange: {
       name: "onChange",
       type: { required: false },
       description:
-        "onChange is a utility for this controlled component to communicate to a consuming component what kind of internal state changes are occurring.",
+        "onChange 매개변수를 사용함으로써 Search에 입력된 내부 값을 가져올 수 있습니다.",
       table: {
         type: {
           summary: "func",
@@ -64,7 +71,16 @@ import Search from "./Search";
 
 ## Overview
 
+Search는 웹사이트에 대한 검색 보기를 쉽고 유연하게 만드는 방법을 제공합니다.
+
 export const Template = (args) => <Search {...args} />;
+
+## How to use
+
+- 'id, autoComplete' 등 props로 input 요소의 속성값을 설정합니다.<br/><br/>
+- 'onKeyDown' props를 통해서 특정 keyDown 이벤트`(ex) 'Enter')`가 발생할 때마다 실행될 함수를 설정할 수 있습니다.<br/><br/>
+- 'onChange' props를 통해서 Search에 입력된 값을 가져올 수 있습니다.<br/><br/>
+  `ex) onChange={(data) => console.log(data)}`
 
 <Canvas>
   <Story name="Default">{Template.bind({})}</Story>

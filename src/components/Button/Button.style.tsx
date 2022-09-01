@@ -3,6 +3,8 @@ import { css } from "@emotion/react";
 import { BodyStyles } from "../Typography/Typography";
 
 export const container = (
+  width?: string,
+  position?: string,
   padding?: string,
   bgColor?: string,
   hover?: { bgColor?: string; color?: string },
@@ -17,7 +19,7 @@ export const container = (
   color?: string,
   size?: string
 ) => css`
-  ${BodyStyles.external.bodyCompact01}
+  ${BodyStyles.bodyCompact01}
   height: ${size === "small"
     ? "32px"
     : size === "middle"
@@ -30,7 +32,13 @@ export const container = (
     ? "80px"
     : "32px"};
   display: flex;
+  justify-content: ${position === "right"
+    ? "flex-end"
+    : position === "center"
+    ? "center"
+    : "flex-start"};
   align-items: center;
+  width: ${width};
   padding: ${padding};
   border: ${border || "none"};
   background-color: ${bgColor || "transparent"};

@@ -1,0 +1,105 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs";
+import TextInput from "./TextInput";
+
+<Meta
+  title="Components/TextInput"
+  component={TextInput}
+  argTypes={{
+    id: {
+      description: "내부 `input`요소의 `id` 값을 설정합니다.",
+      type: { required: false },
+      defaultValue: "textinput",
+    },
+    width: {
+      description:
+        "TextInput의 너비를 설정합니다 ('px' 및 '%' 단위가 가능합니다.)",
+      type: { required: false },
+      defaultValue: "",
+    },
+    type: {
+      description: "내부 `input`요소의 `type` 값을 설정합니다.",
+      type: { name: "string", required: false },
+      defaultValue: "text",
+    },
+    defaultValue: {
+      name: "defaultValue",
+      type: { name: "string", required: false },
+      description: "내부 `input`요소의 `defaultValue` 값을 설정합니다.",
+      defaultValue: "",
+    },
+    maxLength: {
+      description: "Handling the maxLength of the TextInput.",
+      type: { name: "number", required: false },
+      defaultValue: "내부 `input`요소의 `maxLength` 값을 설정합니다.",
+    },
+    disabled: {
+      name: "disabled",
+      type: { name: "boolean", required: false },
+      description: "TextInput의 사용 불가능 여부를 설정합니다.",
+      defaultValue: false,
+    },
+    placeholder: {
+      description: "내부 `input`요소의 `placeholder` 값을 설정합니다.",
+      type: { name: "string", required: false },
+      defaultValue: "placeholder",
+    },
+    label: {
+      name: "label",
+      type: { name: "string", required: false },
+      description: "TextInput의 상단에 위치한 label 텍스트를 설정합니다.",
+      defaultValue: "TextInput label",
+    },
+    hideLabel: {
+      name: "hideLabel",
+      type: { name: "boolean", required: false },
+      description:
+        "TextInput의 상단에 위치한 label 텍스트 표시 여부를 설정합니다.",
+      defaultValue: false,
+    },
+    warn: {
+      name: "warn",
+      type: { name: "string", required: false },
+      description: "TextInput의 하단에 위치한 warn 경고문을 설정합니다.",
+      defaultValue: "This is some helper text",
+    },
+    hideWarn: {
+      name: "hideWarn",
+      type: { name: "boolean", required: false },
+      description:
+        "TextInput의 하단에 위치한 warn 경고문 표시 여부를 설정합니다.",
+      defaultValue: false,
+    },
+    onChange: {
+      name: "onChange",
+      type: { required: false },
+      description:
+        "onChange 매개변수를 사용함으로써 TextInput의 내부에 입력된 값을 가져올 수 있습니다.",
+      table: {
+        type: {
+          summary: "func",
+        },
+      },
+    },
+  }}
+/>
+
+# TextInput
+
+## Overview
+
+TextInput은 사용자가 키보드를 통해 앱에 텍스트를 입력하기 위한 기본 구성 요소입니다.
+
+export const Template = (args) => <TextInput {...args} />;
+
+## How to use
+
+- 'id, type, defaultValue' 등 props로 input 요소의 속성값을 설정합니다.<br/><br/>
+- 'width, label, warn' 등 props로 자유로운 TextInput 커스터마이징이 가능합니다.<br /><br />
+- 'onChange' props를 통해서 TextInput에 입력된 값을 가져올 수 있습니다.<br/><br/>
+  `ex) onChange={(data) => console.log(data)}`
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
+
+<ArgsTable story="Default" />

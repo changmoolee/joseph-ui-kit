@@ -8,13 +8,13 @@ export const container = css`
 `;
 
 export const label = css`
-  ${UtilityStyles.external.label01}
+  ${UtilityStyles.label01}
   margin: 5px 0px;
   color: gray;
 `;
 
 export const button = (width: string, open: boolean, size: string) => css`
-  ${BodyStyles.external.bodyCompact01}
+  ${BodyStyles.bodyCompact01}
   width: ${width};
   height: ${size === "small" ? "32px" : size === "middle" ? "40px" : "48px"};
   display: flex;
@@ -48,6 +48,8 @@ export const suggestion = (width: string, open: boolean, zIndex: number) => css`
   position: absolute;
   width: ${width};
   height: 200px;
+  padding: 0;
+  margin: 0;
   background-color: #f4f4f4;
   overflow-x: none;
   overflow-y: auto;
@@ -80,7 +82,7 @@ export const suggestionItem = (
     opacity: ${disabled ? "0.3" : "1"};
   }
   span {
-    ${BodyStyles.external.bodyCompact01}
+    ${BodyStyles.bodyCompact01}
     width: 100%;
     height: 100%;
     display: flex;
@@ -90,7 +92,7 @@ export const suggestionItem = (
 `;
 
 export const helperText = css`
-  ${UtilityStyles.external.helperText01}
+  ${UtilityStyles.helperText01}
   margin: 5px 0px;
   color: gray;
 `;
