@@ -12,6 +12,7 @@ type ToggleProps = {
   labelA?: string;
   labelB?: string;
   onClick?: () => void;
+  onChange?: (data: { toggled: boolean }) => void;
 };
 
 const Toggle = ({
@@ -22,11 +23,13 @@ const Toggle = ({
   labelA = "On",
   labelB = "Off",
   onClick = () => {},
+  onChange = () => {},
 }: ToggleProps) => {
   const [toggled, setToggled] = useState(false);
 
   const handleToggle = () => {
     setToggled((toggled) => !toggled);
+    onChange({ toggled: toggled });
   };
 
   let toggleSize = 48;
