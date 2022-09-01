@@ -48,6 +48,8 @@ export const suggestion = (width: string, open: boolean, zIndex: number) => css`
   position: absolute;
   width: ${width};
   height: 200px;
+  padding: 0;
+  margin: 0;
   background-color: #f4f4f4;
   overflow-x: none;
   overflow-y: auto;
