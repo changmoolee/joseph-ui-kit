@@ -8,8 +8,7 @@ import FileUploaderDropContainer from "./FileUploaderDropContainer";
     width: {
       name: "width",
       type: { name: "string", required: false },
-      description:
-        "You can handle the width property of FileUploaderDropContainer.",
+      description: "FileUploaderDropContainer의 너비를 설정합니다.",
       table: {
         type: { summary: "string" },
       },
@@ -18,7 +17,7 @@ import FileUploaderDropContainer from "./FileUploaderDropContainer";
     labelText: {
       name: "labelText",
       type: { name: "string", required: false },
-      description: "Specify the label of the FileUploaderDropContainer.",
+      description: "FileUploaderDropContainer 내부 label 텍스트를 설정합니다.",
       table: {
         type: { summary: "string" },
       },
@@ -27,7 +26,7 @@ import FileUploaderDropContainer from "./FileUploaderDropContainer";
       name: "fileSize",
       type: { name: "number", required: false },
       description:
-        "You can handle the size of the image file you want to upload. (The standard unit is 'megabytes')",
+        "FileUploaderDropContainer에 업로드할 수 있는 이미지 파일 사이즈 한도를 설정할 수 있습니다. (단위는 메가바이트(MB)입니다.)",
       table: {
         type: { summary: "number" },
       },
@@ -37,7 +36,7 @@ import FileUploaderDropContainer from "./FileUploaderDropContainer";
       name: "onChange",
       type: { required: false },
       description:
-        "onChange is a utility for this controlled component to communicate to a consuming component what kind of internal state changes are occurring.",
+        "onChange 매개변수를 사용함으로써 FileUploaderDropContainerr에서 변화가 일어날 때 발생하는 이벤트 값을 확인할 수 있습니다.",
       table: {
         type: {
           summary: "func",
@@ -47,13 +46,22 @@ import FileUploaderDropContainer from "./FileUploaderDropContainer";
   }}
 />
 
-# FileUploader
+# FileUploaderDropContainer
 
 ## Overview
 
-File uploaders allow users to a file to upload to a specific location.
+FileUploaderDropContainer를 사용하면 사용자가 이미지 파일을 특정 위치에 업로드할 수 있습니다.<br /><br />
+사용자는 이미지 파일을 해당 ui에 드래그하여 업로드가 가능합니다.
 
 export const Template = (args) => <FileUploaderDropContainer {...args} />;
+
+## How to use
+
+- 'fileSize' props에는 FileUploader에 업로드할 수 있는 이미지 파일 사이즈 한도를 설정할 수 있습니다. (단위는 메가바이트(MB)입니다.)<br/><br/>
+- 'width, labelText'props로 자유로운 FileUploaderDropContainer 커스터마이징이 가능합니다.<br /><br />
+- 'onChange' props의 첫번째 인수(event)로 FileUploader에서 변화가 일어날 때 발생하는 이벤트 값을, 두번째 인수(data)로 FileUploader에
+  인코딩되어 입력된 파일 string을 가져올 수 있습니다.<br/><br/>
+  `ex) onChange={(event, data) => console.log(event,data)}`
 
 <Canvas>
   <Story name="Default" args={{}}>

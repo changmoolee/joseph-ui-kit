@@ -7,19 +7,17 @@ import { TabList, Tab, TabPanels, TabPanel } from "./Tabs";
   component={Tabs}
   argTypes={{
     width: {
-      description:
-        "Handling the width of the Tabs. ('px' and '%' units are ok.)",
+      description: "Tabs의 너비를 설정합니다 ('px' 및 '%' 단위가 가능합니다.)",
       type: { required: false },
     },
     height: {
-      description:
-        "Handling the height of the Tabs. ('px' and '%' units are ok.)",
+      description: "Tabs의 높이를 설정합니다 ('px' 및 '%' 단위가 가능합니다.)",
       type: { required: false },
     },
     children: {
       name: "children",
       description:
-        "Provide child elements to be rendered inside of the Tabs. These elements should render either 'TabsList' or 'TabsDescription'.",
+        "Tabs의 내부 컨텐츠를 설정합니다. React element를 넣어줄 수 있습니다. (첫번째 요소로 `TabsList`컴포넌트, 두번째 요소로 `TabsDescription`컴포넌트를 반드시 넣어줘야 합니다.)",
       table: {
         type: { summary: "node" },
       },
@@ -31,7 +29,7 @@ import { TabList, Tab, TabPanels, TabPanel } from "./Tabs";
       name: "onClick",
       type: { required: false },
       description:
-        "You can use the onClick property in only `<Tab>` element. Provide an optional function to be called when the `<Tab>` element is clicked",
+        "onClick 매개변수는 오직 `<Tab>`컴포넌트에서만 사용할 수 있습니다. `<Tab>`컴포넌트를 클릭할 때 실행할 함수를 설정할 수 있습니다.",
       table: {
         type: {
           summary: "func",
@@ -48,7 +46,23 @@ import { TabList, Tab, TabPanels, TabPanel } from "./Tabs";
 
 ## Overview
 
+Tabs는 사용자가 Tab 목록을 눌러 원하는 대상의 섹션으로 빠르게 이동할 수 있게 해줍니다.
+
 export const Template = (args) => <Tabs {...args} />;
+
+## How to use
+
+- 'width, height' 등 props로 자유로운 커스터마이징이 가능합니다.<br/><br/>
+
+- onClick props는 오직 Tab 컴포넌트에서만 사용할 수 있습니다. 각 Tab 컴포넌트를 클릭할 때 실행할 함수를 설정할 수 있습니다.<br/>
+  `ex) <Tab onClick={() => console.log("tab")}/>`<br/><br/>
+- Tabs 내부에 정해진 컴포넌트 형태로 children props에 넣어줘야 합니다. 아래 설명과 예시 코드를 반드시 확인하고 사용하세요.
+
+1. TabsList, Tab, TabPanels, TabPanel 등 총 4가지 컴포넌트를 children에 넣어줘야 합니다.<br /><br />
+2. 첫번째 요소로 TabsList 컴포넌트, 두번째 요소로 TabPanels 컴포넌트를 반드시 넣어줘야 합니다.<br /><br />
+3. TabsList 컴포넌트에는 Tab 컴포넌트만 사용해야 합니다. Tab 컴포넌트에는 문자열만 입력 가능하며, 각 Tab의 이름을 나타내줍니다.<br /><br />
+4. TabPanels 컴포넌트에는 TabPanel 컴포넌트만 사용해야 합니다. TabPanel 컴포넌트에는 자식 컴포넌트 및 문자열을 사용하여 나타낼 수 있습니다.<br /><br />
+   <br />
 
 <Canvas>
   <Story

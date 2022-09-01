@@ -7,12 +7,12 @@ import Accordion from "./Accordion";
   argTypes={{
     width: {
       description:
-        "Handling the width of the Accordion. ('px' and '%' units are ok.)",
+        "Accordion의 너비를 설정합니다. ('px' 및 '%' 단위가 가능합니다.)",
       type: { required: false },
     },
     title: {
       name: "title",
-      description: "Specify the title of the Accordion.",
+      description: "Accordion의 이름을 설정합니다.",
       type: { required: false },
       table: {
         type: {
@@ -23,7 +23,7 @@ import Accordion from "./Accordion";
     children: {
       name: "children",
       description:
-        "Pass in the children that will be rendered within the Accordion",
+        "Accordion의 내부 컨텐츠를 설정합니다. React element를 넣어줄 수 있습니다.",
       table: {
         type: {
           summary: "node",
@@ -40,7 +40,14 @@ import Accordion from "./Accordion";
 
 ## Overview
 
+Accordion은 헤더와 관련된 콘텐츠를 표시하거나, 숨기기 위해 클릭할 수 있는 수직으로 쌓인 헤더 목록입니다.
+
 export const Template = (args) => <Accordion {...args} />;
+
+## How to use
+
+- Accordion 내부에 넣을 contents를 element 형태로 children props에 넣어줍니다.<br/><br/>
+- 아래는 'p element'가 children으로 들어간 예시입니다.
 
 <Canvas>
   <Story

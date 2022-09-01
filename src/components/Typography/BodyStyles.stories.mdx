@@ -12,7 +12,20 @@ import { BodyStylesStory } from "./StoriesExample";
 
 ## Overview
 
-Our approach to the typographic system uses IBM Plex as its typeface. It has been carefully engineered with suitable scales, styles, and weights to help create clear hierarchies and organize information that guides users through IBM products or experiences.
+IBM Plex를 서체로 사용합니다.
+
+## How to use
+
+### Typography 모듈 적용하기
+
+1. Typography 모듈을 Import 합니다. <br/>`ex) import { UtilityStyles, BodyStyles } from "../Typography/Typography";`<br/><br/>
+2. 적용하길 원하는 컴포넌트에 코드를 추가합니다. <br/>`ex) ${BodyStyles.bodyCompact01}`
+
+### sass 파일에서 Typography 적용하기
+
+1. joseph-sass 패키지를 npm을 통해 다운 받습니다.<br/>`npm install joseph-sass`<br/><br/>
+2. 적용하길 원하는 sass파일 내에 `@use "joseph-sass/type"`명령어를 작성합니다.<br/><br/>
+3. 원하는 클래스나 엘리먼트에 명령어로 적용합니다.<br/>`@include type.UtilityStyles(helperText02)`<br/><br/>
 
 export const Template = (args) => <BodyStylesStory {...args} />;
 

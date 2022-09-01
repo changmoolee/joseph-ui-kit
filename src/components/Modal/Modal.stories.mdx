@@ -9,7 +9,7 @@ import { Button } from "../Button/Button";
     open: {
       name: "open",
       type: { name: "boolean", required: false },
-      description: "Specify whether the Modal is currently open",
+      description: "Modal의 open 여부를 설정합니다.",
       defaultValue: true,
       table: {
         type: { summary: "boolean" },
@@ -19,7 +19,7 @@ import { Button } from "../Button/Button";
       name: "closeModal",
       type: { name: "func", required: false },
       description:
-        "Specify a handler for closing modal. The handler should care of closing modal, e.g. changing open prop.",
+        "Modal의 open 상태에서 close로 상태를 전환하는 setState 함수를 넣어줘야 합니다. ex) `() => setState(false)`",
       table: {
         type: { summary: "func" },
       },
@@ -28,7 +28,7 @@ import { Button } from "../Button/Button";
       name: "width",
       type: { name: "string", required: false },
       description:
-        "You can handle the width property of Modal (min-width : 150px).",
+        "Modal의 너비를 설정합니다. ('px' 및 '%' 단위가 가능합니다.)",
       table: {
         type: { summary: "string" },
       },
@@ -36,8 +36,7 @@ import { Button } from "../Button/Button";
     height: {
       name: "height",
       type: { name: "string", required: false },
-      description:
-        "You can handle the height property of Modal (min-height : 150px)",
+      description: "Modal의 높이를 설정합니다.('px' 및 '%' 단위가 가능합니다.)",
       table: {
         type: { summary: "string" },
       },
@@ -45,7 +44,7 @@ import { Button } from "../Button/Button";
     label: {
       name: "label",
       type: { name: "string", required: false },
-      description: "Specify the label of Modal",
+      description: "Modal의 상단 label의 텍스트를 설정합니다.",
       table: {
         type: { summary: "string" },
       },
@@ -53,7 +52,7 @@ import { Button } from "../Button/Button";
     title: {
       name: "title",
       type: { name: "string", required: false },
-      description: "Specify the title of Modal",
+      description: "Modal의 상단 타이틀을 설정합니다.",
       table: {
         type: { summary: "string" },
       },
@@ -61,7 +60,8 @@ import { Button } from "../Button/Button";
     children: {
       name: "children",
       type: { name: "node", required: false },
-      description: "Provide the contents of your Modal",
+      description:
+        "Modal 내부 컨텐츠를 설정합니다. React element를 넣어줄 수 있습니다.",
       table: {
         type: { summary: "node" },
       },
@@ -72,8 +72,7 @@ import { Button } from "../Button/Button";
     firstButtonDisabled: {
       name: "firstbuttonDisabled",
       type: { name: "boolean", required: false },
-      description:
-        "Specify whether the first Button should be disabled, or not",
+      description: "Modal 하단의 오른쪽 버튼의 표시 여부를 설정합니다.",
       defaultValue: false,
       table: {
         type: {
@@ -84,12 +83,12 @@ import { Button } from "../Button/Button";
     firstButtonText: {
       name: "firstButtonText",
       type: { name: "string", required: false },
-      description: "Specify the text for the primary button.",
+      description: "Modal 하단의 오른쪽 버튼의 내부 이름을 설정합니다.",
     },
     firstButtonOnClick: {
       name: "firstButtonOnClick",
       description:
-        "You can handle the function props when clicking first button.",
+        "Modal 하단의 오른쪽 버튼을 클릭 시 실행될 함수를 설정합니다.",
       type: { required: false },
       table: {
         type: {
@@ -100,8 +99,7 @@ import { Button } from "../Button/Button";
     secondaryButtonDisabled: {
       name: "secondarybuttonDisabled",
       type: { name: "boolean", required: false },
-      description:
-        "Specify whether the secondary Button should be disabled, or not",
+      description: "Modal 하단의 왼쪽 버튼의 표시 여부를 설정합니다.",
       defaultValue: false,
       table: {
         type: {
@@ -112,12 +110,11 @@ import { Button } from "../Button/Button";
     secondaryButtonText: {
       name: "secondaryButton",
       type: { name: "string", required: false },
-      description: "Specify the text for the secondary button.",
+      description: "Modal 하단의 왼쪽 버튼의 내부 이름을 설정합니다.",
     },
     secondaryButtonOnClick: {
       name: "secondaryButtonOnClick",
-      description:
-        "You can handle the function props when clicking secondary button.",
+      description: "Modal 하단의 왼쪽 버튼을 클릭 시 실행될 함수를 설정합니다.",
       type: { required: false },
       table: {
         type: {
@@ -137,14 +134,23 @@ import { Button } from "../Button/Button";
 
 ## Overview
 
-`Modal` allows you to use its bespoke set of contents. children prop maps to the modal body content.
+Modal은 애플리케이션의 기본 창 상단에 있는 큰 UI 요소입니다.<br /><br />
+Modal을 사용하면 맞춤형 콘텐츠 세트를 사용할 수 있습니다. 'children' prop은 Modal의 body에 매핑됩니다.
 
 export const Template = (args) => <Modal {...args} />;
+
+## How to use
+
+- 'width, label, title' 등 props로 자유로운 Modal 커스터마이징이 가능합니다.<br /><br />
+- 특히, 'firstbutton, secondaryButton'이 존재하여 버튼 표시 여부, 버튼 클릭시 이벤트 여부 등 Modal의 Button 커스터마이징이 가능합니다.<br /><br />
+- Modal 내부에 넣을 contents는 element 형태로 children props에 넣어줍니다.<br/><br/>
+- Modal을 소거하는 상호작용을 위해서 사용자는 반드시 'closeModal' props에 Modal의 open 상태를 close로 상태를 전환하는 setState 함수를 넣어줘야 합니다. <br/><br/>`ex) closeModal ={() => setState(false)}`
 
 <Canvas>
   <Story
     name="Default"
     args={{
+      open: false,
       title: "Modal title is here",
       children: (
         <p style={{ padding: "20px" }}>
@@ -156,14 +162,12 @@ export const Template = (args) => <Modal {...args} />;
       ),
       firstButtonText: "Confirm",
       secondaryButtonText: "Cancel",
-      zIndex: 300,
+      zIndex: 0,
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
-
-<Story id="components-button--default-story" />
 
 ## Component Api
 

@@ -9,7 +9,7 @@ import SkeletonUI from "./SkeletonUI";
       name: "width",
       type: { required: false },
       description:
-        "Handling the size of the element that will be rendered by SkeletonUI. ('px' and '%' units are ok.)",
+        "SkeletonUI의 너비를 설정합니다 ('px' 및 '%' 단위가 가능합니다.)",
       defaultValue: "100%",
       table: {
         type: { summary: "string" },
@@ -17,7 +17,8 @@ import SkeletonUI from "./SkeletonUI";
     },
     children: {
       name: "children",
-      description: "Pass in the children that will be rendered by SkeletonUI",
+      description:
+        "스켈레톤 ui로 만들 내부 컨텐츠를 설정합니다. React element를 넣어줄 수 있습니다.",
       table: {
         type: { summary: "node" },
       },
@@ -32,7 +33,14 @@ import SkeletonUI from "./SkeletonUI";
 
 ## Overview
 
+SkeletonUI는 데이터가 로드되기 전에 콘텐츠 미리보기를 표시하여, 사용자가 로드를 기다리게 합니다.
+
 export const Template = (args) => <SkeletonUI {...args} />;
+
+## How to use
+
+- SkeletonUI 내부에 넣을 contents를 element 형태로 children props에 넣어줍니다.<br/><br/>
+- 아래는 다양한 형태의 element들이 children으로 들어간 예시입니다.
 
 <Canvas>
   <Story

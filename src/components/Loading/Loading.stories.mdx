@@ -8,7 +8,7 @@ import Loading from "./Loading";
     size: {
       name: "size",
       type: { name: "select", required: false },
-      description: "Specify the size of the Loading animation.",
+      description: "Loading 애니메이션의 사이즈를 설정합니다.",
       table: {
         type: {
           summary: `small middle large`,
@@ -21,8 +21,7 @@ import Loading from "./Loading";
     active: {
       name: "active",
       type: { name: "boolean", required: false },
-      description:
-        "Specify whether you want the loading indicator to be spinning or not.",
+      description: "Loading 애니메이션의 표시 여부를 설정합니다.",
       table: {
         type: { summary: "boolean" },
         defaultValue: { summary: true },
@@ -35,6 +34,8 @@ import Loading from "./Loading";
 # Loading
 
 ## Overview
+
+Loading은 사용자에게 데이터 fetching 등의 활동이 완료될 때까지 기다리라고 알려주는 역할을 합니다.
 
 export const Template = (args) => <Loading {...args} />;
 

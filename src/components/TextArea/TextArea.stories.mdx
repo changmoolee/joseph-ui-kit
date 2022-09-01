@@ -6,30 +6,30 @@ import TextArea from "./TextArea";
   component={TextArea}
   argTypes={{
     id: {
-      description: "Handling the id of the input tag.",
+      description: "내부 `textarea`요소의 `id` 값을 설정합니다.",
       type: { required: false },
       defaultValue: "textarea",
     },
     width: {
       description:
-        "Handling the width of the TextArea. ('px' and '%' units are ok.)",
+        "TextArea의 너비를 설정합니다. ('px' 및 '%' 단위가 가능합니다.)",
       type: { required: false },
       defaultValue: "",
     },
     defaultValue: {
       name: "defaultValue",
       type: { name: "string", required: false },
-      description: "Specify the defaultValue of the TextArea.",
+      description: "TextArea 내부에 defaultValue 기본 입력값을 설정합니다.",
       defaultValue: "",
     },
     rows: {
       name: "rows",
       type: { name: "number", required: false },
-      description: "Handling the rows of the TextArea.",
+      description: "내부 `textarea`요소의 `rows` 값을 설정합니다.",
       defaultValue: "",
     },
     maxLength: {
-      description: "Handling the maxLength of the TextArea.",
+      description: "내부 `textarea`요소의 `maxLength` 값을 설정합니다.",
       type: { name: "number", required: false },
       defaultValue: "",
     },
@@ -40,39 +40,41 @@ import TextArea from "./TextArea";
       defaultValue: false,
     },
     placeholder: {
-      description: "Specify the placeholder of the TextArea.",
+      description: "내부 `textarea`요소의 `placeholder` 값을 설정합니다.",
       type: { name: "string", required: false },
       defaultValue: "placeholder",
     },
     label: {
       name: "label",
       type: { name: "string", required: false },
-      description: "Specify the label of the TextArea.",
+      description: "TextArea의 상단에 위치한 label 텍스트를 설정합니다.",
       defaultValue: "TextArea label",
     },
     hideLabel: {
       name: "hideLabel",
       type: { name: "boolean", required: false },
-      description: "Controlling the displaying label.",
+      description:
+        "TextArea의 상단에 위치한 label 텍스트 표시 여부를 설정합니다.",
       defaultValue: false,
     },
     warn: {
       name: "warn",
       type: { name: "string", required: false },
-      description: "Specify the warning of the TextArea.",
+      description: "TextArea의 하단에 위치한 warn 경고문을 설정합니다.",
       defaultValue: "This is some helper text",
     },
     hideWarn: {
       name: "hideWarn",
       type: { name: "boolean", required: false },
-      description: "Controlling the displaying warning.",
+      description:
+        "TextArea의 하단에 위치한 warn 경고문 표시 여부를 설정합니다.",
       defaultValue: false,
     },
     onChange: {
       name: "onChange",
       type: { required: false },
       description:
-        "onChange is a utility for this controlled component to communicate to a consuming component what kind of internal state changes are occurring.",
+        "onChange 매개변수를 사용함으로써 TextArea의 내부에 입력된 값을 가져올 수 있습니다.",
       table: {
         type: {
           summary: "func",
@@ -86,8 +88,19 @@ import TextArea from "./TextArea";
 
 ## Overview
 
+TextArea는 사용자가 키보드를 통해 앱에 텍스트를 입력하기 위한 기본 구성 요소입니다. 사용자가 여러 줄의 텍스트를 입력할 수 있습니다.
+
 export const Template = (args) => <TextArea {...args} />;
+
+## How to use
+
+- 'id, rows, maxLength' 등 props로 textarea 요소의 속성값을 설정합니다.<br/><br/>
+- 'width, label, warn' 등 props로 자유로운 TextArea 커스터마이징이 가능합니다.<br /><br />
+- 'onChange' props를 통해서 TextArea에 입력된 값을 가져올 수 있습니다.<br/><br/>
+  `ex) onChange={(data) => console.log(data)}`
 
 <Canvas>
   <Story name="Default">{Template.bind({})}</Story>
 </Canvas>
+
+<ArgsTable story="Default" />
