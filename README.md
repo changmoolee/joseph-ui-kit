@@ -2,7 +2,7 @@
 
 ## Storybook
 
-url: https://62c29bc37522954785db7695-ihvljoogaw.chromatic.com/?path=/story/feature-accordion--primary
+url: https://joseph-ui-kit.netlify.app
 
 ## Chromatic
 
