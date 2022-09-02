@@ -9,6 +9,7 @@ interface FileUploaderProps {
   buttonKind?: "default" | "secondary" | "tertiary" | "ghost" | "danger";
   buttonName?: string;
   fileSize?: number;
+  onError?: () => void;
   onChange?: (
     event: React.ChangeEvent<HTMLInputElement>,
     data: { result: string }
@@ -19,6 +20,9 @@ const FileUploader = ({
   buttonKind = "default",
   buttonName = "Add file",
   fileSize = 0.5,
+  onError = () => {
+    console.log("업로드가 가능한 파일 사이즈를 초과했습니다.");
+  },
   onChange = () => {},
 }: FileUploaderProps) => {
   const [attachment, setAttachment] = useState("");
@@ -39,6 +43,8 @@ const FileUploader = ({
     const theFile = files[0];
 
     if (theFile.size > 1024 * 1024 * fileSize) {
+      onError();
+
       throw Error(
         `업로드할 수 있는 이미지 파일은 ${fileSize}MB 이하 사이즈만 가능합니다.`
       );
