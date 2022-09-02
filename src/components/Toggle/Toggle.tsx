@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import * as style from "./Toggle.style";
 import Check from "../../assets/icon/Check";
 
-type ToggleProps = {
+interface ToggleProps {
   size?: string;
   hideHeaderlabel?: boolean;
   headerlabel?: string;
@@ -13,7 +13,7 @@ type ToggleProps = {
   labelB?: string;
   onClick?: () => void;
   onChange?: (data: { toggled: boolean }) => void;
-};
+}
 
 const Toggle = ({
   size = "middle",

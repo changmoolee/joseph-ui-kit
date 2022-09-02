@@ -5,7 +5,7 @@ import * as style from "./Modal.style";
 import Close from "../../assets/icon/Close";
 import { useKeyEscPress } from "../../hooks/useKeyEscPress";
 
-type ModalProps = {
+interface ModalProps {
   open?: boolean;
   closeModal?: () => void;
   width?: string;
@@ -22,7 +22,7 @@ type ModalProps = {
     | React.MouseEventHandler<HTMLButtonElement>
     | undefined;
   zIndex?: number;
-};
+}
 
 const Modal = ({
   open = true,

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import * as style from "./DropDown.style";
 import Angle from "../../assets/icon/Angle";
 
-type DropDownProps = {
+interface DropDownProps {
   width?: string;
   items?: (
     | {
@@ -27,7 +27,7 @@ type DropDownProps = {
   onChange?: (data: {
     selectedItem: { id: number | string; value: number | string };
   }) => void;
-};
+}
 
 const DropDown = ({
   width = "400px",

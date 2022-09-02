@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 
-type useKeyEscPressProps = () => void;
+interface useKeyEscPressProps {
+  (): void;
+}
 
 export const useKeyEscPress = (closeModal: useKeyEscPressProps) => {
   useEffect(() => {

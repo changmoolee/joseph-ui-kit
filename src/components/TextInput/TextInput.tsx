@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import * as style from "./TextInput.styles";
 import React, { useState } from "react";
 
-type TextInputProps = {
+interface TextInputProps {
   id?: string;
   width?: string;
   type?: string;
@@ -16,7 +16,7 @@ type TextInputProps = {
   warn?: string;
   hideWarn?: boolean;
   onChange?: (data: { value: string }) => void;
-};
+}
 
 const TextInput = ({
   id = "textinput",
