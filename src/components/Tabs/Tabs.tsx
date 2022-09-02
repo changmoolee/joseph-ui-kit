@@ -3,11 +3,11 @@ import { css } from "@emotion/react";
 import React, { useState } from "react";
 import * as style from "./Tabs.style";
 
-type TabsProps = {
+interface TabsProps {
   width?: string;
   height?: string;
   children?: JSX.Element;
-};
+}
 
 const Tabs = ({ width = "600px", height = "50px", children }: TabsProps) => {
   const TabListArr = children?.props.children[0].props.children;
@@ -36,7 +36,7 @@ const Tabs = ({ width = "600px", height = "50px", children }: TabsProps) => {
                 }
               }}
             >
-              <span>{tab}</span>
+              {tab}
             </button>
           ))}
       </div>
@@ -50,18 +50,18 @@ const Tabs = ({ width = "600px", height = "50px", children }: TabsProps) => {
 
 export default Tabs;
 
-type TabsChildProps = {
+interface TabsChildProps {
   children?: JSX.Element | JSX.Element[];
-};
+}
 
-type TabProps = {
+interface TabProps {
   children?: string;
   onClick?: React.MouseEventHandler<HTMLSpanElement> | undefined;
-};
+}
 
-type TabPanelProps = {
+interface TabPanelProps {
   children?: JSX.Element | JSX.Element[] | string;
-};
+}
 
 export const TabList = ({ children }: TabsChildProps) => {
   return <>{children}</>;
