@@ -3,10 +3,10 @@ import { css } from "@emotion/react";
 import React from "react";
 import * as style from "./Loading.style";
 
-type LoadingProps = {
+interface LoadingProps {
   size?: "small" | "middle" | "large";
   active?: boolean;
-};
+}
 
 const Loading = ({ size = "middle", active = true }: LoadingProps) => {
   let loadingSize = 40;

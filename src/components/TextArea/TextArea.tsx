@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import * as style from "./TextArea.styles";
 import React, { useState } from "react";
 
-type TextAreaProps = {
+interface TextAreaProps {
   id?: string;
   width?: string;
   defaultValue?: string;
@@ -16,7 +16,7 @@ type TextAreaProps = {
   warn?: string;
   hideWarn?: boolean;
   onChange?: (data: { value: string }) => void;
-};
+}
 
 const TextArea = ({
   id = "textarea",

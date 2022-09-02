@@ -5,7 +5,7 @@ import * as style from "./Search.style";
 import Close from "../../assets/icon/Close";
 import Magnifier from "../../assets/icon/Magnifier";
 
-type SearchProps = {
+interface SearchProps {
   id?: string;
   width?: string;
   disabled?: boolean;
@@ -13,7 +13,7 @@ type SearchProps = {
   placeholder?: string;
   onKeyDown?: React.KeyboardEventHandler<HTMLInputElement> | undefined;
   onChange?: (data: { value: string }) => void;
-};
+}
 
 const Search = ({
   id = "search",

@@ -8,6 +8,7 @@ interface FileUploaderDropContainerProps {
   width?: string;
   labelText?: string;
   fileSize?: number;
+  onError?: () => void;
   onChange?: (
     event: React.ChangeEvent<HTMLInputElement> | DragEvent,
     data: { result: string }
@@ -18,6 +19,9 @@ const FileUploaderDropContainer = ({
   width = "320px",
   labelText = "Drag and drop files here or click to upload",
   fileSize = 0.5,
+  onError = () => {
+    console.log("업로드가 가능한 파일 사이즈를 초과했습니다.");
+  },
   onChange = () => {},
 }: FileUploaderDropContainerProps) => {
   const divRef = useRef<HTMLLabelElement | null>(null);
@@ -42,6 +46,8 @@ const FileUploaderDropContainer = ({
     const theFile = files[0];
 
     if (theFile.size > 1024 * 1024 * fileSize) {
+      onError();
+
       throw Error(
         `업로드할 수 있는 이미지 파일은 ${fileSize}MB 이하 사이즈만 가능합니다.`
       );

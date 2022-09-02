@@ -4,11 +4,11 @@ import * as style from "./Accordion.style";
 import React, { useState } from "react";
 import Angle from "../../assets/icon/Angle";
 
-type AccordionProps = {
+interface AccordionProps {
   width?: string;
   title?: string;
   children?: JSX.Element | JSX.Element[];
-};
+}
 
 const Accordion = ({
   width = "100%",

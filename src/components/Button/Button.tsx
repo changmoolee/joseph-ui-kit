@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import React from "react";
 import * as style from "./Button.style";
 
-type ButtonProps = {
+interface ButtonProps {
   kind?: "default" | "secondary" | "tertiary" | "ghost" | "danger";
   type?: "button" | "submit" | "reset";
   name?: string;
@@ -26,7 +26,7 @@ type ButtonProps = {
   onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
   onMouseEnter?: React.MouseEventHandler<HTMLButtonElement> | undefined;
   onMouseLeave?: React.MouseEventHandler<HTMLButtonElement> | undefined;
-};
+}
 
 const Button = ({
   kind = "default",
