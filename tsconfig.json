@@ -19,7 +19,7 @@
     "outDir": "dist",
     "declaration": true
   },
-  "include": ["src/**/*.tsx", "src/components/index.ts"],
+  "include": ["src/**/*.tsx", "src/index.ts"],
   "exclude": ["**/*.stories.tsx", "**/*.test.tsx"]
 
   // "include": ["src"]
