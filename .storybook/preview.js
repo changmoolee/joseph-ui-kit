@@ -25,4 +25,9 @@ export const parameters = {
 
 addParameters({ viewport: { viewports: INITIAL_VIEWPORTS } });
 
-addDecorator((Story) => <>{Story()}</>);
+addDecorator((Story) => (
+  <>
+    <GlobalStyle />
+    {Story()}
+  </>
+));
