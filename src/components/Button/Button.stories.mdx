@@ -84,7 +84,7 @@ import Button from "./Button";
     tabIndex: {
       name: "tabIndex",
       type: { name: "number", required: false },
-      description: "Handling the tabindex property of the Button",
+      description: "Button의 tabindex 속성을 제어합니다.",
       defaultValue: 0,
     },
     hover: {
@@ -153,14 +153,14 @@ import Button from "./Button";
 
 ## Overview
 
-Button은 클릭 가능한 요소로 특정 작업을 트리거하는 데 사용됩니다. Button은 사용자가 다양한 방식으로 페이지와 상호 작용할 수 있도록 합니다.
+Button은 클릭 가능한 요소로 특정 작업을 트리거하는 데 사용됩니다. <br/> Button은 사용자가 다양한 방식으로 페이지와 상호 작용할 수 있도록 합니다.
 
 export const Template = (args) => <Button {...args} />;
 
-## How to use
+## Note
 
-- 'kind, name, width, position' 등 props로 자유로운 Button 커스터마이징이 가능합니다.<br/><br/>
-- 'onClick, onMouseEnter, onMouseLeave' props를 이용하여 다양한 이벤트에 대처해보세요.
+&bull;&nbsp; 'kind, name, width, position' 등 props로 자유로운 Button 커스터마이징이 가능합니다.<br/><br/>
+&bull;&nbsp; 'onClick, onMouseEnter, onMouseLeave' props를 이용하여 다양한 이벤트에 대처해보세요.
 
 <Canvas>
   <Story

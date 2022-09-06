@@ -75,12 +75,15 @@ Search는 웹사이트에 대한 검색 보기를 쉽고 유연하게 만드는 
 
 export const Template = (args) => <Search {...args} />;
 
-## How to use
+## Note
 
-- 'id, autoComplete' 등 props로 input 요소의 속성값을 설정합니다.<br/><br/>
-- 'onKeyDown' props를 통해서 특정 keyDown 이벤트`(ex) 'Enter')`가 발생할 때마다 실행될 함수를 설정할 수 있습니다.<br/><br/>
-- 'onChange' props를 통해서 Search에 입력된 값을 가져올 수 있습니다.<br/><br/>
+&bull;&nbsp; 'id, autoComplete' 등 props로 input 요소의 속성값을 설정합니다.<br/><br/>
+&bull;&nbsp; 'onKeyDown' props를 통해서 특정 keyDown 이벤트`(ex) 'Enter')`가 발생할 때마다 실행될 함수를 설정할 수 있습니다.<br/><br/>
+&bull;&nbsp; 'onChange' props를 통해서 Search에 입력된 값을 가져올 수 있습니다.<br/>
+
+<div style={{ marginLeft: "30px" }}>
   `ex) onChange={(data) => console.log(data)}`
+</div>
 
 <Canvas>
   <Story name="Default">{Template.bind({})}</Story>
