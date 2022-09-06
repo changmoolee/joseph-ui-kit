@@ -6,8 +6,27 @@ export const uploadImageContainer = (width: string) => css`
   width: ${width};
   height: auto;
   display: flex;
+`;
+
+export const imageWithButton = css`
+  width: 100%;
+  display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 16px;
+  box-sizing: border-box;
+`;
+
+export const uploadImage = css`
+  width: 100%;
+  margin-bottom: 10px;
+  object-fit: cover;
+`;
+
+export const uploadImageButton = css`
+  ${UtilityStyles.label02};
+  width: 100%;
+  height: 96px;
   padding: 16px;
   border: 1px dashed rgba(141, 141, 141);
   color: #0f62fe;
@@ -21,17 +40,4 @@ export const uploadImageContainer = (width: string) => css`
       text-decoration: underline;
     }
   }
-`;
-
-export const uploadImage = css`
-  width: 100%;
-  margin-bottom: 10px;
-  object-fit: cover;
-`;
-
-export const uploadImageButton = css`
-  ${UtilityStyles.label02};
-  width: 100%;
-  height: 64px;
-  cursor: pointer;
 `;

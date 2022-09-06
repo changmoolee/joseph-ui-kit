@@ -50,7 +50,7 @@ const Modal = ({
           <div css={style.label}>{label}</div>
           <div css={style.title}>{title}</div>
         </div>
-        <button css={style.closeBox} onClick={closeModal}>
+        <button css={style.closeBox} tabIndex={0} onClick={closeModal}>
           <Close width={20} height={20} />
         </button>
         <div css={style.description}>{children}</div>

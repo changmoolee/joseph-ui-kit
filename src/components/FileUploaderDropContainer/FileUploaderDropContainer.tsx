@@ -25,6 +25,7 @@ const FileUploaderDropContainer = ({
   onChange = () => {},
 }: FileUploaderDropContainerProps) => {
   const divRef = useRef<HTMLLabelElement | null>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
   const [attachment, setAttachment] = useState("");
 
   const clearUploadedFile = () => {
@@ -118,16 +119,28 @@ const FileUploaderDropContainer = ({
     <>
       <div css={style.uploadImageContainer(width)}>
         {attachment ? (
-          <>
+          <div css={style.imageWithButton}>
             <img css={style.uploadImage} src={attachment} alt="uploadedImage" />
             <Button
               name="이미지 삭제"
               width="min-content"
               onClick={clearUploadedFile}
             />
-          </>
+          </div>
         ) : (
-          <label htmlFor="upload" css={style.uploadImageButton} ref={divRef}>
+          <label
+            htmlFor="upload"
+            css={style.uploadImageButton}
+            tabIndex={0}
+            ref={divRef}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                if (inputRef.current !== null) {
+                  inputRef.current?.click();
+                }
+              }
+            }}
+          >
             <span>{labelText}</span>
           </label>
         )}
@@ -137,6 +150,7 @@ const FileUploaderDropContainer = ({
         id="upload"
         type="file"
         accept="image/*"
+        ref={inputRef}
         onChange={onFileChange}
       />
     </>

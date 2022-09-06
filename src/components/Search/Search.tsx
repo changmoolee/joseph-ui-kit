@@ -50,9 +50,15 @@ const Search = ({
         onChange={updateValue}
         onKeyDown={onKeyDown}
       />
-      <span css={style.clearIcon(disabled)} onClick={clearInput}>
-        <Close width={16} height={16} />
-      </span>
+      {value ? (
+        <button
+          css={style.clearIcon(disabled)}
+          tabIndex={0}
+          onClick={clearInput}
+        >
+          <Close width={16} height={16} />
+        </button>
+      ) : null}
     </label>
   );
 };

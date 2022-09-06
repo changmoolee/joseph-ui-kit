@@ -35,6 +35,8 @@ export const clearIcon = (disabled: boolean) => css`
   display: flex;
   justify-content: center;
   align-items: center;
+  border: none;
+  background-color: transparent;
   cursor: ${disabled ? "not-allowed" : "pointer"};
   :hover {
     background-color: ${disabled ? "none" : "#e8e8e8"};

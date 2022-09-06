@@ -72,7 +72,7 @@ const DropDown = ({
       )}
       <button
         id="dropdown"
-        tabIndex={-1}
+        tabIndex={0}
         css={style.button(width, open, size)}
         onBlur={closeSuggestion}
         onClick={handleSuggestion}
