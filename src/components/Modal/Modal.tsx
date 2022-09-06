@@ -4,6 +4,7 @@ import React from "react";
 import * as style from "./Modal.style";
 import Close from "../../assets/icon/Close";
 import { useKeyEscPress } from "../../hooks/useKeyEscPress";
+import Button from "../Button/Button";
 
 interface ModalProps {
   open?: boolean;
@@ -55,20 +56,22 @@ const Modal = ({
         <div css={style.description}>{children}</div>
         <div css={style.buttons}>
           {secondaryButtonDisabled ? null : (
-            <button
-              css={[style.button, style.leftButton]}
+            <Button
+              kind="secondary"
+              name={secondaryButtonText}
+              width="50%"
+              size="large"
               onClick={secondaryButtonOnClick}
-            >
-              {secondaryButtonText}
-            </button>
+            />
           )}
           {firstButtonDisabled ? null : (
-            <button
-              css={[style.button, style.rightButton]}
+            <Button
+              kind="default"
+              name={firstButtonText}
+              width="50%"
+              size="large"
               onClick={firstButtonOnClick}
-            >
-              {firstButtonText}
-            </button>
+            />
           )}
         </div>
       </div>
