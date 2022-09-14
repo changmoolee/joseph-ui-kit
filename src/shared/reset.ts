@@ -4,13 +4,16 @@ const reset = `
    License: none (public domain)
 */
 
+// ** h1, h2, h3, h4, h5, h6, p, ol, ul, li, code, 
+// mdx 파일 docs에 관여하는 요소들 제외
+
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
+blockquote, pre,
+a, abbr, acronym, address, big, cite,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
-dl, dt, dd, ol, ul, li,
+dl, dt, dd,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 

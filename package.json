@@ -1,7 +1,7 @@
 {
   "name": "joseph-ui-kit",
   "description": "joseph-ui-kit는 오픈 소스로써, React 기반으로 제작된 ui-kit 패키지입니다. 사전 제작된 다양한 ui 키트를 React 프로젝트에 활용해 보세요!",
-  "version": "0.8.4",
+  "version": "0.8.5",
   "private": false,
   "main": "dist/index.js",
   "author": {
@@ -10,9 +10,6 @@
   "repository": "git+https://github.com/changmoolee/joseph-ui-kit.git",
   "dependencies": {
     "@emotion/react": "^11.9.3",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.11.43",
     "@types/react": "^18.0.15",

@@ -23,7 +23,7 @@ const Accordion = ({
 
   return (
     <div css={style.container(width)}>
-      <button tabIndex={-1} css={style.button(open)} onClick={handleAccordion}>
+      <button tabIndex={0} css={style.button(open)} onClick={handleAccordion}>
         {title}
         <div css={style.arrowIcon(open)}>
           <Angle />

@@ -95,20 +95,7 @@ export const description = css`
 export const buttons = css`
   width: 100%;
   display: flex;
-  justify-content: flex-end;
-`;
-
-export const button = css`
-  width: 50%;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  margin: 0;
   margin-top: 16px;
-  border: 0;
-  color: #fff;
-  box-sizing: border-box;
 `;
 
 export const leftButton = css`

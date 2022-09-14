@@ -91,12 +91,15 @@ TextInput은 사용자가 키보드를 통해 앱에 텍스트를 입력하기 �
 
 export const Template = (args) => <TextInput {...args} />;
 
-## How to use
+## Note
 
-- 'id, type, defaultValue' 등 props로 input 요소의 속성값을 설정합니다.<br/><br/>
-- 'width, label, warn' 등 props로 자유로운 TextInput 커스터마이징이 가능합니다.<br /><br />
-- 'onChange' props를 통해서 TextInput에 입력된 값을 가져올 수 있습니다.<br/><br/>
+&bull;&nbsp; 'id, type, defaultValue' 등 props로 input 요소의 속성값을 설정합니다.<br/><br/>
+&bull;&nbsp; 'width, label, warn' 등 props로 자유로운 TextInput 커스터마이징이 가능합니다.<br /><br />
+&bull;&nbsp; 'onChange' props를 통해서 TextInput에 입력된 값을 가져올 수 있습니다.
+
+<div style={{ marginLeft: "30px" }}>
   `ex) onChange={(data) => console.log(data)}`
+</div>
 
 <Canvas>
   <Story name="Default">{Template.bind({})}</Story>

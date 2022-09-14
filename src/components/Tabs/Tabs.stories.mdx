@@ -50,19 +50,35 @@ Tabs는 사용자가 Tab 목록을 눌러 원하는 대상의 섹션으로 빠�
 
 export const Template = (args) => <Tabs {...args} />;
 
-## How to use
+## Note
 
-- 'width, height' 등 props로 자유로운 커스터마이징이 가능합니다.<br/><br/>
+&bull;&nbsp; 'width, height' 등 props로 자유로운 커스터마이징이 가능합니다.<br/>
 
-- onClick props는 오직 Tab 컴포넌트에서만 사용할 수 있습니다. 각 Tab 컴포넌트를 클릭할 때 실행할 함수를 설정할 수 있습니다.<br/>
-  `ex) <Tab onClick={() => console.log("tab")}/>`<br/><br/>
-- Tabs 내부에 정해진 컴포넌트 형태로 children props에 넣어줘야 합니다. 아래 설명과 예시 코드를 반드시 확인하고 사용하세요.
+&bull;&nbsp; 'onClick' props는 오직 Tab 컴포넌트에서만 사용할 수 있습니다. 각 Tab 컴포넌트를 클릭할 때 실행할 함수를 설정할 수 있습니다.<br/>
 
-1. TabsList, Tab, TabPanels, TabPanel 등 총 4가지 컴포넌트를 children에 넣어줘야 합니다.<br /><br />
-2. 첫번째 요소로 TabsList 컴포넌트, 두번째 요소로 TabPanels 컴포넌트를 반드시 넣어줘야 합니다.<br /><br />
-3. TabsList 컴포넌트에는 Tab 컴포넌트만 사용해야 합니다. Tab 컴포넌트에는 문자열만 입력 가능하며, 각 Tab의 이름을 나타내줍니다.<br /><br />
-4. TabPanels 컴포넌트에는 TabPanel 컴포넌트만 사용해야 합니다. TabPanel 컴포넌트에는 자식 컴포넌트 및 문자열을 사용하여 나타낼 수 있습니다.<br /><br />
-   <br />
+<div style={{ marginLeft: "30px" }}>
+  `ex) <Tab onClick={() => console.log("tab")} />`
+</div>
+
+&bull;&nbsp; Tabs 내부에 정해진 컴포넌트 형태로 'children' props에 넣어줘야 합니다.
+아래 설명과 예시 코드를 반드시 확인하고 사용하세요.
+
+<div style={{ marginLeft: "30px" }}>
+  (1) TabsList, Tab, TabPanels, TabPanel 등 총 4가지 컴포넌트를 children에
+  넣어줘야 합니다.
+</div>
+<div style={{ marginLeft: "30px" }}>
+  (2) 첫번째 요소로 TabsList 컴포넌트, 두번째 요소로 TabPanels 컴포넌트를 반드시
+  넣어줘야 합니다.
+</div>
+<div style={{ marginLeft: "30px" }}>
+  (3) TabsList 컴포넌트에는 Tab 컴포넌트만 사용해야 합니다. Tab 컴포넌트에는
+  문자열만 입력 가능하며, 각 Tab의 이름을 나타내줍니다.
+</div>
+<div style={{ marginLeft: "30px" }}>
+  (4) TabPanels 컴포넌트에는 TabPanel 컴포넌트만 사용해야 합니다. TabPanel
+  컴포넌트에는 자식 컴포넌트 및 문자열을 사용하여 나타낼 수 있습니다.
+</div>
 
 <Canvas>
   <Story

@@ -1,10 +1,10 @@
 import { ArgsTable, Preview, Canvas, Meta, Story } from "@storybook/addon-docs";
-import Modal from "./Modal";
+import ModalExample from "./ModalExample";
 import { Button } from "../Button/Button";
 
 <Meta
   title="Components/Modal"
-  component={Modal}
+  component={ModalExample}
   argTypes={{
     open: {
       name: "open",
@@ -134,23 +134,27 @@ import { Button } from "../Button/Button";
 
 ## Overview
 
-Modal은 애플리케이션의 기본 창 상단에 있는 큰 UI 요소입니다.<br /><br />
+Modal은 애플리케이션의 기본 창 상단에 있는 큰 UI 요소입니다.<br />
 Modal을 사용하면 맞춤형 콘텐츠 세트를 사용할 수 있습니다. 'children' prop은 Modal의 body에 매핑됩니다.
 
-export const Template = (args) => <Modal {...args} />;
+export const Template = (args) => <ModalExample {...args} />;
 
-## How to use
+## Note
 
-- 'width, label, title' 등 props로 자유로운 Modal 커스터마이징이 가능합니다.<br /><br />
-- 특히, 'firstbutton, secondaryButton'이 존재하여 버튼 표시 여부, 버튼 클릭시 이벤트 여부 등 Modal의 Button 커스터마이징이 가능합니다.<br /><br />
-- Modal 내부에 넣을 contents는 element 형태로 children props에 넣어줍니다.<br/><br/>
-- Modal을 소거하는 상호작용을 위해서 사용자는 반드시 'closeModal' props에 Modal의 open 상태를 close로 상태를 전환하는 setState 함수를 넣어줘야 합니다. <br/><br/>`ex) closeModal ={() => setState(false)}`
+&bull;&nbsp; 'width, label, title' 등 props로 자유로운 Modal 커스터마이징이 가능합니다.<br /><br />
+&bull;&nbsp; 특히, 'firstbutton, secondaryButton'이 존재하여 버튼 표시 여부, 버튼 클릭시 이벤트 여부 등 Modal의 Button 커스터마이징이 가능합니다.<br /><br />
+&bull;&nbsp; Modal 내부에 넣을 contents는 element 형태로 children props에 넣어줍니다.<br/><br/>
+&bull;&nbsp; Modal을 소거하는 상호작용을 위해서 사용자는 반드시 'closeModal' props에 Modal의 open 상태를 close로 상태를 전환하는 setState 함수를 넣어줘야 합니다. <br/>
+
+<div style={{ marginLeft: "30px" }}>
+  `ex) closeModal ={() => setState(false)}`
+</div>
 
 <Canvas>
   <Story
     name="Default"
     args={{
-      open: false,
+      open: true,
       title: "Modal title is here",
       children: (
         <p style={{ padding: "20px" }}>
