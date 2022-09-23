@@ -4,7 +4,7 @@ import { BodyStyles } from "../Typography/Typography";
 
 export const container = css`
   ${BodyStyles.bodyCompact01}
-  display: flex;
+  display: inline-flex;
   align-items: center;
   margin-bottom: 4px;
   cursor: pointer;
