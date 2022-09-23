@@ -29,9 +29,10 @@ export const disabledCheckboxLabel = css`
 export const checkedCheckbox = css`
   width: 16px;
   height: 16px;
-  border: 1px solid black;
+  outline: 1px solid black;
   border-radius: 1px;
   background-color: black;
+  box-sizing: border-box;
 `;
 
 export const uncheckedCheckbox = css`
@@ -39,6 +40,7 @@ export const uncheckedCheckbox = css`
   height: 16px;
   border: 1px solid black;
   border-radius: 1px;
+  box-sizing: border-box;
 `;
 
 export const checkboxLabel = css`
