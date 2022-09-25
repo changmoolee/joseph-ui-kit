@@ -10,6 +10,11 @@
 #### `joseph-ui-kit`는 오픈 소스로써, React 기반으로 제작된 ui-kit 패키지입니다.<br>
 
 #### 사전 제작된 다양한 ui 키트를 React 프로젝트에 활용해 보세요!
+<br>
+
+#### `joseph-ui-kit` UI의 design은 자체 제작이 아닌, IBM의 오픈소스 `carbondesignsystem` UI의 design을 클론하였습니다.
+IBM의 carbondesignsystem : https://carbondesignsystem.com/
+
 
 <br><br>
 
@@ -20,6 +25,7 @@
 <pre><code>npm install joseph-ui-kit</code></pre><br>
 
 #### 2. 배포된 Storybook에서 필요한 기능과 사용 방법(Note)을 확인합니다.
+
 
 ![image](https://user-images.githubusercontent.com/84559872/188084889-8c456694-0709-4023-82d6-d2fbc6815b2e.png)
 <br><br>
