@@ -1,0 +1,109 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs";
+import DataTable from "./DataTable";
+
+<Meta
+  title="Components/DataTable"
+  component={DataTable}
+  argTypes={{
+    headerText: {
+      description:
+        "DataTable의 headerText를 설정합니다. 입력값이 빈 string일 경우 header가 사라집니다.",
+      type: { name: "string", required: false },
+    },
+    checkboxSelection: {
+      description: "checkbox 열의 구현 유무를 설정합니다.",
+      type: { name: "boolean", required: false },
+    },
+    columns: {
+      description:
+        "DataTable의 각 column 열의 이름과 너비를 설정합니다. 배열 내 데이터 구조는 `{field: string;, headerName: string;, width: string;}` 형태를 갖춰야 합니다. `field`는 rows의 `[사용자 설정 속성]`데이터와 연결되는 속성입니다.",
+      type: { name: "array", required: false },
+      table: {
+        type: {
+          summary: "array",
+        },
+      },
+      control: {
+        type: null,
+      },
+    },
+    rows: {
+      description:
+        "DataTable의 각 rows 행의 id와 rows 행 안의 각 cell들의 내용을 설정합니다. 배열 내 데이터 구조는 `{id: string | number;, [사용자 설정 속성] : [사용자 설정 속성값];}` 형태를 갖춰야 합니다. `[사용자 설정 속성]`은 columns의 `field` 데이터와 연결되는 속성입니다.",
+      type: { name: "array", required: false },
+      table: {
+        type: {
+          summary: "array",
+        },
+      },
+      control: {
+        type: null,
+      },
+    },
+  }}
+/>
+
+# DataTable
+
+## Overview
+
+DataTable은 행과 열을 사용하여 정보를 표시합니다. 데이터를 효율적으로 구성하고 표시하는 데 사용됩니다.
+
+export const Template = (args) => <DataTable {...args} />;
+
+## Note
+
+&bull;&nbsp; columns props에는 아래와 같은 데이터 형식이 포함된 배열을 넣어줘야 합니다.
+
+<div style={{ marginLeft: "30px" }}>
+ `columns = [{field: string;, headerName: string;, width: string;}]` 
+</div>
+&bull;&nbsp; 위 columns 데이터의 headerName은 DataTable의 열에 들어갈 이름에 해당합니다.<br/><br/><br/>
+&bull;&nbsp; rows props에는 아래와 같은 데이터 형식이 포함된 배열을 넣어줘야 합니다.
+<div style={{ marginLeft: "30px" }}>
+ `rows = [{id: string | number;, [사용자 설정 속성] : [사용자 설정 속성값];}]` 
+</div>
+&bull;&nbsp; 위 rows 데이터의 [사용자 설정 속성]은 columns 데이터의 field와 동일한 이름을 가져야 합니다. <br/><br/>
+&bull;&nbsp; 위 rows 데이터의 [사용자 설정 속성값]은 DataTable의 각 cell에 들어가게 됩니다.
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      headerText: "Datatable",
+      checkboxSelection: true,
+      columns: columns,
+      rows: rows,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Component Api
+
+<ArgsTable story="Default" />
+
+export const columns = [
+  {
+    field: "id",
+    headerName: "NO",
+    width: "50px",
+  },
+  {
+    field: "name",
+    headerName: "이름",
+    width: "70px",
+  },
+];
+
+export const rows = [
+  {
+    id: 1,
+    name: "박지훈",
+  },
+  {
+    id: 2,
+    name: "강백호",
+  },
+];
