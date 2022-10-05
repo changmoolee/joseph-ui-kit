@@ -158,3 +158,19 @@ Toggle은 ON 및 OFF와 같이 상호 배타적인 두 가지 상태가 있는 U
 ### Typography
 
 IBM Plex를 서체로 사용합니다.<br><br>
+
+### Checkbox
+
+Checkbox는 목록에서 선택할 항목이 여러 개인 경우에 사용됩니다. 사용자는 0개, 1개 또는 원하는 수의 항목을 선택할 수 있습니다.<br><br>
+
+<img alt="Checkbox" src="https://user-images.githubusercontent.com/84559872/194015976-717a728d-403c-4130-83b6-a2055cb717f9.png" width="200px">
+
+<br><br>
+
+### DataTable
+
+DataTable은 행과 열을 사용하여 정보를 표시합니다. 데이터를 효율적으로 구성하고 표시하는 데 사용됩니다.<br><br>
+
+<img alt="DataTable" src="https://user-images.githubusercontent.com/84559872/194016269-6da68c3a-015d-4e97-8a76-c3b30fb7ceba.png" width="200px">
+
+<br><br>
