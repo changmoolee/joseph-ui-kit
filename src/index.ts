@@ -12,6 +12,8 @@ import TextInput from "./components/TextInput/TextInput";
 import TextArea from "./components/TextArea/TextArea";
 import FileUploader from "./components/FileUploader/FileUploader";
 import FileUploaderDropContainer from "./components/FileUploaderDropContainer/FileUploaderDropContainer";
+import Checkbox from "./components/Checkbox/Checkbox";
+import DataTable from "./components/DataTable/DataTable";
 import {
   UtilityStyles,
   BodyStyles,
@@ -36,6 +38,8 @@ export {
   TextArea,
   FileUploader,
   FileUploaderDropContainer,
+  Checkbox,
+  DataTable,
   UtilityStyles,
   BodyStyles,
   FixedHeadingStyles,
