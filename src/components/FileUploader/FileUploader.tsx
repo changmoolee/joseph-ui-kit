@@ -9,7 +9,6 @@ interface FileUploaderProps {
   buttonKind?: "default" | "secondary" | "tertiary" | "ghost" | "danger";
   buttonName?: string;
   fileSize?: number;
-  onError?: () => void;
   onChange?: (
     event: React.ChangeEvent<HTMLInputElement>,
     data: { result: string }
@@ -20,9 +19,7 @@ const FileUploader = ({
   buttonKind = "default",
   buttonName = "Add file",
   fileSize = 0.5,
-  onError = () => {
-    console.log("업로드가 가능한 파일 사이즈를 초과했습니다.");
-  },
+
   onChange = () => {},
 }: FileUploaderProps) => {
   const [attachment, setAttachment] = useState("");
@@ -34,34 +31,36 @@ const FileUploader = ({
   };
 
   const onFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const {
-      target: { files },
-    } = event;
+    try {
+      const {
+        target: { files },
+      } = event;
 
-    if (files === null) throw Error("적절한 파일이 입력되지 않았습니다.");
+      if (files === null) throw Error("적절한 파일이 입력되지 않았습니다.");
 
-    const theFile = files[0];
+      const theFile = files[0];
 
-    if (theFile.size > 1024 * 1024 * fileSize) {
-      onError();
-
-      throw Error(
-        `업로드할 수 있는 이미지 파일은 ${fileSize}MB 이하 사이즈만 가능합니다.`
-      );
-    }
-
-    setFilename(theFile.name);
-
-    const reader = new FileReader();
-
-    reader.onloadend = (finishedEvent: ProgressEvent<FileReader>) => {
-      const result = (finishedEvent.currentTarget as FileReader).result;
-      if (typeof result === "string") {
-        setAttachment(result);
-        onChange(event, { result: result });
+      if (theFile.size > 1024 * 1024 * fileSize) {
+        throw Error(
+          `업로드할 수 있는 이미지 파일은 ${fileSize}MB 이하 사이즈만 가능합니다.`
+        );
       }
-    };
-    reader.readAsDataURL(theFile);
+
+      setFilename(theFile.name);
+
+      const reader = new FileReader();
+
+      reader.onloadend = (finishedEvent: ProgressEvent<FileReader>) => {
+        const result = (finishedEvent.currentTarget as FileReader).result;
+        if (typeof result === "string") {
+          setAttachment(result);
+          onChange(event, { result: result });
+        }
+      };
+      reader.readAsDataURL(theFile);
+    } catch (err) {
+      alert(err);
+    }
   };
 
   const clearUploadedFile = () => {

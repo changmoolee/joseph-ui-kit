@@ -29,20 +29,6 @@ import FileUploader from "./FileUploader";
       },
       defaultValue: 0.5,
     },
-    onError: {
-      name: "onError",
-      type: { required: false },
-      description:
-        "FileUploader에 업로드할 수 있는 이미지 파일 사이즈 한도를 초과할 시, 실행할 함수를 설정할 수 있습니다.",
-      table: {
-        type: {
-          summary: "func",
-        },
-      },
-      defaultValue: () => {
-        console.log("업로드가 가능한 파일 사이즈를 초과했습니다.");
-      },
-    },
     onChange: {
       name: "onChange",
       type: { required: false },

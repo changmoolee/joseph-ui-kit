@@ -8,7 +8,6 @@ interface FileUploaderDropContainerProps {
   width?: string;
   labelText?: string;
   fileSize?: number;
-  onError?: () => void;
   onChange?: (
     event: React.ChangeEvent<HTMLInputElement> | DragEvent,
     data: { result: string }
@@ -19,9 +18,6 @@ const FileUploaderDropContainer = ({
   width = "320px",
   labelText = "Drag and drop files here or click to upload",
   fileSize = 0.5,
-  onError = () => {
-    console.log("업로드가 가능한 파일 사이즈를 초과했습니다.");
-  },
   onChange = () => {},
 }: FileUploaderDropContainerProps) => {
   const divRef = useRef<HTMLLabelElement | null>(null);
@@ -35,35 +31,37 @@ const FileUploaderDropContainer = ({
   const onFileChange = (
     event: React.ChangeEvent<HTMLInputElement> | DragEvent
   ) => {
-    let files;
-    if (event instanceof DragEvent && event.dataTransfer !== null) {
-      files = event.dataTransfer.files;
-    } else {
-      files = (event.target as HTMLInputElement).files;
-    }
-
-    if (files === null) throw Error("적절한 파일이 입력되지 않았습니다.");
-
-    const theFile = files[0];
-
-    if (theFile.size > 1024 * 1024 * fileSize) {
-      onError();
-
-      throw Error(
-        `업로드할 수 있는 이미지 파일은 ${fileSize}MB 이하 사이즈만 가능합니다.`
-      );
-    }
-
-    const reader = new FileReader();
-
-    reader.onloadend = (finishedEvent: ProgressEvent<FileReader>) => {
-      const result = (finishedEvent.currentTarget as FileReader).result;
-      if (typeof result === "string") {
-        setAttachment(result);
-        onChange(event, { result: result });
+    try {
+      let files;
+      if (event instanceof DragEvent && event.dataTransfer !== null) {
+        files = event.dataTransfer.files;
+      } else {
+        files = (event.target as HTMLInputElement).files;
       }
-    };
-    reader.readAsDataURL(theFile);
+
+      if (files === null) throw Error("적절한 파일이 입력되지 않았습니다.");
+
+      const theFile = files[0];
+
+      if (theFile.size > 1024 * 1024 * fileSize) {
+        throw Error(
+          `업로드할 수 있는 이미지 파일은 ${fileSize}MB 이하 사이즈만 가능합니다.`
+        );
+      }
+
+      const reader = new FileReader();
+
+      reader.onloadend = (finishedEvent: ProgressEvent<FileReader>) => {
+        const result = (finishedEvent.currentTarget as FileReader).result;
+        if (typeof result === "string") {
+          setAttachment(result);
+          onChange(event, { result: result });
+        }
+      };
+      reader.readAsDataURL(theFile);
+    } catch (err) {
+      alert(err);
+    }
   };
 
   const initDragEvents = (): void => {
